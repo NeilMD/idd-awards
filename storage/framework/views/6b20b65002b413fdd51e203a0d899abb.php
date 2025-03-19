@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGNITE Awards</title>
+    <link rel="stylesheet" href="https://use.typekit.net/tzg2jet.css">
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/styles.css'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/time-capsule.css'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/award-categories.css'); ?>
+    <link rel="stylesheet" href="./assets/css/ux.css">
+</head>
+<body>
+    <!-- nav -->
+    <nav>
+      <a href="<?php echo e(url('/')); ?>"><img src="<?php echo e(Vite::asset('resources/img/Asset 8.png')); ?>" class="logo" id="logo" data-hover-logo="<?php echo e(Vite::asset('resources/img/logo-hover.png')); ?>"
+      /></a>
+        <div class="nav-links">
+            <a href="<?php echo e(url('/')); ?>">Home</a>
+            <a href="<?php echo e(url('awards')); ?>">Awards</a>
+            <!-- <a href="#">Nominees</a> -->
+            <a href="<?php echo e(url('time-capsule')); ?>">Time Capsule</a>
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <button class="contact-btn">Contact</button>
+    </nav>
+       <!--hero-->
+       <section class="hero ux-hero">
+        <div class="overlay"></div>
+        <h1 class="title"> USER EXPERIENCE AWARDS</h1>
+    </section>
+
+        <!-- Accordion Categories -->
+        <div class="accordion-container">
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h3>The HI-FI High-Five Award</h3>
+                <div class="accordion-icon">
+                  <span class="arrow"></span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <h4>BEST HIGH FIDELITY MOCKUP</h4>
+                <p>Description
+                </p>
+                <ul class="award-details">
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criterias</li>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h3>The Innovator Extraordinaire Award</h3>
+                <div class="accordion-icon">
+                  <span class="arrow"></span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <h4>MOST INNOVATIVE PROBLEM SOLVING</h4>
+                <p>decription
+                </p>
+                <ul class="award-details">
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criterias</li>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h3>The Design System Vanguard Award</h3>
+                <div class="accordion-icon">
+                  <span class="arrow"></span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <h4>BEST DESIGN SYSTEM</h4>
+                <p>Description</p>
+                <ul class="award-details">
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criterias</li>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h3>The Sick Flow Award</h3>
+                <div class="accordion-icon">
+                  <span class="arrow"></span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <h4>BEST USER FLOW</h4>
+                <p>Think you've got sick flow, bro? Prove you're the best using a sequence of only 5
+                    user flows. Submissions with more than 5 will not be accepted.
+                </p>
+                <ul class="award-details">
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <h3>The Little Big Deal Award</h3>
+                <div class="accordion-icon">
+                  <span class="arrow"></span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <h4>BEST MICRO INTERACTION</h4>
+                <p>This is your chance to show off your favourite buttons!
+                </p>
+                <ul class="award-details">
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+                    <li>criteria</li>
+              </div>
+            </div>
+          </div>
+
+                <!-- redirection -->
+          <h2 class="section-title">See Also:</h2>
+          <section class="cards-section">
+              <div class="cards-container">
+                  <div class="card">
+                      <a href="<?php echo e(url('ignite-awards')); ?>"><img src="<?php echo e(Vite::asset('resources/img/IGNITE@3x.png')); ?>" alt="Award Category" class="card-img"></a>
+                      <div class="card-content">
+                          <h2 class="card-title">The IGNITE Award</h2>
+                          <p class="card-text">See criteria for the IGNITE award. Student and Instructor voted!</p>
+                      </div>
+                  </div>
+                  <div class="card">
+                      <a href="<?php echo e(url('graphic-design')); ?>"><img src="<?php echo e(Vite::asset('resources/img/IGNITE@3x.png')); ?>" alt="Award Category" class="card-img"></a>
+                      <div class="card-content">
+                          <h2 class="card-title">Graphic Design</h2>
+                          <p class="card-text">See criteria for all Graphic Design awards. Applicants must be Graphic Design Majors.</p>
+                      </div>
+                  </div>
+                  <div class="card">
+                      <a href="<?php echo e(url('web-development')); ?>"><img src="<?php echo e(Vite::asset('resources/img/WEB@3x.png')); ?>" alt="Award Category" class="card-img"></a>
+                      <div class="card-content">
+                          <h2 class="card-title">Web Development</h2>
+                          <p class="card-text">See criteria for all Web awards. Applicants must be Web Dev Majors.</p>
+                      </div>
+                  </div>
+                  <div class="card">
+                      <a href="<?php echo e(url('general-awards')); ?>"><img src="<?php echo e(Vite::asset('resources/img/GEN@3x.png')); ?>" alt="Award Category" class="card-img"></a>
+                      <div class="card-content">
+                          <h2 class="card-title">General</h2>
+                          <p class="card-text">See criteria for general awards. Open to all applicants!</p>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      
+
+    <!-- Footer -->
+    <footer>
+        <p>IGNITE 2025. All Rights Reserved.</p>
+    </footer>
+
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/scripts.js'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/award-categories.js'); ?>
+</body>
+</html><?php /**PATH /Applications/MAMP/htdocs/idd/awards/resources/views/user-experience.blade.php ENDPATH**/ ?>
