@@ -1,0 +1,9 @@
+.gen-hero {
+    background: linear-gradient(180deg, #060608, #003467, #06E3FC);
+    max-height: 40em;
+}
+
+.title {
+    color: #fafafa;
+    mix-blend-mode:overlay;
+}
