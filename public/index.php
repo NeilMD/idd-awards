@@ -1,36 +1,18 @@
 <?php
 
-require_once '../app/core/App.php';
-require_once '../app/core/Router.php';
-require_once '../app/core/Controller.php';
-require_once '../app/core/Model.php';
+use App\Core\Request;
+use App\Core\Router;
+use App\Controllers\HomeController;
 
 $router = new Router();
+$homeController = new HomeController();
 
 // Define routes
-$router->add('/', 'GET', function() {
-    $controller = new HomeController();
-    $controller->index();
-});
+$router->get('/', [$homeController, 'index']);
+$router->get('/about', [$homeController, 'about']);
+$router->get('/contact', [$homeController, 'contact']);
+$router->post('/contact', [$homeController, 'contact']);  // For form submission
 
-$router->add('/about', 'GET', function() {
-    $controller = new AboutController();
-    $controller->index();
-});
-
-$router->add('/contact', 'GET', function() {
-    $controller = new ContactController();
-    $controller->index();
-});
-
-$router->add('/contact/submit', 'POST', function() {
-    $controller = new ContactController();
-    $controller->submit();
-});
-
-// Dispatch based on the current URL and method
-$requestUri = $_SERVER['REQUEST_URI'];
-$requestMethod = $_SERVER['REQUEST_METHOD'];
-$router->dispatch(parse_url($requestUri, PHP_URL_PATH), $requestMethod);
-
-?>
+// Resolve the incoming request
+$request = new Request();
+$router->resolve($request);

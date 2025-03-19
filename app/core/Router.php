@@ -1,27 +1,55 @@
 <?php
 
-class Router {
-    private $routes = [];
+namespace App\Core;
 
-    public function add($route, $method, $callback) {
-        $this->routes[] = [
-            'route' => $route,
-            'method' => $method,
-            'callback' => $callback
-        ];
+use App\Controllers\HomeController;
+
+class Router
+{
+    private array $routes = [];
+
+    /**
+     * Registers a GET route.
+     *
+     * @param string $path
+     * @param callable $callback
+     * @return void
+     */
+    public function get(string $path, callable $callback): void
+    {
+        $this->routes['GET'][$path] = $callback;
     }
 
-    public function dispatch($url, $requestMethod) {
-        foreach ($this->routes as $route) {
-            if ($url === $route['route'] && $requestMethod === $route['method']) {
-                return call_user_func($route['callback']);
-            }
+    /**
+     * Registers a POST route.
+     *
+     * @param string $path
+     * @param callable $callback
+     * @return void
+     */
+    public function post(string $path, callable $callback): void
+    {
+        $this->routes['POST'][$path] = $callback;
+    }
+
+    /**
+     * Resolves the current route based on the request method and URI.
+     *
+     * @param Request $request
+     * @return mixed
+     */
+    public function resolve(Request $request)
+    {
+        $method = $request->getMethod();
+        $path = $request->getPath();
+
+        $callback = $this->routes[$method][$path] ?? null;
+
+        if (!$callback) {
+            (new HomeController())->showNotFound();
+            return null;
         }
 
-        // If no match, show 404 page
-        header("HTTP/1.0 404 Not Found");
-        echo "404 - Page not found.";
-        exit;
+        return call_user_func($callback, $request);
     }
 }
-?>
