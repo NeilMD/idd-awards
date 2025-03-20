@@ -3109,3 +3109,494 @@
 #58 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Applications/M...')
 #59 {main}
 "} 
+[2025-03-19 23:15:05] local.ERROR: Invalid route action: [time-capsule]. {"exception":"[object] (UnexpectedValueException(code: 0): Invalid route action: [time-capsule]. at /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php:92)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php(47): Illuminate\\Routing\\RouteAction::makeInvokable('time-capsule')
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Route.php(198): Illuminate\\Routing\\RouteAction::parse('time-capsule/su...', Array)
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Route.php(179): Illuminate\\Routing\\Route->parseAction(Array)
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(672): Illuminate\\Routing\\Route->__construct('POST', 'time-capsule/su...', Array)
+#4 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(563): Illuminate\\Routing\\Router->newRoute('POST', 'time-capsule/su...', Array)
+#5 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(543): Illuminate\\Routing\\Router->createRoute('POST', '/time-capsule/s...', Array)
+#6 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(173): Illuminate\\Routing\\Router->addRoute('POST', '/time-capsule/s...', 'time-capsule')
+#7 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Routing\\Router->post('/time-capsule/s...', 'time-capsule')
+#8 /Applications/MAMP/htdocs/idd/awards/routes/web.php(18): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#9 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/Applications/M...')
+#10 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\\Routing\\RouteFileRegistrar->register('/Applications/M...')
+#11 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(467): Illuminate\\Routing\\Router->loadRoutes('/Applications/M...')
+#12 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(207): Illuminate\\Routing\\Router->group(Array, '/Applications/M...')
+#13 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(248): Illuminate\\Routing\\RouteRegistrar->group('/Applications/M...')
+#14 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
+#15 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#18 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#19 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(162): Illuminate\\Container\\Container->call(Object(Closure))
+#20 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(59): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#21 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#22 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#23 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#24 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#25 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#26 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(144): Illuminate\\Container\\Container->call(Object(Closure))
+#27 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1154): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#28 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1132): Illuminate\\Foundation\\Application->bootProvider(Object(Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider))
+#29 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider), 'Illuminate\\\\Foun...')
+#30 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1131): array_walk(Array, Object(Closure))
+#31 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#32 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#33 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(187): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#34 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(171): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#35 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#36 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#37 /Applications/MAMP/htdocs/idd/awards/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#38 {main}
+"} 
+[2025-03-19 23:15:06] local.ERROR: Invalid route action: [time-capsule]. {"exception":"[object] (UnexpectedValueException(code: 0): Invalid route action: [time-capsule]. at /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php:92)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php(47): Illuminate\\Routing\\RouteAction::makeInvokable('time-capsule')
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Route.php(198): Illuminate\\Routing\\RouteAction::parse('time-capsule/su...', Array)
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Route.php(179): Illuminate\\Routing\\Route->parseAction(Array)
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(672): Illuminate\\Routing\\Route->__construct('POST', 'time-capsule/su...', Array)
+#4 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(563): Illuminate\\Routing\\Router->newRoute('POST', 'time-capsule/su...', Array)
+#5 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(543): Illuminate\\Routing\\Router->createRoute('POST', '/time-capsule/s...', Array)
+#6 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(173): Illuminate\\Routing\\Router->addRoute('POST', '/time-capsule/s...', 'time-capsule')
+#7 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Routing\\Router->post('/time-capsule/s...', 'time-capsule')
+#8 /Applications/MAMP/htdocs/idd/awards/routes/web.php(18): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#9 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/Applications/M...')
+#10 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\\Routing\\RouteFileRegistrar->register('/Applications/M...')
+#11 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(467): Illuminate\\Routing\\Router->loadRoutes('/Applications/M...')
+#12 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(207): Illuminate\\Routing\\Router->group(Array, '/Applications/M...')
+#13 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(248): Illuminate\\Routing\\RouteRegistrar->group('/Applications/M...')
+#14 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
+#15 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#18 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#19 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(162): Illuminate\\Container\\Container->call(Object(Closure))
+#20 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(59): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#21 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#22 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#23 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#24 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#25 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#26 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(144): Illuminate\\Container\\Container->call(Object(Closure))
+#27 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1154): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#28 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1132): Illuminate\\Foundation\\Application->bootProvider(Object(Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider))
+#29 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider), 'Illuminate\\\\Foun...')
+#30 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1131): array_walk(Array, Object(Closure))
+#31 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#32 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#33 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(187): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#34 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(171): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#35 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#36 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#37 /Applications/MAMP/htdocs/idd/awards/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#38 {main}
+"} 
+[2025-03-19 23:16:06] local.ERROR: Invalid route action: [time-capsule]. {"exception":"[object] (UnexpectedValueException(code: 0): Invalid route action: [time-capsule]. at /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php:92)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php(47): Illuminate\\Routing\\RouteAction::makeInvokable('time-capsule')
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Route.php(198): Illuminate\\Routing\\RouteAction::parse('time-capsule/su...', Array)
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Route.php(179): Illuminate\\Routing\\Route->parseAction(Array)
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(672): Illuminate\\Routing\\Route->__construct('POST', 'time-capsule/su...', Array)
+#4 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(563): Illuminate\\Routing\\Router->newRoute('POST', 'time-capsule/su...', Array)
+#5 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(543): Illuminate\\Routing\\Router->createRoute('POST', '/time-capsule/s...', Array)
+#6 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(173): Illuminate\\Routing\\Router->addRoute('POST', '/time-capsule/s...', 'time-capsule')
+#7 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Routing\\Router->post('/time-capsule/s...', 'time-capsule')
+#8 /Applications/MAMP/htdocs/idd/awards/routes/web.php(18): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#9 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/Applications/M...')
+#10 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\\Routing\\RouteFileRegistrar->register('/Applications/M...')
+#11 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(467): Illuminate\\Routing\\Router->loadRoutes('/Applications/M...')
+#12 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(207): Illuminate\\Routing\\Router->group(Array, '/Applications/M...')
+#13 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(248): Illuminate\\Routing\\RouteRegistrar->group('/Applications/M...')
+#14 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
+#15 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#18 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#19 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(162): Illuminate\\Container\\Container->call(Object(Closure))
+#20 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(59): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#21 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#22 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#23 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#24 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#25 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#26 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(144): Illuminate\\Container\\Container->call(Object(Closure))
+#27 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1154): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#28 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1132): Illuminate\\Foundation\\Application->bootProvider(Object(Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider))
+#29 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider), 'Illuminate\\\\Foun...')
+#30 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1131): array_walk(Array, Object(Closure))
+#31 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#32 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#33 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(187): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#34 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(171): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#35 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#36 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#37 /Applications/MAMP/htdocs/idd/awards/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#38 {main}
+"} 
+[2025-03-19 23:16:08] local.ERROR: Invalid route action: [time-capsule]. {"exception":"[object] (UnexpectedValueException(code: 0): Invalid route action: [time-capsule]. at /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php:92)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php(47): Illuminate\\Routing\\RouteAction::makeInvokable('time-capsule')
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Route.php(198): Illuminate\\Routing\\RouteAction::parse('time-capsule/su...', Array)
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Route.php(179): Illuminate\\Routing\\Route->parseAction(Array)
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(672): Illuminate\\Routing\\Route->__construct('POST', 'time-capsule/su...', Array)
+#4 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(563): Illuminate\\Routing\\Router->newRoute('POST', 'time-capsule/su...', Array)
+#5 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(543): Illuminate\\Routing\\Router->createRoute('POST', '/time-capsule/s...', Array)
+#6 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(173): Illuminate\\Routing\\Router->addRoute('POST', '/time-capsule/s...', 'time-capsule')
+#7 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Routing\\Router->post('/time-capsule/s...', 'time-capsule')
+#8 /Applications/MAMP/htdocs/idd/awards/routes/web.php(18): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#9 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/Applications/M...')
+#10 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\\Routing\\RouteFileRegistrar->register('/Applications/M...')
+#11 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(467): Illuminate\\Routing\\Router->loadRoutes('/Applications/M...')
+#12 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(207): Illuminate\\Routing\\Router->group(Array, '/Applications/M...')
+#13 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(248): Illuminate\\Routing\\RouteRegistrar->group('/Applications/M...')
+#14 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
+#15 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#18 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#19 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(162): Illuminate\\Container\\Container->call(Object(Closure))
+#20 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(59): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#21 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#22 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#23 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#24 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#25 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#26 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(144): Illuminate\\Container\\Container->call(Object(Closure))
+#27 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1154): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#28 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1132): Illuminate\\Foundation\\Application->bootProvider(Object(Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider))
+#29 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider), 'Illuminate\\\\Foun...')
+#30 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1131): array_walk(Array, Object(Closure))
+#31 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#32 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#33 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(187): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#34 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(171): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#35 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#36 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#37 /Applications/MAMP/htdocs/idd/awards/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#38 {main}
+"} 
+[2025-03-19 23:16:08] local.ERROR: Invalid route action: [time-capsule]. {"exception":"[object] (UnexpectedValueException(code: 0): Invalid route action: [time-capsule]. at /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php:92)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php(47): Illuminate\\Routing\\RouteAction::makeInvokable('time-capsule')
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Route.php(198): Illuminate\\Routing\\RouteAction::parse('time-capsule/su...', Array)
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Route.php(179): Illuminate\\Routing\\Route->parseAction(Array)
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(672): Illuminate\\Routing\\Route->__construct('POST', 'time-capsule/su...', Array)
+#4 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(563): Illuminate\\Routing\\Router->newRoute('POST', 'time-capsule/su...', Array)
+#5 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(543): Illuminate\\Routing\\Router->createRoute('POST', '/time-capsule/s...', Array)
+#6 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(173): Illuminate\\Routing\\Router->addRoute('POST', '/time-capsule/s...', 'time-capsule')
+#7 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(361): Illuminate\\Routing\\Router->post('/time-capsule/s...', 'time-capsule')
+#8 /Applications/MAMP/htdocs/idd/awards/routes/web.php(18): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#9 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/Applications/M...')
+#10 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\\Routing\\RouteFileRegistrar->register('/Applications/M...')
+#11 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/Router.php(467): Illuminate\\Routing\\Router->loadRoutes('/Applications/M...')
+#12 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(207): Illuminate\\Routing\\Router->group(Array, '/Applications/M...')
+#13 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Configuration/ApplicationBuilder.php(248): Illuminate\\Routing\\RouteRegistrar->group('/Applications/M...')
+#14 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}()
+#15 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#18 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#19 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(162): Illuminate\\Container\\Container->call(Object(Closure))
+#20 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(59): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#21 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#22 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#23 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(84): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#24 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#25 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#26 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(144): Illuminate\\Container\\Container->call(Object(Closure))
+#27 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1154): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#28 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1132): Illuminate\\Foundation\\Application->bootProvider(Object(Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider))
+#29 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider), 'Illuminate\\\\Foun...')
+#30 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1131): array_walk(Array, Object(Closure))
+#31 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#32 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#33 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(187): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#34 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(171): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#35 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#36 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#37 /Applications/MAMP/htdocs/idd/awards/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#38 {main}
+"} 
+[2025-03-19 23:25:09] local.ERROR: The command "mysqldump  --user="${:LARAVEL_LOAD_USER}" --password="${:LARAVEL_LOAD_PASSWORD}" --host="${:LARAVEL_LOAD_HOST}" --port="${:LARAVEL_LOAD_PORT}" --no-tablespaces --skip-add-locks --skip-comments --skip-set-charset --tz-utc "${:LARAVEL_LOAD_DATABASE}" --routines --result-file="${:LARAVEL_LOAD_PATH}" --no-data" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Applications/MAMP/htdocs/idd/awards
+
+Output:
+================
+
+
+Error Output:
+================
+sh: mysqldump: command not found
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"mysqldump  --user=\"${:LARAVEL_LOAD_USER}\" --password=\"${:LARAVEL_LOAD_PASSWORD}\" --host=\"${:LARAVEL_LOAD_HOST}\" --port=\"${:LARAVEL_LOAD_PORT}\" --no-tablespaces --skip-add-locks --skip-comments --skip-set-charset --tz-utc \"${:LARAVEL_LOAD_DATABASE}\" --routines --result-file=\"${:LARAVEL_LOAD_PATH}\" --no-data\" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Applications/MAMP/htdocs/idd/awards
+
+Output:
+================
+
+
+Error Output:
+================
+sh: mysqldump: command not found
+ at /Applications/MAMP/htdocs/idd/awards/vendor/symfony/process/Process.php:269)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(158): Symfony\\Component\\Process\\Process->mustRun(Object(Closure), Array)
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(167): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array, 2)
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(161): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array, 1)
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(21): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array)
+#4 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Console/DumpCommand.php(46): Illuminate\\Database\\Schema\\MySqlSchemaState->dump(Object(Illuminate\\Database\\MySqlConnection), '/Applications/M...')
+#5 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\DumpCommand->handle(Object(Illuminate\\Database\\DatabaseManager), Object(Illuminate\\Events\\Dispatcher))
+#6 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#7 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call(Array)
+#11 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\DumpCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /Applications/MAMP/htdocs/idd/awards/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#19 {main}
+"} 
+[2025-03-19 23:25:29] local.ERROR: The command "mysqldump  --user="${:LARAVEL_LOAD_USER}" --password="${:LARAVEL_LOAD_PASSWORD}" --host="${:LARAVEL_LOAD_HOST}" --port="${:LARAVEL_LOAD_PORT}" --no-tablespaces --skip-add-locks --skip-comments --skip-set-charset --tz-utc "${:LARAVEL_LOAD_DATABASE}" --routines --result-file="${:LARAVEL_LOAD_PATH}" --no-data" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Applications/MAMP/htdocs/idd/awards
+
+Output:
+================
+
+
+Error Output:
+================
+sh: mysqldump: command not found
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"mysqldump  --user=\"${:LARAVEL_LOAD_USER}\" --password=\"${:LARAVEL_LOAD_PASSWORD}\" --host=\"${:LARAVEL_LOAD_HOST}\" --port=\"${:LARAVEL_LOAD_PORT}\" --no-tablespaces --skip-add-locks --skip-comments --skip-set-charset --tz-utc \"${:LARAVEL_LOAD_DATABASE}\" --routines --result-file=\"${:LARAVEL_LOAD_PATH}\" --no-data\" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Applications/MAMP/htdocs/idd/awards
+
+Output:
+================
+
+
+Error Output:
+================
+sh: mysqldump: command not found
+ at /Applications/MAMP/htdocs/idd/awards/vendor/symfony/process/Process.php:269)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(158): Symfony\\Component\\Process\\Process->mustRun(Object(Closure), Array)
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(167): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array, 2)
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(161): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array, 1)
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(21): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array)
+#4 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Console/DumpCommand.php(46): Illuminate\\Database\\Schema\\MySqlSchemaState->dump(Object(Illuminate\\Database\\MySqlConnection), '/Applications/M...')
+#5 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\DumpCommand->handle(Object(Illuminate\\Database\\DatabaseManager), Object(Illuminate\\Events\\Dispatcher))
+#6 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#7 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call(Array)
+#11 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\DumpCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /Applications/MAMP/htdocs/idd/awards/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#19 {main}
+"} 
+[2025-03-19 23:25:53] local.ERROR: The command "mysqldump  --user="${:LARAVEL_LOAD_USER}" --password="${:LARAVEL_LOAD_PASSWORD}" --host="${:LARAVEL_LOAD_HOST}" --port="${:LARAVEL_LOAD_PORT}" --no-tablespaces --skip-add-locks --skip-comments --skip-set-charset --tz-utc "${:LARAVEL_LOAD_DATABASE}" --routines --result-file="${:LARAVEL_LOAD_PATH}" --no-data" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Applications/MAMP/htdocs/idd/awards
+
+Output:
+================
+
+
+Error Output:
+================
+sh: mysqldump: command not found
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"mysqldump  --user=\"${:LARAVEL_LOAD_USER}\" --password=\"${:LARAVEL_LOAD_PASSWORD}\" --host=\"${:LARAVEL_LOAD_HOST}\" --port=\"${:LARAVEL_LOAD_PORT}\" --no-tablespaces --skip-add-locks --skip-comments --skip-set-charset --tz-utc \"${:LARAVEL_LOAD_DATABASE}\" --routines --result-file=\"${:LARAVEL_LOAD_PATH}\" --no-data\" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Applications/MAMP/htdocs/idd/awards
+
+Output:
+================
+
+
+Error Output:
+================
+sh: mysqldump: command not found
+ at /Applications/MAMP/htdocs/idd/awards/vendor/symfony/process/Process.php:269)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(158): Symfony\\Component\\Process\\Process->mustRun(Object(Closure), Array)
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(167): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array, 2)
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(161): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array, 1)
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(21): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array)
+#4 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Console/DumpCommand.php(46): Illuminate\\Database\\Schema\\MySqlSchemaState->dump(Object(Illuminate\\Database\\MySqlConnection), '/Applications/M...')
+#5 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\DumpCommand->handle(Object(Illuminate\\Database\\DatabaseManager), Object(Illuminate\\Events\\Dispatcher))
+#6 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#7 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call(Array)
+#11 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\DumpCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /Applications/MAMP/htdocs/idd/awards/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#19 {main}
+"} 
+[2025-03-19 23:25:55] local.ERROR: The command "mysqldump  --user="${:LARAVEL_LOAD_USER}" --password="${:LARAVEL_LOAD_PASSWORD}" --host="${:LARAVEL_LOAD_HOST}" --port="${:LARAVEL_LOAD_PORT}" --no-tablespaces --skip-add-locks --skip-comments --skip-set-charset --tz-utc "${:LARAVEL_LOAD_DATABASE}" --routines --result-file="${:LARAVEL_LOAD_PATH}" --no-data" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Applications/MAMP/htdocs/idd/awards
+
+Output:
+================
+
+
+Error Output:
+================
+sh: mysqldump: command not found
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"mysqldump  --user=\"${:LARAVEL_LOAD_USER}\" --password=\"${:LARAVEL_LOAD_PASSWORD}\" --host=\"${:LARAVEL_LOAD_HOST}\" --port=\"${:LARAVEL_LOAD_PORT}\" --no-tablespaces --skip-add-locks --skip-comments --skip-set-charset --tz-utc \"${:LARAVEL_LOAD_DATABASE}\" --routines --result-file=\"${:LARAVEL_LOAD_PATH}\" --no-data\" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Applications/MAMP/htdocs/idd/awards
+
+Output:
+================
+
+
+Error Output:
+================
+sh: mysqldump: command not found
+ at /Applications/MAMP/htdocs/idd/awards/vendor/symfony/process/Process.php:269)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(158): Symfony\\Component\\Process\\Process->mustRun(Object(Closure), Array)
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(167): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array, 2)
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(161): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array, 1)
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php(21): Illuminate\\Database\\Schema\\MySqlSchemaState->executeDumpProcess(Object(Symfony\\Component\\Process\\Process), Object(Closure), Array)
+#4 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Database/Console/DumpCommand.php(46): Illuminate\\Database\\Schema\\MySqlSchemaState->dump(Object(Illuminate\\Database\\MySqlConnection), '/Applications/M...')
+#5 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\DumpCommand->handle(Object(Illuminate\\Database\\DatabaseManager), Object(Illuminate\\Events\\Dispatcher))
+#6 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#7 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call(Array)
+#11 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\DumpCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /Applications/MAMP/htdocs/idd/awards/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#19 {main}
+"} 
+[2025-03-19 23:28:17] local.ERROR: Command "make:migraiton" is not defined.
+
+Did you mean one of these?
+    make:cache-table
+    make:cast
+    make:channel
+    make:class
+    make:command
+    make:component
+    make:controller
+    make:enum
+    make:event
+    make:exception
+    make:factory
+    make:interface
+    make:job
+    make:job-middleware
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:notifications-table
+    make:observer
+    make:policy
+    make:provider
+    make:queue-batches-table
+    make:queue-failed-table
+    make:queue-table
+    make:request
+    make:resource
+    make:rule
+    make:scope
+    make:seeder
+    make:session-table
+    make:test
+    make:trait
+    make:view {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make:migraiton\" is not defined.
+
+Did you mean one of these?
+    make:cache-table
+    make:cast
+    make:channel
+    make:class
+    make:command
+    make:component
+    make:controller
+    make:enum
+    make:event
+    make:exception
+    make:factory
+    make:interface
+    make:job
+    make:job-middleware
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:notifications-table
+    make:observer
+    make:policy
+    make:provider
+    make:queue-batches-table
+    make:queue-failed-table
+    make:queue-table
+    make:request
+    make:resource
+    make:rule
+    make:scope
+    make:seeder
+    make:session-table
+    make:test
+    make:trait
+    make:view at /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php:726)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(284): Symfony\\Component\\Console\\Application->find('make:migraiton')
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /Applications/MAMP/htdocs/idd/awards/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#5 {main}
+"} 

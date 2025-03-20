@@ -13,7 +13,8 @@
     <!-- nav -->
     <nav>
       <a href="{{ url('/') }}"
-        ><img src="{{ Vite::asset('resources/img/Asset 8.png') }}" class="logo" id="logo"
+        >
+        <img src="{{ Vite::asset('resources/img/Asset 8.png') }}" class="logo" id="logo" data-hover-logo="{{ Vite::asset('resources/img/logo-hover.png') }}"
       /></a>
       <div class="nav-links">
         <a href="{{ url('/') }}">Home</a>

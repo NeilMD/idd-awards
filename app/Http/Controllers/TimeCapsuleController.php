@@ -1,0 +1,58 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
+use App\Models\DesignSubmission;
+
+class TimeCapsuleController extends Controller
+{
+    /**
+
+    * Show the profile for a given user.
+
+    */
+   public function submit(Request $request)
+
+   {
+
+    try {
+        // Validate form input
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'design_title' => 'required|string|max:255',
+            'design_description' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = $image->store('uploads/images', 'public');
+        }
+
+        // Save data to the database using the model
+        DesignSubmission::create([
+            'name' => $validatedData['name'],
+            'design_title' => $validatedData['design_title'],
+            'design_description' => $validatedData['design_description'],
+            'image_path' => $imagePath,
+        ]);
+
+        // Return success response as JSON
+        return response()->json([
+            'success' => true,
+            'message' => 'Design submitted successfully!',
+        ], 200);
+
+    } catch (ValidationException $e) {
+        // If validation fails, return JSON response with errors
+        return response()->json([
+            'success' => false,
+            'errors' => $e->errors(), // Validation errors will be automatically available here
+        ], 422); 
+    }
+
+   }
+}

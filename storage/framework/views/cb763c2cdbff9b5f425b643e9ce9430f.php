@@ -13,7 +13,8 @@
 <body>
     <!-- nav -->
     <nav>
-      <a href="<?php echo e(url('/')); ?>"><img src="<?php echo e(Vite::asset('resources/img/Asset 8.png')); ?>" class="logo" id="logo"></a>
+      <a href="<?php echo e(url('/')); ?>"><img src="<?php echo e(Vite::asset('resources/img/Asset 8.png')); ?>" class="logo" id="logo" data-hover-logo="<?php echo e(Vite::asset('resources/img/logo-hover.png')); ?>"
+      /></a>
         <div class="nav-links">
             <a href="<?php echo e(url('/')); ?>">Home</a>
             <a href="<?php echo e(url('awards')); ?>">Awards</a>

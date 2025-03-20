@@ -13,14 +13,14 @@
   <body>
     <!-- nav -->
     <nav>
-      <a href="index.html"
-        ><img src="<?php echo e(Vite::asset('resources/img/Asset 8.png')); ?>" class="logo" id="logo"
+      <a href="<?php echo e(url('/')); ?>"
+        ><img src="<?php echo e(Vite::asset('resources/img/Asset 8.png')); ?>" class="logo" id="logo" data-hover-logo="<?php echo e(Vite::asset('resources/img/logo-hover.png')); ?>"
       /></a>
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="awards.html">Awards</a>
+        <a href="<?php echo e(url('/')); ?>">Home</a>
+        <a href="<?php echo e(url('awards')); ?>">Awards</a>
         <!-- <a href="#">Nominees</a> -->
-        <a href="time-capsule.html">Time Capsule</a>
+        <a href="<?php echo e(url('time-capsule')); ?>">Time Capsule</a>
       </div>
       <div class="menu-toggle">
         <span></span>
