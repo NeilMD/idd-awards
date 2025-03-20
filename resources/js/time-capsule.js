@@ -25,7 +25,7 @@ function init() {
     //     localStorage.setItem('igniteMemories', JSON.stringify(memories));
     // }
 
-    displayMemories("all");
+    //displayMemories("all");
 
     setupEventListeners();
 }
@@ -97,7 +97,6 @@ function handleSubmission(e) {
     const reader = new FileReader();
     reader.onloadend = function (event) {
         const imageUrl = event.target.result;
-        const base64Image = reader.result.split(",")[1]; // Get base64 string
         const newMemory = {
             id: Date.now(),
             name,

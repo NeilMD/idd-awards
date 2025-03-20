@@ -114,7 +114,30 @@
           <button class="filter-btn" data-filter="featured">Featured</button>
         </div>
 
-        <div id="gallery-grid" class="gallery-grid"></div>
+        <div id="gallery-grid" class="gallery-grid">
+          <?php $__currentLoopData = $memories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $memory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <?php if (isset($component)) { $__componentOriginald05dd3bfc32d1f0c6c3ddd10d9ace994 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginald05dd3bfc32d1f0c6c3ddd10d9ace994 = $attributes; } ?>
+<?php $component = App\View\Components\MemoriesItem::resolve(['memory' => $memory] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('memories-item'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\MemoriesItem::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginald05dd3bfc32d1f0c6c3ddd10d9ace994)): ?>
+<?php $attributes = $__attributesOriginald05dd3bfc32d1f0c6c3ddd10d9ace994; ?>
+<?php unset($__attributesOriginald05dd3bfc32d1f0c6c3ddd10d9ace994); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginald05dd3bfc32d1f0c6c3ddd10d9ace994)): ?>
+<?php $component = $__componentOriginald05dd3bfc32d1f0c6c3ddd10d9ace994; ?>
+<?php unset($__componentOriginald05dd3bfc32d1f0c6c3ddd10d9ace994); ?>
+<?php endif; ?>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
       </div>
     </section>
 
