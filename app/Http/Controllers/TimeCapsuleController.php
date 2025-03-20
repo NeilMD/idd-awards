@@ -58,7 +58,7 @@ class TimeCapsuleController extends Controller
     public function show()
 
     {   
-        $submissions = DesignSubmission::all();
+        $submissions = DesignSubmission::orderBy('created_at', 'desc')->get();
         
         // Format the data as memories for the view
         $memories = $submissions->map(function($submission) {
