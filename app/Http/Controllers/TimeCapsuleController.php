@@ -16,7 +16,6 @@ class TimeCapsuleController extends Controller
    public function submit(Request $request)
 
    {
-
     try {
         // Validate form input
         $validatedData = $request->validate([

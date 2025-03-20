@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IGNITE Time Capsule</title>
     <link rel="stylesheet" href="https://use.typekit.net/tzg2jet.css" />
+
+
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <?php echo app('Illuminate\Foundation\Vite')('resources/css/styles.css'); ?>
     <?php echo app('Illuminate\Foundation\Vite')('resources/css/time-capsule.css'); ?>
   </head>
@@ -47,7 +50,7 @@
           gallery below.
         </p>
 
-        <form id="submission-form" class="memory-form">
+        <form enctype="multipart/form-data" data-attr-submit="<?php echo e(url('/time-capsule/submit')); ?>" id="submission-form" class="memory-form">
           <div class="form-group">
             <label for="submitter-name">Your Name</label>
             <input
@@ -136,7 +139,7 @@
     </footer>
 
     <?php echo app('Illuminate\Foundation\Vite')('resources/js/scripts.js'); ?>
-    <?php echo app('Illuminate\Foundation\Vite')('resources/js/time-capsule.js'); ?>
+    <script src="<?php echo e(Vite::asset('resources/js/time-capsule.js')); ?>" defer></script>
   </body>
 </html>
 <?php /**PATH /Applications/MAMP/htdocs/idd/awards/resources/views/time-capsule.blade.php ENDPATH**/ ?>

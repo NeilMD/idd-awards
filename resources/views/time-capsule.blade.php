@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IGNITE Time Capsule</title>
     <link rel="stylesheet" href="https://use.typekit.net/tzg2jet.css" />
+
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite('resources/css/styles.css')
     @vite('resources/css/time-capsule.css')
   </head>
@@ -47,7 +50,7 @@
           gallery below.
         </p>
 
-        <form id="submission-form" class="memory-form">
+        <form enctype="multipart/form-data" data-attr-submit="{{ url('/time-capsule/submit') }}" id="submission-form" class="memory-form">
           <div class="form-group">
             <label for="submitter-name">Your Name</label>
             <input
@@ -136,6 +139,6 @@
     </footer>
 
     @vite('resources/js/scripts.js')
-    @vite('resources/js/time-capsule.js')
+    <script src="{{ Vite::asset('resources/js/time-capsule.js') }}" defer></script>
   </body>
 </html>

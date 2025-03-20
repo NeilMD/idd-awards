@@ -1,58 +1,58 @@
 // DOM Elements
-const submissionForm = document.getElementById('submission-form');
-const memoryImageInput = document.getElementById('memory-image');
-const imagePreview = document.getElementById('image-preview');
-const previewImg = document.getElementById('preview-img');
-const removeImageBtn = document.getElementById('remove-image');
-const galleryGrid = document.getElementById('gallery-grid');
-const filterButtons = document.querySelectorAll('.filter-btn');
-const memoryModal = document.getElementById('memory-modal');
-const modalImage = document.getElementById('modal-image');
-const modalTitle = document.getElementById('modal-title');
-const modalSubmitter = document.getElementById('modal-submitter');
-const modalDescription = document.getElementById('modal-description');
-const closeModal = document.querySelector('.close-modal');
+const submissionForm = document.getElementById("submission-form");
+const memoryImageInput = document.getElementById("memory-image");
+const imagePreview = document.getElementById("image-preview");
+const previewImg = document.getElementById("preview-img");
+const removeImageBtn = document.getElementById("remove-image");
+const galleryGrid = document.getElementById("gallery-grid");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const memoryModal = document.getElementById("memory-modal");
+const modalImage = document.getElementById("modal-image");
+const modalTitle = document.getElementById("modal-title");
+const modalSubmitter = document.getElementById("modal-submitter");
+const modalDescription = document.getElementById("modal-description");
+const closeModal = document.querySelector(".close-modal");
 
 let memories = [];
 
 function init() {
-    const savedMemories = localStorage.getItem('igniteMemories');
-    if (savedMemories) {
-        memories = JSON.parse(savedMemories);
-    } else {
-        memories = [...sampleMemories];
-        localStorage.setItem('igniteMemories', JSON.stringify(memories));
-    }
-    
-    displayMemories('all');
-    
+    // This will not work as it will always saved in the User PC
+    // const savedMemories = localStorage.getItem('igniteMemories');
+    // if (savedMemories) {
+    //     memories = JSON.parse(savedMemories);
+    // } else {
+    //     memories = [...sampleMemories];
+    //     localStorage.setItem('igniteMemories', JSON.stringify(memories));
+    // }
+
+    displayMemories("all");
+
     setupEventListeners();
 }
+
 function setupEventListeners() {
+    memoryImageInput.addEventListener("change", handleImagePreview);
 
-    memoryImageInput.addEventListener('change', handleImagePreview);
-    
-    removeImageBtn.addEventListener('click', removeImage);
+    removeImageBtn.addEventListener("click", removeImage);
 
-    submissionForm.addEventListener('submit', handleSubmission);
+    submissionForm.addEventListener("submit", handleSubmission);
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
- 
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+
             displayMemories(button.dataset.filter);
         });
     });
 
-    closeModal.addEventListener('click', () => {
-        memoryModal.style.display = 'none';
+    closeModal.addEventListener("click", () => {
+        memoryModal.style.display = "none";
     });
 
-    window.addEventListener('click', (e) => {
+    window.addEventListener("click", (e) => {
         if (e.target === memoryModal) {
-            memoryModal.style.display = 'none';
+            memoryModal.style.display = "none";
         }
     });
 }
@@ -61,86 +61,115 @@ function handleImagePreview(e) {
     const file = e.target.files[0];
     if (file) {
         const reader = new FileReader();
-        
-        reader.onload = function(event) {
+
+        reader.onload = function (event) {
             previewImg.src = event.target.result;
-            imagePreview.style.display = 'block';
+            imagePreview.style.display = "block";
         };
-        
+
         reader.readAsDataURL(file);
     }
 }
 
 function removeImage() {
-    memoryImageInput.value = '';
-    previewImg.src = '#';
-    imagePreview.style.display = 'none';
+    memoryImageInput.value = "";
+    previewImg.src = "#";
+    imagePreview.style.display = "none";
 }
 function handleSubmission(e) {
+    console.log("handleSubmission");
     e.preventDefault();
-    
-    const name = document.getElementById('submitter-name').value;
-    const title = document.getElementById('memory-title').value;
-    const description = document.getElementById('memory-description').value;
-    const imageFile = document.getElementById('memory-image').files[0];
-    
+
+    const name = document.getElementById("submitter-name").value;
+    const title = document.getElementById("memory-title").value;
+    const description = document.getElementById("memory-description").value;
+    const imageFile = document.getElementById("memory-image").files[0];
+
     if (!imageFile) {
-        alert('Please select an image to upload');
+        alert("Please select an image to upload");
         return;
     }
+    const submitUrl = this.getAttribute("data-attr-submit");
+    const csrfToken = document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content");
 
     const reader = new FileReader();
-    reader.onload = function(event) {
+    reader.onloadend = function (event) {
         const imageUrl = event.target.result;
-        
+        const base64Image = reader.result.split(",")[1]; // Get base64 string
         const newMemory = {
             id: Date.now(),
             name,
             title,
             description,
             imageUrl,
-            type: 'latest',
-            timestamp: new Date().getTime()
+            type: "latest",
+            timestamp: new Date().getTime(),
         };
-        
-        memories.unshift(newMemory);
-        
-        localStorage.setItem('igniteMemories', JSON.stringify(memories));
-        
-        submissionForm.reset();
-        removeImage();
 
-        displayMemories('all');
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("design_title", title);
+        formData.append("design_description", description);
+        formData.append("image", imageFile);
+        // Send form data using fetch
+        fetch(submitUrl, {
+            method: "POST",
+            headers: {
+                "X-CSRF-TOKEN": csrfToken, // Add the CSRF token to the request headers
+            },
+            body: formData,
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (!data.success) {
+                    // If validation fails, display the errors
+                    console.error("Error:", error);
+                    alert("Error: occured Submitting Design");
+                } else {
+                    submissionForm.reset();
+                    removeImage();
 
-        alert('Your design has been added to the time capsule!');
+                    displayMemories("all");
+
+                    alert("Your design has been added to the time capsule!");
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                alert("Error: occured Submitting Design");
+            });
     };
-    
+
     reader.readAsDataURL(imageFile);
 }
 
 function displayMemories(filter) {
-
-    galleryGrid.innerHTML = '';
+    galleryGrid.innerHTML = "";
 
     let filteredMemories = [...memories];
-    if (filter === 'latest') {
-        filteredMemories = memories.filter(memory => memory.type === 'latest');
-    } else if (filter === 'featured') {
-        filteredMemories = memories.filter(memory => memory.type === 'featured');
+    if (filter === "latest") {
+        filteredMemories = memories.filter(
+            (memory) => memory.type === "latest"
+        );
+    } else if (filter === "featured") {
+        filteredMemories = memories.filter(
+            (memory) => memory.type === "featured"
+        );
     }
 
-    filteredMemories.forEach(memory => {
+    filteredMemories.forEach((memory) => {
         const galleryItem = createGalleryItem(memory);
         galleryGrid.appendChild(galleryItem);
     });
 }
 
-
 function createGalleryItem(memory) {
-    const galleryItem = document.createElement('div');
-    galleryItem.className = 'gallery-item';
+    const galleryItem = document.createElement("div");
+    galleryItem.className = "gallery-item";
     galleryItem.dataset.id = memory.id;
-    
+
     galleryItem.innerHTML = `
         <div class="gallery-image-container">
             <img src="${memory.imageUrl}" alt="${memory.title}" class="gallery-image">
@@ -151,12 +180,11 @@ function createGalleryItem(memory) {
             <p class="gallery-description">${memory.description}</p>
         </div>
     `;
-    
 
-    galleryItem.addEventListener('click', () => {
+    galleryItem.addEventListener("click", () => {
         openMemoryModal(memory);
     });
-    
+
     return galleryItem;
 }
 
@@ -165,8 +193,8 @@ function openMemoryModal(memory) {
     modalTitle.textContent = memory.title;
     modalSubmitter.textContent = `Submitted by ${memory.name}`;
     modalDescription.textContent = memory.description;
-    
-    memoryModal.style.display = 'block';
+
+    memoryModal.style.display = "block";
 }
 
-document.addEventListener('DOMContentLoaded', init);
+init();
