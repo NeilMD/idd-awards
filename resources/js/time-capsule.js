@@ -133,7 +133,10 @@ function handleSubmission(e) {
                     removeImage();
 
                     const newGalleryItem = createGalleryItem(newMemory);
-                    galleryGrid.appendChild(newGalleryItem);
+                    galleryGrid.insertAdjacentElement(
+                        "afterbegin",
+                        newGalleryItem
+                    );
                     alert("Your design has been added to the time capsule!");
                 }
             })
@@ -194,4 +197,12 @@ elGalleryItem.forEach((el) => {
         };
         openMemoryModal(objMemory);
     });
+});
+
+document.getElementById("memory-image").addEventListener("change", (el) => {
+    if (el.target.files[0].size > 2097152) {
+        // Use el.target to access the element
+        alert("File should be less than 2mb.");
+        el.target.value = ""; // Reset the file input
+    }
 });
