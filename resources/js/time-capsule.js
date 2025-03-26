@@ -61,12 +61,20 @@ function setupEventListeners() {
 
 function handleImagePreview(e) {
     const file = e.target.files[0];
+
     if (file) {
         const reader = new FileReader();
 
         reader.onload = function (event) {
-            previewImg.src = event.target.result;
-            imagePreview.style.display = "block";
+            if (e.target.files[0].size > 2097152) {
+                // Use el.target to access the element
+                alert("File should be less than 2mb.");
+                e.target.value = ""; // Reset the file input
+                return;
+            } else {
+                previewImg.src = event.target.result;
+                imagePreview.style.display = "block";
+            }
         };
 
         reader.readAsDataURL(file);
@@ -197,12 +205,4 @@ elGalleryItem.forEach((el) => {
         };
         openMemoryModal(objMemory);
     });
-});
-
-document.getElementById("memory-image").addEventListener("change", (el) => {
-    if (el.target.files[0].size > 2097152) {
-        // Use el.target to access the element
-        alert("File should be less than 2mb.");
-        el.target.value = ""; // Reset the file input
-    }
 });
