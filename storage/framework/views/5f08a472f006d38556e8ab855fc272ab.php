@@ -114,8 +114,8 @@
           <button class="filter-btn" data-filter="featured">Featured</button>
         </div>
 
-        <div id="gallery-grid" class="gallery-grid">
-          <?php $__currentLoopData = $memories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $memory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class="gallery-grid tab-content" id="all">
+        <?php $__currentLoopData = $memories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $memory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <?php if (isset($component)) { $__componentOriginald05dd3bfc32d1f0c6c3ddd10d9ace994 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald05dd3bfc32d1f0c6c3ddd10d9ace994 = $attributes; } ?>
 <?php $component = App\View\Components\MemoriesItem::resolve(['memory' => $memory] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -138,6 +138,15 @@
 <?php endif; ?>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
+
+        <div class="gallery-grid tab-content" id="latest">
+            
+        </div>
+
+        <div class="gallery-grid tab-content" id="featured">
+         
+        </div>
+      
       </div>
     </section>
 

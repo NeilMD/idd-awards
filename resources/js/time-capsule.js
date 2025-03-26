@@ -1,10 +1,21 @@
+document.querySelectorAll(".filter-btn").forEach((button) => {
+    console.log(`button ${button}`);
+    button.addEventListener("click", function () {
+        const tab = this.getAttribute("data-filter");
+        document.querySelectorAll(".tab-content").forEach((content) => {
+            content.classList.remove("active-section");
+        });
+        document.getElementById(tab).classList.add("active-section");
+    });
+});
+
 // DOM Elements
 const submissionForm = document.getElementById("submission-form");
 const memoryImageInput = document.getElementById("memory-image");
 const imagePreview = document.getElementById("image-preview");
 const previewImg = document.getElementById("preview-img");
 const removeImageBtn = document.getElementById("remove-image");
-const galleryGrid = document.getElementById("gallery-grid");
+const galleryGrid = document.querySelector(".gallery-grid");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const memoryModal = document.getElementById("memory-modal");
 const modalImage = document.getElementById("modal-image");
@@ -36,15 +47,6 @@ function setupEventListeners() {
     removeImageBtn.addEventListener("click", removeImage);
 
     submissionForm.addEventListener("submit", handleSubmission);
-
-    filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            filterButtons.forEach((btn) => btn.classList.remove("active"));
-            button.classList.add("active");
-
-            displayMemories(button.dataset.filter);
-        });
-    });
 
     closeModal.addEventListener("click", () => {
         memoryModal.style.display = "none";
@@ -130,8 +132,8 @@ function handleSubmission(e) {
                     submissionForm.reset();
                     removeImage();
 
-                    displayMemories("all");
-
+                    const newGalleryItem = createGalleryItem(newMemory);
+                    galleryGrid.appendChild(newGalleryItem);
                     alert("Your design has been added to the time capsule!");
                 }
             })
@@ -142,26 +144,6 @@ function handleSubmission(e) {
     };
 
     reader.readAsDataURL(imageFile);
-}
-
-function displayMemories(filter) {
-    galleryGrid.innerHTML = "";
-
-    let filteredMemories = [...memories];
-    if (filter === "latest") {
-        filteredMemories = memories.filter(
-            (memory) => memory.type === "latest"
-        );
-    } else if (filter === "featured") {
-        filteredMemories = memories.filter(
-            (memory) => memory.type === "featured"
-        );
-    }
-
-    filteredMemories.forEach((memory) => {
-        const galleryItem = createGalleryItem(memory);
-        galleryGrid.appendChild(galleryItem);
-    });
 }
 
 function createGalleryItem(memory) {
@@ -197,3 +179,19 @@ function openMemoryModal(memory) {
 }
 
 init();
+
+const elGalleryItem = document.querySelectorAll(".gallery-item");
+
+elGalleryItem.forEach((el) => {
+    el.addEventListener("click", (e) => {
+        let objMemory = {
+            imageUrl: el.querySelector(".gallery-image").src,
+            title: el.querySelector(".gallery-title").textContent,
+            name: el
+                .querySelector(".gallery-submitter")
+                .textContent.substring(3),
+            description: el.querySelector(".gallery-description").textContent,
+        };
+        openMemoryModal(objMemory);
+    });
+});

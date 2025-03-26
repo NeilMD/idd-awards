@@ -1,6 +1,6 @@
-<div>
+<div class="gallery-item">
     <div class="gallery-image-container">
-        <img src="{{ $memory['imageUrl'] }}" alt="{{ $memory['title'] }}" class="gallery-image">
+        <img loading="lazy" src="{{ $memory['imageUrl'] }}" alt="{{ $memory['title'] }}" class="gallery-image">
     </div>
     <div class="gallery-info">
         <h3 class="gallery-title">{{ $memory['title'] }}</h3>

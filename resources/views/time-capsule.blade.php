@@ -114,11 +114,20 @@
           <button class="filter-btn" data-filter="featured">Featured</button>
         </div>
 
-        <div id="gallery-grid" class="gallery-grid">
-          @foreach ($memories as $memory)
+        <div class="gallery-grid tab-content" id="all">
+        @foreach ($memories as $memory)
               <x-memories-item :memory="$memory" />
           @endforeach
         </div>
+
+        <div class="gallery-grid tab-content" id="latest">
+            
+        </div>
+
+        <div class="gallery-grid tab-content" id="featured">
+         
+        </div>
+      
       </div>
     </section>
 

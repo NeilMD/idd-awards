@@ -1,4 +1,3 @@
-
 /* Hero specific styles for time capsule */
 .time-capsule-hero {
     background: linear-gradient(180deg, #000000, hsl(240, 28%, 14%));
@@ -91,7 +90,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #EA8936;
+    border-color: #ea8936;
     background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -115,7 +114,7 @@
 
 .file-upload-label:hover {
     background-color: rgba(255, 255, 255, 0.15);
-    border-color: #EA8936;
+    border-color: #ea8936;
 }
 
 .upload-icon {
@@ -176,7 +175,7 @@
 }
 
 .submit-btn {
-    background-color: #EA8936;
+    background-color: #ea8936;
     color: black;
     border: none;
     padding: 15px 30px;
@@ -190,7 +189,7 @@
 }
 
 .submit-btn:hover {
-    background-color: #EA8936;
+    background-color: #ea8936;
     transform: translateY(-2px);
 }
 
@@ -219,9 +218,17 @@
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: #EA8936;
+    background-color: #ea8936;
     color: black;
-    border-color: #EA8936;
+    border-color: #ea8936;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
 }
 
 .gallery-grid {
@@ -382,7 +389,6 @@
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
-
     .title {
         font-size: 3rem;
         letter-spacing: 5px;
@@ -396,17 +402,17 @@
     .section-title {
         font-size: 4.5rem;
     }
-    
+
     .modal-content {
         width: 95%;
         margin: 20px auto;
     }
-    
+
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         gap: 15px;
     }
-    
+
     .filter-container {
         flex-wrap: wrap;
     }
