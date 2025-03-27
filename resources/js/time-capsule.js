@@ -23,6 +23,7 @@ const modalTitle = document.getElementById("modal-title");
 const modalSubmitter = document.getElementById("modal-submitter");
 const modalDescription = document.getElementById("modal-description");
 const closeModal = document.querySelector(".close-modal");
+const submitBtn = document.getElementById("submit-memory");
 
 let memories = [];
 
@@ -87,6 +88,8 @@ function removeImage() {
     imagePreview.style.display = "none";
 }
 function handleSubmission(e) {
+    submitBtn.classList.add("button-disabled");
+
     console.log("handleSubmission");
     e.preventDefault();
 
@@ -145,6 +148,7 @@ function handleSubmission(e) {
                         "afterbegin",
                         newGalleryItem
                     );
+                    submitBtn.classList.remove("button-disabled");
                     alert("Your design has been added to the time capsule!");
                 }
             })

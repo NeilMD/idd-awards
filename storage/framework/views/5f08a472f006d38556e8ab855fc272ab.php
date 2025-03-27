@@ -95,7 +95,7 @@
             </div>
           </div>
 
-          <button type="submit" class="submit-btn">Submit Memory</button>
+          <button id="submit-memory" type="submit" class="submit-btn">Submit Memory</button>
         </form>
       </div>
     </section>

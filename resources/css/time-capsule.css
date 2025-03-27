@@ -371,6 +371,12 @@
     line-height: 1.6;
 }
 
+.button-disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
 /* Animations */
 @keyframes titleEntrance {
     0% {
