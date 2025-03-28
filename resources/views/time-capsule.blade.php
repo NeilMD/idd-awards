@@ -52,7 +52,7 @@
 
         <form enctype="multipart/form-data" data-attr-submit="{{ url('/time-capsule/submit') }}" id="submission-form" class="memory-form">
           <div class="form-group">
-            <label for="submitter-name">Your Name</label>
+            <label for="submitter-name">Name</label>
             <input
               type="text"
               id="submitter-name"
@@ -76,6 +76,7 @@
           </div>
 
           <div class="form-group file-upload-container">
+            <span class="upload-label">Add Your Design</span>
             <label for="memory-image" class="file-upload-label">
               <object type="image/svg+xml" data="{{ Vite::asset('resources/img/arrow_up.svg') }}"></object>
               <span>Upload the Design here</span>
