@@ -9,16 +9,6 @@ document.querySelectorAll(".filter-btn").forEach((button) => {
     });
 });
 
-// JavaScript to handle the conditional display of the link input
-document.getElementById("category").addEventListener("change", function () {
-    var linkContainer = document.getElementById("link-container");
-    if (this.value === "ux" || this.value === "web") {
-        linkContainer.style.display = "block"; // Show the link input
-    } else {
-        linkContainer.style.display = "none"; // Hide the link input
-    }
-});
-
 // DOM Elements
 const submissionForm = document.getElementById("submission-form");
 const memoryImageInput = document.getElementById("memory-image");
@@ -34,22 +24,22 @@ const modalSubmitter = document.getElementById("modal-submitter");
 const modalDescription = document.getElementById("modal-description");
 const closeModal = document.querySelector(".close-modal");
 const submitBtn = document.getElementById("submit-memory");
+const categoryInput = document.getElementById("category");
+const linkContainer = document.getElementById("link-container");
+const linkInput = document.getElementById("link");
 
 let memories = [];
 
 function init() {
-    // This will not work as it will always saved in the User PC
-    // const savedMemories = localStorage.getItem('igniteMemories');
-    // if (savedMemories) {
-    //     memories = JSON.parse(savedMemories);
-    // } else {
-    //     memories = [...sampleMemories];
-    //     localStorage.setItem('igniteMemories', JSON.stringify(memories));
-    // }
-
-    //displayMemories("all");
-
     setupEventListeners();
+}
+
+function linkDisplay() {
+    if (categoryInput.value === "ux" || categoryInput.value === "web") {
+        linkContainer.style.display = "block"; // Show the link input
+    } else {
+        linkContainer.style.display = "none"; // Hide the link input
+    }
 }
 
 function setupEventListeners() {
@@ -108,10 +98,46 @@ function handleSubmission(e) {
     const description = document.getElementById("memory-description").value;
     const imageFile = document.getElementById("memory-image").files[0];
 
+    const email = document.getElementById("email").value;
+    const category = document.getElementById("category").value;
+    const link = document.getElementById("link").value;
+    let errorMessages = [];
     if (!imageFile) {
         alert("Please select an image to upload");
         return;
     }
+
+    // Show or hide link input based on category selection
+    if (category === "ux" || category === "web") {
+        linkContainer.style.display = "block"; // Show link input
+        linkInput.required = true; // Make the link input required
+    } else {
+        linkContainer.style.display = "none"; // Hide link input
+        linkInput.required = false; // Remove the required attribute
+    }
+
+    // Validate the link input if category is 'ux' or 'web'
+    if ((category === "ux" || category === "web") && !linkInput.value) {
+        errorMessages.push(
+            "Please provide a valid link (URL) for UX or Web category."
+        );
+    }
+
+    // Check validity using HTML5 checkValidity method
+    if (!submissionForm.checkValidity()) {
+        // If any field is invalid, gather error messages
+        const invalidFields = submissionForm.querySelectorAll(":invalid");
+        invalidFields.forEach((field) => {
+            errorMessages.push(`${field.name} is invalid.`);
+        });
+
+        // Also show an alert with the errors
+        alert("Error: \n" + errorMessages.join("\n"));
+
+        submitBtn.classList.remove("button-disabled");
+        return;
+    }
+
     const submitUrl = this.getAttribute("data-attr-submit");
     const csrfToken = document
         .querySelector('meta[name="csrf-token"]')
@@ -135,6 +161,10 @@ function handleSubmission(e) {
         formData.append("design_title", title);
         formData.append("design_description", description);
         formData.append("image", imageFile);
+
+        formData.append("email", email);
+        formData.append("link", link);
+        formData.append("design_category", category);
         // Send form data using fetch
         fetch(submitUrl, {
             method: "POST",
@@ -143,13 +173,26 @@ function handleSubmission(e) {
             },
             body: formData,
         })
-            .then((response) => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                    return response.json().then((data) => {
+                        let errorString = "";
+                        for (const [field, messages] of Object.entries(
+                            data.errors
+                        )) {
+                            messages.forEach((message) => {
+                                // Concatenate each error message followed by a line break
+                                errorString += message + "\n";
+                            });
+                        }
+                        console.error("Error details:", data); // Log the error response from Laravel
+                        throw new Error(errorString);
+                    });
+                }
+                return response.json();
+            })
             .then((data) => {
-                if (!data.success) {
-                    // If validation fails, display the errors
-                    console.error("Error:", error);
-                    alert("Error: occured Submitting Design");
-                } else {
+                if (data.success) {
                     submissionForm.reset();
                     removeImage();
 
@@ -158,13 +201,15 @@ function handleSubmission(e) {
                         "afterbegin",
                         newGalleryItem
                     );
-                    submitBtn.classList.remove("button-disabled");
+
                     alert("Your design has been added to the time capsule!");
                 }
+
+                submitBtn.classList.remove("button-disabled");
             })
             .catch((error) => {
-                console.error("Error:", error);
-                alert("Error: occured Submitting Design");
+                submitBtn.classList.remove("button-disabled");
+                alert("Error: occurred Submitting Design.\n" + error);
             });
     };
 
@@ -219,4 +264,12 @@ elGalleryItem.forEach((el) => {
         };
         openMemoryModal(objMemory);
     });
+});
+
+// JavaScript to handle the conditional display of the link input
+document.getElementById("category").addEventListener("change", linkDisplay);
+
+document.addEventListener("DOMContentLoaded", function () {
+    linkDisplay();
+    submissionForm.reset();
 });

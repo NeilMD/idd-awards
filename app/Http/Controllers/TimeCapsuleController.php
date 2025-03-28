@@ -23,6 +23,17 @@ class TimeCapsuleController extends Controller
                 'design_title' => 'required|string|max:255',
                 'design_description' => 'required|string',
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'design_category' => 'required|in:graphic,ux,web', // Ensures only valid categories can be selected
+                'link' => [
+                    'required_if:design_category,ux,web', // Requires link if category is ux or web
+                    'nullable', // Allows null for other categories
+                    'url', // Ensures it's a valid URL format
+                ],
+                'email' => [
+                    'required', // Makes email required
+                    'email', // Ensures it's a valid email format
+                    'regex:/^[a-zA-Z0-9._%+-]+@(edu\.sait\.ca|sait\.ca)$/', // Ensures the email is from edu.sait.ca or sait.ca
+                ],
             ]);
 
             // Handle image upload

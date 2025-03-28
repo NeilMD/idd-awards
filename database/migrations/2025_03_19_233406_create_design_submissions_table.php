@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('design_title'); // The title of the design
             $table->text('design_description'); // The description of the design
             $table->string('image_path'); // Path to the image on the server
+            $table->string('link', 2048)->nullable();
+            $table->string('design_category', 100);
+            $table->string('email'); // email column, not nullable
             $table->timestamps(); // Created at and Updated at timestamps
         });
     }

@@ -73,6 +73,7 @@
             <textarea
               id="memory-description"
               name="memory-description"
+              required
               placeholder="Describe the inspiration, process, and key elements of your masterpiece."
               rows="3"
             ></textarea>
@@ -96,7 +97,6 @@
               id="email"
               name="email"
               placeholder="@edu.sait.ca or @sait only 😤"
-              pattern="[a-zA-Z0-9._%+-]+@(?:edu\.sait\.ca|sait\.[a-zA-Z]{2,})$"
               required
             />
           
@@ -207,7 +207,7 @@
     </footer>
 
     <?php echo app('Illuminate\Foundation\Vite')('resources/js/scripts.js'); ?>
-    <script src="<?php echo e(Vite::asset('resources/js/time-capsule.js')); ?>" defer></script>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/time-capsule.js'); ?>
   </body>
 </html>
 <?php /**PATH /Applications/MAMP/htdocs/idd/awards/resources/views/time-capsule.blade.php ENDPATH**/ ?>
