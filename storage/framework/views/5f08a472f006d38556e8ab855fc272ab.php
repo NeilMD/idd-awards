@@ -57,13 +57,15 @@
               type="text"
               id="submitter-name"
               name="submitter-name"
+              placeholder="What’s your name, trailblazer?"
               required
             />
           </div>
 
           <div class="form-group">
             <label for="memory-title">Design Title</label>
-            <input type="text" id="memory-title" name="memory-title" required />
+            <input type="text" id="memory-title" name="memory-title"
+            placeholder="Give your masterpiece a name!" required />
           </div>
 
           <div class="form-group">
@@ -71,8 +73,37 @@
             <textarea
               id="memory-description"
               name="memory-description"
+              placeholder="Describe the inspiration, process, and key elements of your masterpiece."
               rows="3"
             ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="email">SAIT Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="@edu.sait.ca or @sait only 😤"
+              pattern="[a-zA-Z0-9._%+-]+@(?:edu\.sait\.ca|sait\.[a-zA-Z]{2,})$"
+              required
+            />
+          
+          </div>
+         
+          <div class="form-group">
+              <label for="category">Design Category</label>
+              <select id="category" name="category" required>
+                  <option value="" disabled selected>Pick a Category</option>
+                  <option value="graphic">Graphic</option>
+                  <option value="ux">UX</option>
+                  <option value="web">Web</option>
+              </select>
+          </div>
+
+          <div id="link-container" class="form-group" style="display: none;">
+            <label for="link">Add Figma or Website Link</label>
+            <input type="url" id="link" name="link" placeholder="Share your link (don’t forget the http:// or https://)!" />
           </div>
 
           <div class="form-group file-upload-container">

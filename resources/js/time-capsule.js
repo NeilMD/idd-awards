@@ -9,6 +9,16 @@ document.querySelectorAll(".filter-btn").forEach((button) => {
     });
 });
 
+// JavaScript to handle the conditional display of the link input
+document.getElementById("category").addEventListener("change", function () {
+    var linkContainer = document.getElementById("link-container");
+    if (this.value === "ux" || this.value === "web") {
+        linkContainer.style.display = "block"; // Show the link input
+    } else {
+        linkContainer.style.display = "none"; // Hide the link input
+    }
+});
+
 // DOM Elements
 const submissionForm = document.getElementById("submission-form");
 const memoryImageInput = document.getElementById("memory-image");
