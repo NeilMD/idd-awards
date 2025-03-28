@@ -10,5 +10,5 @@ class DesignSubmission extends Model
     protected $table = 'design_submissions';
 
     // Specify the fields that can be mass-assigned
-    protected $fillable = ['name', 'design_title', 'design_description', 'image_path'];
+    protected $fillable = ['name', 'design_title', 'design_description', 'image_path','design_category','link','email'];
 }

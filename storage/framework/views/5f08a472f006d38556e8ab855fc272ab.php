@@ -12,6 +12,7 @@
     <?php echo app('Illuminate\Foundation\Vite')('resources/css/time-capsule.css'); ?>
   </head>
   <body>
+ 
     <!-- nav -->
     <nav>
       <a href="<?php echo e(url('/')); ?>"

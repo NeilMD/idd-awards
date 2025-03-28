@@ -12,6 +12,7 @@
     @vite('resources/css/time-capsule.css')
   </head>
   <body>
+ 
     <!-- nav -->
     <nav>
       <a href="{{ url('/') }}"

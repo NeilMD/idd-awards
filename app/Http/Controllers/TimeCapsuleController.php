@@ -47,6 +47,9 @@ class TimeCapsuleController extends Controller
                 'name' => $validatedData['name'],
                 'design_title' => $validatedData['design_title'],
                 'design_description' => $validatedData['design_description'],
+                'design_category' => $validatedData['design_category'],
+                'email' => $validatedData['email'],
+                'link' => $validatedData['link'],
                 'image_path' => $imagePath,
             ]);
 
@@ -78,6 +81,9 @@ class TimeCapsuleController extends Controller
                 'title' => $submission->design_title,
                 'name' => $submission->name,
                 'description' => $submission->design_description,
+                'email' => $submission->email,
+                'link' => $submission->link,
+                'design_category' => $submission->design_category
             ];
         });
         
