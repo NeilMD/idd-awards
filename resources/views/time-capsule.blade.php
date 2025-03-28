@@ -152,7 +152,7 @@
         </div>
 
         <div class="gallery-grid tab-content" id="all">
-        @foreach ($memories as $memory)
+          @foreach ($memories as $memory)
               <x-memories-item :memory="$memory" />
           @endforeach
         </div>

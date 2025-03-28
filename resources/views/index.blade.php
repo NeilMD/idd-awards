@@ -47,78 +47,42 @@
     <h2 class="section-title">Award Categories</h2>
     <section class="cards-section">
       <div class="cards-container">
-        <div class="card">
-          <a href="{{ url('ignite-awards') }}"
-            ><img
-              src="{{ Vite::asset('resources/img/IGNITE@3x.png') }}"
-              alt="Award Category"
-              class="card-img"
-          /></a>
-          <div class="card-content">
-            <h2 class="card-title">The IGNITE Award</h2>
-            <p class="card-text">
-              See criteria for the IGNITE award. Student and Instructor voted!
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="{{ url('graphic-design') }}"
-            ><img
-              src="{{ Vite::asset('resources/img/IGNITE@3x.png') }}"
-              alt="Award Category"
-              class="card-img"
-          /></a>
-          <div class="card-content">
-            <h2 class="card-title">Graphic Design</h2>
-            <p class="card-text">
-              See criteria for all Graphic Design awards. Applicants must be
-              Graphic Design Majors.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="{{ url('user-experience') }}"
-            ><img
-              src="{{ Vite::asset('resources/img/UX@3x.png') }}"
-              alt="Award Category"
-              class="card-img"
-          /></a>
-          <div class="card-content">
-            <h2 class="card-title">User Experience</h2>
-            <p class="card-text">
-              See criteria for all UX awards. Applicants must be UX Majors.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="{{ url('web-development') }}"
-            ><img
-              src="{{ Vite::asset('resources/img/WEB@3x.png') }}"
-              alt="Award Category"
-              class="card-img"
-          /></a>
-          <div class="card-content">
-            <h2 class="card-title">Web Development</h2>
-            <p class="card-text">
-              See criteria for all Web awards. Applicants must be Web Dev
-              Majors.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="{{ url('general-awards') }}"
-            ><img
-              src="{{ Vite::asset('resources/img/GEN@3x.png') }}"
-              alt="Award Category"
-              class="card-img"
-          /></a>
-          <div class="card-content">
-            <h2 class="card-title">General</h2>
-            <p class="card-text">
-              See criteria for general awards. Open to all applicants!
-            </p>
-          </div>
-        </div>
+
+      <x-awards-item 
+      :pageUrl="url('ignite-awards')" 
+      :imageUrl="Vite::asset('resources/img/IGNITE@3x.png')" 
+      :awardTitle="'The IGNITE Award'" 
+      :awardText="'See criteria for the IGNITE award. Student and Instructor voted!'" />
+
+      <x-awards-item 
+      :pageUrl="url('graphic-design')" 
+      :imageUrl="Vite::asset('resources/img/IGNITE@3x.png')" 
+      :awardTitle="'Graphic Design'" 
+      :awardText="'See criteria for all Graphic Design awards. Applicants must be
+              Graphic Design Majors.'" />
+
+      <x-awards-item 
+      :pageUrl="url('user-experience')" 
+      :imageUrl="Vite::asset('resources/img/UX@3x.png')" 
+      :awardTitle="'User Experience'" 
+      :awardText="'See criteria for all UX awards. Applicants must be UX Majors.'" />
+
+      <x-awards-item 
+      :pageUrl="url('web-development')" 
+      :imageUrl="Vite::asset('resources/img/WEB@3x.png')" 
+      :awardTitle="'Web Development'" 
+      :awardText="'See criteria for all Web awards. Applicants must be Web Dev
+              Majors.'" />
+
+      <x-awards-item 
+      :pageUrl="url('general-awards')" 
+      :imageUrl="Vite::asset('resources/img/GEN@3x.png')" 
+      :awardTitle="'General'" 
+      :awardText="'See criteria for general awards. Open to all applicants!'" />
+        
+              
+      
+       
       </div>
     </section>
 

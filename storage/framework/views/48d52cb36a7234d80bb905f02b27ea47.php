@@ -47,78 +47,117 @@
     <h2 class="section-title">Award Categories</h2>
     <section class="cards-section">
       <div class="cards-container">
-        <div class="card">
-          <a href="<?php echo e(url('ignite-awards')); ?>"
-            ><img
-              src="<?php echo e(Vite::asset('resources/img/IGNITE@3x.png')); ?>"
-              alt="Award Category"
-              class="card-img"
-          /></a>
-          <div class="card-content">
-            <h2 class="card-title">The IGNITE Award</h2>
-            <p class="card-text">
-              See criteria for the IGNITE award. Student and Instructor voted!
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="<?php echo e(url('graphic-design')); ?>"
-            ><img
-              src="<?php echo e(Vite::asset('resources/img/IGNITE@3x.png')); ?>"
-              alt="Award Category"
-              class="card-img"
-          /></a>
-          <div class="card-content">
-            <h2 class="card-title">Graphic Design</h2>
-            <p class="card-text">
-              See criteria for all Graphic Design awards. Applicants must be
-              Graphic Design Majors.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="<?php echo e(url('user-experience')); ?>"
-            ><img
-              src="<?php echo e(Vite::asset('resources/img/UX@3x.png')); ?>"
-              alt="Award Category"
-              class="card-img"
-          /></a>
-          <div class="card-content">
-            <h2 class="card-title">User Experience</h2>
-            <p class="card-text">
-              See criteria for all UX awards. Applicants must be UX Majors.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="<?php echo e(url('web-development')); ?>"
-            ><img
-              src="<?php echo e(Vite::asset('resources/img/WEB@3x.png')); ?>"
-              alt="Award Category"
-              class="card-img"
-          /></a>
-          <div class="card-content">
-            <h2 class="card-title">Web Development</h2>
-            <p class="card-text">
-              See criteria for all Web awards. Applicants must be Web Dev
-              Majors.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <a href="<?php echo e(url('general-awards')); ?>"
-            ><img
-              src="<?php echo e(Vite::asset('resources/img/GEN@3x.png')); ?>"
-              alt="Award Category"
-              class="card-img"
-          /></a>
-          <div class="card-content">
-            <h2 class="card-title">General</h2>
-            <p class="card-text">
-              See criteria for general awards. Open to all applicants!
-            </p>
-          </div>
-        </div>
+
+      <?php if (isset($component)) { $__componentOriginale6ac1e2f6d29663be186c7ee15898f86 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginale6ac1e2f6d29663be186c7ee15898f86 = $attributes; } ?>
+<?php $component = App\View\Components\AwardsItem::resolve(['pageUrl' => url('ignite-awards'),'imageUrl' => Vite::asset('resources/img/IGNITE@3x.png'),'awardTitle' => 'The IGNITE Award','awardText' => 'See criteria for the IGNITE award. Student and Instructor voted!'] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('awards-item'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\AwardsItem::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginale6ac1e2f6d29663be186c7ee15898f86)): ?>
+<?php $attributes = $__attributesOriginale6ac1e2f6d29663be186c7ee15898f86; ?>
+<?php unset($__attributesOriginale6ac1e2f6d29663be186c7ee15898f86); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginale6ac1e2f6d29663be186c7ee15898f86)): ?>
+<?php $component = $__componentOriginale6ac1e2f6d29663be186c7ee15898f86; ?>
+<?php unset($__componentOriginale6ac1e2f6d29663be186c7ee15898f86); ?>
+<?php endif; ?>
+
+      <?php if (isset($component)) { $__componentOriginale6ac1e2f6d29663be186c7ee15898f86 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginale6ac1e2f6d29663be186c7ee15898f86 = $attributes; } ?>
+<?php $component = App\View\Components\AwardsItem::resolve(['pageUrl' => url('graphic-design'),'imageUrl' => Vite::asset('resources/img/IGNITE@3x.png'),'awardTitle' => 'Graphic Design','awardText' => 'See criteria for all Graphic Design awards. Applicants must be
+              Graphic Design Majors.'] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('awards-item'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\AwardsItem::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginale6ac1e2f6d29663be186c7ee15898f86)): ?>
+<?php $attributes = $__attributesOriginale6ac1e2f6d29663be186c7ee15898f86; ?>
+<?php unset($__attributesOriginale6ac1e2f6d29663be186c7ee15898f86); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginale6ac1e2f6d29663be186c7ee15898f86)): ?>
+<?php $component = $__componentOriginale6ac1e2f6d29663be186c7ee15898f86; ?>
+<?php unset($__componentOriginale6ac1e2f6d29663be186c7ee15898f86); ?>
+<?php endif; ?>
+
+      <?php if (isset($component)) { $__componentOriginale6ac1e2f6d29663be186c7ee15898f86 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginale6ac1e2f6d29663be186c7ee15898f86 = $attributes; } ?>
+<?php $component = App\View\Components\AwardsItem::resolve(['pageUrl' => url('user-experience'),'imageUrl' => Vite::asset('resources/img/UX@3x.png'),'awardTitle' => 'User Experience','awardText' => 'See criteria for all UX awards. Applicants must be UX Majors.'] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('awards-item'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\AwardsItem::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginale6ac1e2f6d29663be186c7ee15898f86)): ?>
+<?php $attributes = $__attributesOriginale6ac1e2f6d29663be186c7ee15898f86; ?>
+<?php unset($__attributesOriginale6ac1e2f6d29663be186c7ee15898f86); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginale6ac1e2f6d29663be186c7ee15898f86)): ?>
+<?php $component = $__componentOriginale6ac1e2f6d29663be186c7ee15898f86; ?>
+<?php unset($__componentOriginale6ac1e2f6d29663be186c7ee15898f86); ?>
+<?php endif; ?>
+
+      <?php if (isset($component)) { $__componentOriginale6ac1e2f6d29663be186c7ee15898f86 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginale6ac1e2f6d29663be186c7ee15898f86 = $attributes; } ?>
+<?php $component = App\View\Components\AwardsItem::resolve(['pageUrl' => url('web-development'),'imageUrl' => Vite::asset('resources/img/WEB@3x.png'),'awardTitle' => 'Web Development','awardText' => 'See criteria for all Web awards. Applicants must be Web Dev
+              Majors.'] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('awards-item'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\AwardsItem::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginale6ac1e2f6d29663be186c7ee15898f86)): ?>
+<?php $attributes = $__attributesOriginale6ac1e2f6d29663be186c7ee15898f86; ?>
+<?php unset($__attributesOriginale6ac1e2f6d29663be186c7ee15898f86); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginale6ac1e2f6d29663be186c7ee15898f86)): ?>
+<?php $component = $__componentOriginale6ac1e2f6d29663be186c7ee15898f86; ?>
+<?php unset($__componentOriginale6ac1e2f6d29663be186c7ee15898f86); ?>
+<?php endif; ?>
+
+      <?php if (isset($component)) { $__componentOriginale6ac1e2f6d29663be186c7ee15898f86 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginale6ac1e2f6d29663be186c7ee15898f86 = $attributes; } ?>
+<?php $component = App\View\Components\AwardsItem::resolve(['pageUrl' => url('general-awards'),'imageUrl' => Vite::asset('resources/img/GEN@3x.png'),'awardTitle' => 'General','awardText' => 'See criteria for general awards. Open to all applicants!'] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('awards-item'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\AwardsItem::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginale6ac1e2f6d29663be186c7ee15898f86)): ?>
+<?php $attributes = $__attributesOriginale6ac1e2f6d29663be186c7ee15898f86; ?>
+<?php unset($__attributesOriginale6ac1e2f6d29663be186c7ee15898f86); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginale6ac1e2f6d29663be186c7ee15898f86)): ?>
+<?php $component = $__componentOriginale6ac1e2f6d29663be186c7ee15898f86; ?>
+<?php unset($__componentOriginale6ac1e2f6d29663be186c7ee15898f86); ?>
+<?php endif; ?>
+        
+              
+      
+       
       </div>
     </section>
 
