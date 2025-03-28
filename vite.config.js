@@ -18,6 +18,7 @@ export default defineConfig({
                 "resources/js/award-categories.js",
                 "resources/js/app.js",
                 "resources/img/Asset 8.png",
+                "resources/img/arrow_up.svg",
                 "resources/img/GEN@3x.png",
                 "resources/img/GRAPHIC@3x.png",
                 "resources/img/IGNITE@3x.png",

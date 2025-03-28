@@ -1,3 +1,17 @@
+* {
+    font-family: "ivyepic-variable", sans-serif;
+}
+
+/* Forced Font to change for Forms */
+form,
+input,
+label,
+textarea,
+select,
+button {
+    font-family: "ivyepic-variable", sans-serif !important;
+}
+
 /* Hero specific styles for time capsule */
 .time-capsule-hero {
     background: linear-gradient(180deg, #000000, hsl(240, 28%, 14%));
@@ -67,6 +81,7 @@
 
 .form-group {
     margin-bottom: 20px;
+    font-family: "ivy-epic-variable", sans-serif;
 }
 
 .form-group label {
@@ -100,9 +115,12 @@
     position: relative;
 }
 
-.file-upload-label {
+label.file-upload-label {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    color: white;
+    fill: white;
     gap: 10px;
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -111,6 +129,17 @@
     cursor: pointer;
     text-align: center;
     transition: all 0.3s ease;
+}
+
+label.file-upload-label object {
+    height: 24px;
+    width: 24px;
+    stroke-width: 2px;
+    color: white;
+}
+
+label.file-upload-label sub {
+    color: gray;
 }
 
 .file-upload-label:hover {

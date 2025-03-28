@@ -25,7 +25,7 @@
     "isEntry": true
   },
   "resources/css/time-capsule.css": {
-    "file": "assets/time-capsule.29PwPMEg.css",
+    "file": "assets/time-capsule.DLP670zX.css",
     "src": "resources/css/time-capsule.css",
     "isEntry": true
   },
@@ -63,6 +63,10 @@
     "file": "assets/WEB@3x.CMEdRC7C.png",
     "src": "resources/img/WEB@3x.png"
   },
+  "resources/img/arrow_up.svg": {
+    "file": "assets/arrow_up.U86h6Y9o.svg",
+    "src": "resources/img/arrow_up.svg"
+  },
   "resources/img/logo-hover.png": {
     "file": "assets/logo-hover.CBAGEXPn.png",
     "src": "resources/img/logo-hover.png"
@@ -86,7 +90,7 @@
     "isEntry": true
   },
   "resources/js/time-capsule.js": {
-    "file": "assets/time-capsule-Dtz8xGYF.js",
+    "file": "assets/time-capsule-D-hsIDuY.js",
     "name": "time-capsule",
     "src": "resources/js/time-capsule.js",
     "isEntry": true

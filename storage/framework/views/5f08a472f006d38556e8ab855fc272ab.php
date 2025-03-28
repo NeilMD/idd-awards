@@ -77,8 +77,9 @@
 
           <div class="form-group file-upload-container">
             <label for="memory-image" class="file-upload-label">
-              <div class="upload-icon">+</div>
-              <span>Choose an image</span>
+              <object type="image/svg+xml" data="<?php echo e(Vite::asset('resources/img/arrow_up.svg')); ?>"></object>
+              <span>Upload the Design here</span>
+              <sub class="">max 2MB design allowed</sub>
             </label>
             <input
               type="file"
