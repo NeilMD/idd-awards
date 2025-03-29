@@ -17,5 +17,8 @@ Route::view('/web-development', 'web-development');
 Route::get('/time-capsule', [TimeCapsuleController::class,'show']);
 Route::post('/time-capsule/submit', [TimeCapsuleController::class,'submit']);
 
+// Signed Route for Upload Verification
 Route::get('/time-capsule/generateUrl', [TimeCapsuleController::class,'generateUrl']);
 Route::get('/time-capsule/verify/{email}', [TimeCapsuleController::class,'verify'])->name('verify');
+
+Route::view('/time-capsule/email', 'components.email.design-verification');

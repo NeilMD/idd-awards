@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('design_submissions', function (Blueprint $table) {
             $table->id(); // Primary key
+            $table->string('email')->unique(); // email column, not nullable
             $table->string('name'); // The name of the person submitting the form
             $table->string('design_title'); // The title of the design
             $table->text('design_description'); // The description of the design
             $table->string('image_path'); // Path to the image on the server
             $table->string('link', 2048)->nullable();
             $table->string('design_category', 100);
-            $table->string('email'); // email column, not nullable
             $table->boolean('isVerified')->default(false); 
             $table->timestamps(); // Created at and Updated at timestamps
         });

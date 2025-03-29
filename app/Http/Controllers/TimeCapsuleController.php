@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Storage;
 use App\Models\DesignSubmission;
 
 class TimeCapsuleController extends Controller
@@ -37,6 +38,11 @@ class TimeCapsuleController extends Controller
                 ],
             ]);
 
+            $oldImage = DesignSubmission::where('email',$validatedData['email'])->value('image_path');
+            if ($oldImage) {
+                Storage::delete('oldImage');
+            }
+            
             // Handle image upload
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
@@ -44,7 +50,9 @@ class TimeCapsuleController extends Controller
             }
 
             // Save data to the database using the model
-            DesignSubmission::create([
+            DesignSubmission::updateOrCreate(
+                ['email' => $validatedData['email']],
+                [
                 'name' => $validatedData['name'],
                 'design_title' => $validatedData['design_title'],
                 'design_description' => $validatedData['design_description'],
@@ -70,14 +78,22 @@ class TimeCapsuleController extends Controller
 
     }
 
-    public function verify(Request $request)
+    public function verify(Request $request, $email)
 
     {
         if (! $request->hasValidSignature()) {
             abort(401);
         }
+       
+        $updated = DesignSubmission::where('email',$email)->update(['isVerified'=> true]);
+        
+        if ($updated) {
 
-        echo 'success';
+        } else {
+            echo 'No records were verified.';
+        }
+
+       
     }
 
     public function generateUrl(Request $request)
@@ -85,7 +101,7 @@ class TimeCapsuleController extends Controller
     {
         return URL::temporarySignedRoute(
 
-            'verify', now()->addMinutes(30), ['email' => 'neilcydric.capistrano@gmail.com']
+            'verify', now()->addMinutes(30), ['email' => 'temp@edu.sait.ca']
         
         );
     }
@@ -93,7 +109,7 @@ class TimeCapsuleController extends Controller
     public function show()
 
     {   
-        $submissions = DesignSubmission::orderBy('created_at', 'desc')->get();
+        $submissions = DesignSubmission::orderBy('updated_at', 'desc')->where('isVerified',true)->get();
         
         // Format the data as memories for the view
         $memories = $submissions->map(function($submission) {

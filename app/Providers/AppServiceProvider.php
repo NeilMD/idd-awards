@@ -13,6 +13,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         Blade::component('section.cards-section', \App\View\Components\Section\CardSection::class);
+        Blade::component('email.design-verification', \App\View\Components\Email\DesignVerification::class);
     }
 
     /**
