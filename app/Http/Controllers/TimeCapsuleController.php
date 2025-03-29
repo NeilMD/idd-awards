@@ -7,6 +7,7 @@ use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Storage;
 use App\Models\DesignSubmission;
+use Symfony\Component\Mailer\Messenger\SendEmailMessage;
 
 class TimeCapsuleController extends Controller
 {
@@ -48,7 +49,7 @@ class TimeCapsuleController extends Controller
                 $image = $request->file('image');
                 $imagePath = $image->store('uploads/images', 'public');
             }
-
+            $mailCode = $this->sendEmail($validatedData, $imagePath);
             // Save data to the database using the model
             DesignSubmission::updateOrCreate(
                 ['email' => $validatedData['email']],
@@ -66,6 +67,7 @@ class TimeCapsuleController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Design submitted successfully!',
+                'mailCode' =>$mailCode
             ], 200);
 
         } catch (ValidationException $e) {
@@ -94,6 +96,38 @@ class TimeCapsuleController extends Controller
         }
 
        
+    }
+    private function sendEmail($validatedData, $imagePath) {
+
+        // Additional dynamic data
+        $subject = "Verify your Upload";
+        
+        $signedUrl = URL::temporarySignedRoute(
+
+            'verify', now()->addMinutes(3000), ['email' => $validatedData['email']]
+        
+        );
+
+        // Render the Blade view to HTML
+        $viewContent = view('components.email.design-verification', [
+            'designTitle' => $validatedData['design_title'],
+            'category' => $validatedData['design_category'],
+            'description' => $validatedData['design_description'],
+            'designImageUrl' => $imagePath,
+            'verificationUrl' => $signedUrl
+        ])->render();
+
+        // Email details
+        $to = $validatedData['email']; // The recipient's email address
+        $headers = "From: submissions@interactivedesign.ca\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n"; // Specify HTML content type
+
+        // Send the email using PHP's mail() function
+        if (mail($to, $subject, $viewContent, $headers)) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public function generateUrl(Request $request)
