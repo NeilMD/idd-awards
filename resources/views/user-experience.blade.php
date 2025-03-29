@@ -139,37 +139,7 @@
 
                 <!-- redirection -->
           <h2 class="section-title">See Also:</h2>
-          <section class="cards-section">
-              <div class="cards-container">
-                  
-
-                  <x-awards-item 
-                  :pageUrl="url('ignite-awards')" 
-                  :imageUrl="Vite::asset('resources/img/IGNITE@3x.png')" 
-                  :awardTitle="'The IGNITE Award'" 
-                  :awardText="'See criteria for the IGNITE award. Student and Instructor voted!'" />
-
-                  <x-awards-item 
-                  :pageUrl="url('graphic-design')" 
-                  :imageUrl="Vite::asset('resources/img/IGNITE@3x.png')" 
-                  :awardTitle="'Graphic Design'" 
-                  :awardText="'See criteria for all Graphic Design awards. Applicants must be
-                          Graphic Design Majors.'" />
-
-                  <x-awards-item 
-                  :pageUrl="url('web-development')" 
-                  :imageUrl="Vite::asset('resources/img/WEB@3x.png')" 
-                  :awardTitle="'Web Development'" 
-                  :awardText="'See criteria for all Web awards. Applicants must be Web Dev
-                          Majors.'" />
-
-                  <x-awards-item 
-                  :pageUrl="url('general-awards')" 
-                  :imageUrl="Vite::asset('resources/img/GEN@3x.png')" 
-                  :awardTitle="'General'" 
-                  :awardText="'See criteria for general awards. Open to all applicants!'" />
-              </div>
-          </section>
+          <x-section.cards-section hiddenAward="ux" />
       
 
     <!-- Footer -->
