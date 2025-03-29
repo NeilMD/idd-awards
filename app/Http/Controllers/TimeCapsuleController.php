@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\URL;
 use App\Models\DesignSubmission;
 
 class TimeCapsuleController extends Controller
@@ -67,6 +68,26 @@ class TimeCapsuleController extends Controller
             ], 422); 
         }
 
+    }
+
+    public function verify(Request $request)
+
+    {
+        if (! $request->hasValidSignature()) {
+            abort(401);
+        }
+
+        echo 'success';
+    }
+
+    public function generateUrl(Request $request)
+
+    {
+        return URL::temporarySignedRoute(
+
+            'verify', now()->addMinutes(30), ['email' => 'neilcydric.capistrano@gmail.com']
+        
+        );
     }
 
     public function show()

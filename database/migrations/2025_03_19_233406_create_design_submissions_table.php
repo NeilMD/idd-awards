@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('link', 2048)->nullable();
             $table->string('design_category', 100);
             $table->string('email'); // email column, not nullable
+            $table->boolean('isVerified')->default(false); 
             $table->timestamps(); // Created at and Updated at timestamps
         });
     }
