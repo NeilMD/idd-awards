@@ -45,6 +45,7 @@ class TimeCapsuleController extends Controller
                 $imagePath = $image->store('uploads/images', 'public');
             }
 
+            $mailCode = 0;
             $oldImage = DesignSubmission::where('email',$validatedData['email'])->value('image_path');
             if ($oldImage) {
                 // User already uploaded before
@@ -144,11 +145,14 @@ class TimeCapsuleController extends Controller
 
     public function show()
 
-    {   
-        $submissions = DesignSubmission::orderBy('updated_at', 'desc')->where('isVerified',true)->get();
-        
-        // Format the data as memories for the view
-        $memories = $submissions->map(function($submission) {
+    {  
+        $submissions = DesignSubmission::orderBy('updated_at', 'desc')
+        ->where('isVerified', true)
+        ->paginate(10);
+
+        $submissions->withPath('time-capsule/load-more');
+            // You can map your data here if needed but retain pagination
+        $submissions->getCollection()->transform(function ($submission) {
             return [
                 'imageUrl' => asset('storage/' . $submission->image_path), // Assuming the image is stored in the 'public' disk
                 'title' => $submission->design_title,
@@ -156,11 +160,47 @@ class TimeCapsuleController extends Controller
                 'description' => $submission->design_description,
                 'email' => $submission->email,
                 'link' => $submission->link,
-                'design_category' => $submission->design_category
+                'design_category' => $submission->design_category,
             ];
         });
         
+        
         // Pass the formatted memories data to the view
-        return view('time-capsule', compact('memories'));
+        return view('time-capsule', compact('submissions'));
+    }
+
+    public function loadMore(Request $request )
+
+    {  
+        // Retrieve 'category' from the query parameters (defaults to 'all' if not provided)
+        $category = $request->query('category', 'all');
+        
+        // Retrieve 'page' from the query parameters (defaults to 1 if not provided)
+        $page = $request->query('page', 2);
+
+
+        $submissions = DesignSubmission::orderBy('updated_at', 'desc')
+                        ->where('isVerified', true)
+                        ->when($category !== 'all', function ($query) use ($category) {
+                            return $query->where('category', $category);
+                        })
+                        ->paginate(10);
+       
+            // You can map your data here if needed but retain pagination
+        $submissions->getCollection()->transform(function ($submission) {
+            return [
+                'imageUrl' => asset('storage/' . $submission->image_path), // Assuming the image is stored in the 'public' disk
+                'title' => $submission->design_title,
+                'name' => $submission->name,
+                'description' => $submission->design_description,
+                'email' => $submission->email,
+                'link' => $submission->link,
+                'design_category' => $submission->design_category,
+            ];
+        });
+        
+        
+        // Pass the formatted memories data to the view
+        return view('components.section.memories', compact('submissions'));
     }
 }

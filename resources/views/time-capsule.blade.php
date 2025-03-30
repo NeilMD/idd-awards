@@ -132,24 +132,17 @@
 
         <div class="filter-container">
           <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="latest">Latest</button>
-          <button class="filter-btn" data-filter="featured">Featured</button>
+          <button class="filter-btn" data-filter="Graphic">Graphic</button>
+          <button class="filter-btn" data-filter="UX">UX</button>
+          <button class="filter-btn" data-filter="Web">Web</button>
         </div>
 
-        <div class="gallery-grid tab-content" id="all">
-          @foreach ($memories as $memory)
-              <x-memories-item :memory="$memory" />
-          @endforeach
+        <div id="gallery-section" class="gallery-grid tab-content">
+          <x-section.memories :submissions="$submissions"/>
         </div>
-
-        <div class="gallery-grid tab-content" id="latest">
-            
-        </div>
-
-        <div class="gallery-grid tab-content" id="featured">
-         
-        </div>
-      
+        <div id="load-more"></div>
+        <input type="hidden" id="next-page-category" value="all">
+        <input type="hidden" id="next-page-url" value="{{ $submissions->nextPageUrl() }}">
       </div>
     </section>
 

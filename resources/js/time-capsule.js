@@ -234,29 +234,6 @@ function handleSubmission(e) {
     reader.readAsDataURL(imageFile);
 }
 
-function createGalleryItem(memory) {
-    const galleryItem = document.createElement("div");
-    galleryItem.className = "gallery-item";
-    galleryItem.dataset.id = memory.id;
-
-    galleryItem.innerHTML = `
-        <div class="gallery-image-container">
-            <img src="${memory.imageUrl}" alt="${memory.title}" class="gallery-image">
-        </div>
-        <div class="gallery-info">
-            <h3 class="gallery-title">${memory.title}</h3>
-            <p class="gallery-submitter">By ${memory.name}</p>
-            <p class="gallery-description">${memory.description}</p>
-        </div>
-    `;
-
-    galleryItem.addEventListener("click", () => {
-        openMemoryModal(memory);
-    });
-
-    return galleryItem;
-}
-
 function openMemoryModal(memory) {
     modalImage.src = memory.imageUrl;
     modalTitle.textContent = memory.title;
@@ -290,4 +267,44 @@ document.getElementById("category").addEventListener("change", linkDisplay);
 document.addEventListener("DOMContentLoaded", function () {
     linkDisplay();
     submissionForm.reset();
+
+    const loadMore = document.getElementById("load-more");
+    const nextPageUrlInput = document.getElementById("next-page-url");
+    const nextPageCategory =
+        document.getElementById("next-page-category").value;
+
+    let observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            // Get the next page URL
+            let nextPageUrl = nextPageUrlInput.value;
+
+            if (nextPageUrl) {
+                fetchMoreData(nextPageUrl);
+            }
+        }
+    });
+
+    observer.observe(loadMore);
+
+    function fetchMoreData(url) {
+        let newUrl = url + `&category=${nextPageCategory}`;
+        fetch(newUrl)
+            .then((response) => response.text())
+            .then((data) => {
+                console.log(data);
+                // Append the new designs to the design container
+                document
+                    .getElementById("gallery-section")
+                    .insertAdjacentHTML("beforeend", data);
+
+                // Update the next page URL
+                let newNextPageUrl = document.querySelector("#next-page-url");
+                nextPageUrlInput.value = newNextPageUrl
+                    ? newNextPageUrl.value
+                    : "";
+            })
+            .catch((error) =>
+                console.error("Error fetching more data:", error)
+            );
+    }
 });

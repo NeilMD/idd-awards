@@ -241,9 +241,10 @@ label.file-upload-label sub {
     background-color: transparent;
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 8px 20px;
+    padding: 0.5rem 1.2rem;
     border-radius: 30px;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
 }

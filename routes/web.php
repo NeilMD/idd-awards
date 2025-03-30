@@ -16,6 +16,7 @@ Route::view('/web-development', 'web-development');
 
 Route::get('/time-capsule', [TimeCapsuleController::class,'show']);
 Route::post('/time-capsule/submit', [TimeCapsuleController::class,'submit']);
+Route::get('/time-capsule/load-more', [TimeCapsuleController::class, 'loadMore'])->name('loadMore');
 
 // Signed Route for Upload Verification
 Route::get('/time-capsule/generateUrl', [TimeCapsuleController::class,'generateUrl']);
@@ -28,3 +29,4 @@ Route::view('/time-capsule/email', 'components.email.design-verification', [
     'designImageUrl' => 'https://example.com/images/design.jpg', // You can use a placeholder image URL here
     'verificationUrl' => 'https://example.com/verifyverifyverifyverifyverifyverifyverifyverify?email=dummy@edu.sait.ca'
 ]);
+
