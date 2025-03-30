@@ -45,9 +45,13 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            text-transform: capitalize;
             
         }
-        p {
+        .email-header {
+            text-align: center;
+        }
+        p.description {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -62,24 +66,39 @@
             border-radius: 8px;
             margin-top: 20px;
         }
+        p.info {
+            line-height: 1.5;
+            color: #1a1a1c;
+            white-space: wrap;
+        }
         .info-box {
             background-color: #f9f9f9;
-            color: #1a1a1c;
+            color: black;
             display: flex;
+            flex-direction: column;
             padding: 15px;
             margin-top: 20px;
             border-radius: 8px;
             border: 1px solid #ddd;
-            p {
-                line-height: 1.5;
-                color: #1a1a1c;
-                white-space: wrap;
-            }
         }
         #btn {
             width: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
+        }
+        .verify-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap:1rem;
+        }
+        .verify-link {
+            margin: 20px 0;
+            font-weight: 200;
+            text-decoration: underline;
+            color: whitesmoke;
         }
         .verify-btn {
             display: inline-block;
@@ -90,7 +109,8 @@
             border-radius: 8px;
             font-size: 16px;
             margin-top: 20px;
-            text-align: center;
+            text-align: left;
+
         }
         .verify-btn:hover {
             opacity: 80%;
@@ -103,32 +123,27 @@
         }
     </style>
 </head>
-<body>
+<body> 
+
     <main>
         <div class="email-container">
-            <h1>Design Submission: Test</h1>
-            
-            <h3>Category: Web</h3>
-            <p>LoasdasdsaremLoasdasdsarem</p>
+            <h1 class="email-header">Thank you for your Submission!</h1>
+          
+            <h1>{{ $designTitle}}</h1>
+                
+                <h3> {{ $category}}</h3>
+                <p class="">{{ $description }}</p>
+            <div id="btn" class="verify-group">
+                <div >
+                    <a class="verify-btn" href="{{ $verificationUrl }}">
+                    Click to here verify your submission 
+                    </a>
+                </div>
+                <small>
+                    If you cant click on the button above, go to following link manually: 
+                    {{ $verificationUrl }}
+                </small>
 
-            <!-- Display the design image -->
-            <img class="design-image" src="#" alt="Design Image">
-
-            <!-- Previous submission info -->
-            <div class="info-box">
-                <p>
-                    <strong>Important:</strong> 
-                    If you have uploaded a design before, your previous submission will be overwritten.
-                </p>
-            </div>
-            <div id="btn">
-                <!-- Verification Button -->
-                <a href="#" class="verify-btn">Click here to verify your upload</a>
-            </div>
-            
-
-            <div class="footer-text">
-                <p>Thank you for your submission! If you need assistance, feel free to contact us.</p>
             </div>
         </div>
     </main>

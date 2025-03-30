@@ -21,4 +21,10 @@ Route::post('/time-capsule/submit', [TimeCapsuleController::class,'submit']);
 Route::get('/time-capsule/generateUrl', [TimeCapsuleController::class,'generateUrl']);
 Route::get('/time-capsule/verify/{email}', [TimeCapsuleController::class,'verify'])->name('verify');
 
-Route::view('/time-capsule/email', 'components.email.design-verification');
+Route::view('/time-capsule/email', 'components.email.design-verification', [
+    'designTitle' => 'Futuristic UI Design',
+    'category' => 'UX Design',
+    'description' => 'This design explores futuristic interfaces with smooth transitions and interactive elements.',
+    'designImageUrl' => 'https://example.com/images/design.jpg', // You can use a placeholder image URL here
+    'verificationUrl' => 'https://example.com/verifyverifyverifyverifyverifyverifyverifyverify?email=dummy@edu.sait.ca'
+]);

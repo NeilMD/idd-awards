@@ -39,18 +39,22 @@ class TimeCapsuleController extends Controller
                 ],
             ]);
 
-            $oldImage = DesignSubmission::where('email',$validatedData['email'])->value('image_path');
-            if ($oldImage) {
-                Storage::delete('oldImage');
-            }
-            
             // Handle image upload
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imagePath = $image->store('uploads/images', 'public');
             }
-            $mailCode = $this->sendEmail($validatedData, $imagePath);
-            // Save data to the database using the model
+
+            $oldImage = DesignSubmission::where('email',$validatedData['email'])->value('image_path');
+            if ($oldImage) {
+                // User already uploaded before
+                Storage::delete('oldImage');
+            } else {
+                // New User. Send Email
+                $mailCode = $this->sendEmail($validatedData, $imagePath);
+            }
+            
+            // Update or Create data to the database 
             DesignSubmission::updateOrCreate(
                 ['email' => $validatedData['email']],
                 [
@@ -90,11 +94,11 @@ class TimeCapsuleController extends Controller
         $updated = DesignSubmission::where('email',$email)->update(['isVerified'=> true]);
         
         if ($updated) {
-
+            
         } else {
-            echo 'No records were verified.';
+            echo  'No records were verified.';
         }
-
+        return redirect()->away('http://interactivedesign.ca/time-capsule');
        
     }
     private function sendEmail($validatedData, $imagePath) {

@@ -13,28 +13,28 @@
             'pageUrl' => 'graphic-design',
             'imageUrl' => Vite::asset('resources/img/IGNITE@3x.png'),
             'awardTitle' => 'Graphic Design',
-            'awardText' => 'See criteria for all Graphic Design awards. Applicants must be Graphic Design Majors.',
+            'awardText' => 'See criteria for all Graphic Design awards.',
             'id' => 'graphic-design'
         ],
         [
             'pageUrl' => 'user-experience',
             'imageUrl' => Vite::asset('resources/img/UX@3x.png'),
             'awardTitle' => 'User Experience',
-            'awardText' => 'See criteria for all UX awards. Applicants must be UX Majors.',
+            'awardText' => 'See criteria for all UX awards.',
             'id' => 'ux'
         ],
         [
             'pageUrl' => 'web-development',
             'imageUrl' => Vite::asset('resources/img/WEB@3x.png'),
             'awardTitle' => 'Web Development',
-            'awardText' => 'See criteria for all Web awards. Applicants must be Web Dev Majors.',
+            'awardText' => 'See criteria for all Web awards.',
             'id' => 'web'
         ],
         [
             'pageUrl' => 'general-awards',
             'imageUrl' => Vite::asset('resources/img/GEN@3x.png'),
             'awardTitle' => 'General',
-            'awardText' => 'See criteria for general awards. Open to all applicants!',
+            'awardText' => 'See criteria for general awards. ',
             'id' => 'general'
         ],
     ];
