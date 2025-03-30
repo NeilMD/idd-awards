@@ -84,7 +84,7 @@ class TimeCapsuleController extends Controller
         }
 
     }
-
+    // TODO:: Add extra button as SAIT actually crawls this one.
     public function verify(Request $request, $email)
 
     {
@@ -149,7 +149,7 @@ class TimeCapsuleController extends Controller
         $submissions = DesignSubmission::orderBy('updated_at', 'desc')
         ->where('isVerified', true)
         ->paginate(10);
-
+        
         $submissions->withPath('time-capsule/load-more');
             // You can map your data here if needed but retain pagination
         $submissions->getCollection()->transform(function ($submission) {

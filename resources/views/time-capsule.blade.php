@@ -34,8 +34,8 @@
           Share a photo of your proudest design. It will be displayed in the
           gallery below.
         </p>
-
-        <form enctype="multipart/form-data" data-attr-submit="{{ url('/time-capsule/submit') }}" id="submission-form" class="memory-form">
+   
+        <form method="POST" enctype="multipart/form-data" data-attr-submit="{{ url('/time-capsule/submit') }}" id="submission-form" class="memory-form">
           
           <div class="form-group">
             <label for="memory-title">Design Title</label>
@@ -129,7 +129,6 @@
         <p class="section-description">
           Explore designs submitted by fellow students!
         </p>
-
         <div class="filter-container">
           <button id="all" class="filter-btn active" data-filter="all">All</button>
           <button id="graphic" class="filter-btn" data-filter="graphic">Graphic</button>
@@ -142,7 +141,7 @@
         </div>
         <div id="load-more"></div>
         <input type="hidden" id="next-page-category" value="all">
-      <input type="hidden" id="next-page-url" value="{{ $submissions->nextPageUrl() }}">
+      <input type="hidden" id="next-page-url" value="{{$submissions->nextPageUrl()}}">
       </div>
     </section>
 
@@ -195,6 +194,6 @@
     </footer>
 
     @vite('resources/js/scripts.js')
-    @vite('resources/js/time-capsule.js')
+    <script src="{{ Vite::asset('resources/js/time-capsule.js') }}" defer></script>
   </body>
 </html>

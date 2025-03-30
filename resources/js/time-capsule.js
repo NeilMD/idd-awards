@@ -39,8 +39,10 @@ const categoryInput = document.getElementById("category");
 const linkContainer = document.getElementById("link-container");
 const linkInput = document.getElementById("link");
 const gallerySection = document.getElementById("gallery-section");
-const urlRef = document.getElementById("next-page-url").value.split("?")[0];
+const currentUrl = window.location.origin + window.location.pathname;
+const urlRef = currentUrl + "/load-more";
 
+// Modal not working
 let memories = [];
 
 function init() {
@@ -53,15 +55,6 @@ function linkDisplay() {
     } else {
         linkContainer.style.display = "none"; // Hide the link input
     }
-}
-
-function changeTab(tab) {
-    console.log("tigres");
-    let nextPageUrlInput = document.getElementById("next-page-url");
-    let nextPageCategory = document.getElementById("next-page-category");
-    nextPageUrlInput.value = urlRef;
-    nextPageCategory.value = tab;
-    galleryGrid.innerHTML = "";
 }
 
 document
@@ -83,7 +76,7 @@ function setupEventListeners() {
 
     removeImageBtn.addEventListener("click", removeImage);
 
-    submissionForm.addEventListener("submit", () => handleSubmission);
+    submissionForm.addEventListener("submit", handleSubmission);
 
     closeModal.forEach((el) => {
         el.addEventListener("click", () => {
@@ -145,12 +138,12 @@ function submitModalReset() {
 }
 
 function handleSubmission(e) {
+    e.preventDefault();
+    console.log("Prevent Default");
     submitBtn.classList.add("button-disabled");
 
     submitModalReset();
     submitModal.style.display = "block";
-
-    e.preventDefault();
 
     const name = document.getElementById("submitter-name").value;
     const title = document.getElementById("memory-title").value;
@@ -320,29 +313,34 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     observer.observe(loadMore);
-
-    function fetchMoreData(url) {
-        let nextPageCategory =
-            document.getElementById("next-page-category").value;
-        let newUrl = url.includes("?page")
-            ? url + `&category=${nextPageCategory}` // If URL already has '?page', append with '&category'
-            : url + `?category=${nextPageCategory}`; // If no '?page', start the query string with '?category'
-        fetch(newUrl)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                // Append the new designs to the design container
-                gallerySection.insertAdjacentHTML(
-                    "beforeend",
-                    data.submissionsHtml
-                );
-
-                // Update the next page URL
-                let nextPageUrlInput = document.querySelector("#next-page-url");
-                nextPageUrlInput.value = data.nextPageUrl;
-            })
-            .catch((error) =>
-                console.error("Error fetching more data:", error)
-            );
-    }
 });
+
+function fetchMoreData(url) {
+    let nextPageCategory = document.getElementById("next-page-category").value;
+    let newUrl = url.includes("?page")
+        ? url + `&category=${nextPageCategory}` // If URL already has '?page', append with '&category'
+        : url + `?category=${nextPageCategory}`; // If no '?page', start the query string with '?category'
+    fetch(newUrl)
+        .then((response) => response.json())
+        .then((data) => {
+            // Append the new designs to the design container
+            gallerySection.insertAdjacentHTML(
+                "beforeend",
+                data.submissionsHtml
+            );
+
+            // Update the next page URL
+            let nextPageUrlInput = document.querySelector("#next-page-url");
+            nextPageUrlInput.value = data.nextPageUrl;
+        })
+        .catch((error) => console.error("Error fetching more data:", error));
+}
+
+function changeTab(tab) {
+    console.log("tigres");
+    let nextPageUrlInput = document.getElementById("next-page-url");
+    let nextPageCategory = document.getElementById("next-page-category");
+    nextPageCategory.value = tab;
+    galleryGrid.innerHTML = "";
+    fetchMoreData(urlRef);
+}
