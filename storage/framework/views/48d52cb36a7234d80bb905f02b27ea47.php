@@ -9,24 +9,26 @@
     <?php echo app('Illuminate\Foundation\Vite')(['resources/css/styles.css']); ?>
   </head>
   <body>
-    <!-- nav -->
-    <nav>
-      <a href="<?php echo e(url('/')); ?>"
-        ><img src="<?php echo e(Vite::asset('resources/img/Asset 8.png')); ?>" class="logo" id="logo" data-hover-logo="<?php echo e(Vite::asset('resources/img/logo-hover.png')); ?>"
-      /></a>
-      <div class="nav-links">
-        <a href="<?php echo e(url('/')); ?>" class="active">Home</a>
-        <a href="<?php echo e(url('awards')); ?>">Awards</a>
-        <!-- <a href="#">Nominees</a> -->
-        <a href="<?php echo e(url('time-capsule')); ?>">Time Capsule</a>
-      </div>
-      <div class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <button class="contact-btn">Contact</button>
-    </nav>
+    <?php if (isset($component)) { $__componentOriginal5caa43e57eb10ef851fb3545bb508994 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal5caa43e57eb10ef851fb3545bb508994 = $attributes; } ?>
+<?php $component = App\View\Components\Section\NavHeader::resolve(['active' => ''] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('section.nav-header'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\Section\NavHeader::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal5caa43e57eb10ef851fb3545bb508994)): ?>
+<?php $attributes = $__attributesOriginal5caa43e57eb10ef851fb3545bb508994; ?>
+<?php unset($__attributesOriginal5caa43e57eb10ef851fb3545bb508994); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal5caa43e57eb10ef851fb3545bb508994)): ?>
+<?php $component = $__componentOriginal5caa43e57eb10ef851fb3545bb508994; ?>
+<?php unset($__componentOriginal5caa43e57eb10ef851fb3545bb508994); ?>
+<?php endif; ?>
 
     <!-- hero -->
     <section class="hero">

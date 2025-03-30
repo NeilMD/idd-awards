@@ -12,131 +12,116 @@
 </head>
 <body>
     <!-- nav -->
-    <nav>
-      <a href="{{ url('/') }}"><img src="{{ Vite::asset('resources/img/Asset 8.png') }}" class="logo" id="logo" data-hover-logo="{{ Vite::asset('resources/img/logo-hover.png') }}"
-      /></a>
-        <div class="nav-links">
-            <a href="{{ url('/') }}">Home</a>
-            <a href="{{ url('awards') }}">Awards</a>
-            <!-- <a href="#">Nominees</a> -->
-            <a href="{{ url('time-capsule') }}">Time Capsule</a>
-        </div>
-        <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <button class="contact-btn">Contact</button>
-    </nav>
-       <!--hero-->
-       <section class="hero gd-hero">
-        <div class="overlay"></div>
-        <h1 class="title"> GRAPHIC DESIGN AWARDS</h1>
+    <x-section.nav-header active="awards" />
+      <!--hero-->
+    <section class="hero gd-hero">
+      <div class="overlay"></div>
+      <h1 class="title"> GRAPHIC DESIGN AWARDS</h1>
     </section>
 
         <!-- Accordion Categories -->
-<div class="accordion-container">
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h3>The Brand Identity Icon Award</h3>
-        <div class="accordion-icon">
-          <span class="arrow"></span>
+  <div class="accordion-container">
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>The Brand Identity Icon Award</h3>
+          <div class="accordion-icon">
+            <span class="arrow"></span>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <h4>BEST BRAND IDENTITY</h4>
+          <p>Description
+          </p>
+          <ul class="award-details">
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criterias</li>
         </div>
       </div>
-      <div class="accordion-content">
-        <h4>BEST BRAND IDENTITY</h4>
-        <p>Description
-        </p>
-        <ul class="award-details">
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criterias</li>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h3>The Print Isn't Dead! Award</h3>
-        <div class="accordion-icon">
-          <span class="arrow"></span>
+      
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>The Print Isn't Dead! Award</h3>
+          <div class="accordion-icon">
+            <span class="arrow"></span>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <h4>BEST PRINTED MATERIALS</h4>
+          <p>A.K.A the "Brian's favourite" Award.
+          </p>
+          <ul class="award-details">
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criterias</li>
         </div>
       </div>
-      <div class="accordion-content">
-        <h4>BEST PRINTED MATERIALS</h4>
-        <p>A.K.A the "Brian's favourite" Award.
-        </p>
-        <ul class="award-details">
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criterias</li>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h3>The Motion Graphics G.O.A.T. Award</h3>
-        <div class="accordion-icon">
-          <span class="arrow"></span>
+      
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>The Motion Graphics G.O.A.T. Award</h3>
+          <div class="accordion-icon">
+            <span class="arrow"></span>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <h4>BEST MOTION GRAPHICS</h4>
+          <p>Description</p>
+          <ul class="award-details">
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criterias</li>
         </div>
       </div>
-      <div class="accordion-content">
-        <h4>BEST MOTION GRAPHICS</h4>
-        <p>Description</p>
-        <ul class="award-details">
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criterias</li>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h3>The Hierarchical Harmony Award</h3>
-        <div class="accordion-icon">
-          <span class="arrow"></span>
+      
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>The Hierarchical Harmony Award</h3>
+          <div class="accordion-icon">
+            <span class="arrow"></span>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <h4>EXCELLENT LAYOUT DESIGN</h4>
+          <p>Description</p>
+          <ul class="award-details">
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
         </div>
       </div>
-      <div class="accordion-content">
-        <h4>EXCELLENT LAYOUT DESIGN</h4>
-        <p>Description</p>
-        <ul class="award-details">
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h3>The DIGI Pro Award</h3>
-        <div class="accordion-icon">
-          <span class="arrow"></span>
+      
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>The DIGI Pro Award</h3>
+          <div class="accordion-icon">
+            <span class="arrow"></span>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <h4>BEST DIGITAL IMAGE</h4>
+          <p>Description</p>
+          <ul class="award-details">
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
+              <li>criteria</li>
         </div>
       </div>
-      <div class="accordion-content">
-        <h4>BEST DIGITAL IMAGE</h4>
-        <p>Description</p>
-        <ul class="award-details">
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-            <li>criteria</li>
-      </div>
     </div>
-  </div>
 
-        <!-- redirection -->
-  <h2 class="section-title">See Also:</h2>
-  <x-section.cards-section hiddenAward="graphic-design" />
+          <!-- redirection -->
+    <h2 class="section-title">See Also:</h2>
+    <x-section.cards-section hiddenAward="graphic-design" />
 
 
     <!-- Footer -->

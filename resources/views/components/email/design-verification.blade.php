@@ -32,13 +32,18 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        
+        .group {
+            margin-bottom:2rem
+        }
         h1 {
             font-size: 24px;
-            margin-bottom: 2rem;
+            margin: 0;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
         h3 {
             font-size: 18px;
             margin: 5px 0;
@@ -48,8 +53,13 @@
             text-transform: capitalize;
             
         }
+
+        p {
+            margin: 0;
+        }
         .email-header {
             text-align: center;
+            margin-bottom: 2rem;
         }
         p.description {
             white-space: nowrap;
@@ -121,6 +131,9 @@
             text-align: center;
             margin-top: 20px;
         }
+        small {
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body> 
@@ -128,11 +141,21 @@
     <main>
         <div class="email-container">
             <h1 class="email-header">Thank you for your Submission!</h1>
-          
-            <h1>{{ $designTitle}}</h1>
-                
+
+            <div class="group">
+                <small>Design Title:</small>
+                <h1>{{ $designTitle}}</h1>
+            </div>
+
+            <div class="group">
+                <small>Design Category:</small>
                 <h3> {{ $category}}</h3>
+            </div>
+            <div class="group">
+                <small>Design Description:</small>
                 <p class="">{{ $description }}</p>
+            </div>
+           
             <div id="btn" class="verify-group">
                 <div >
                     <a class="verify-btn" href="{{ $verificationUrl }}">

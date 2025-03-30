@@ -93,9 +93,7 @@ class TimeCapsuleController extends Controller
        
         $updated = DesignSubmission::where('email',$email)->update(['isVerified'=> true]);
         
-        if ($updated) {
-            
-        } else {
+        if (!$updated){
             echo  'No records were verified.';
         }
         return redirect()->away('http://interactivedesign.ca/time-capsule');
