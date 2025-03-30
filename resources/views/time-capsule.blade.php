@@ -116,6 +116,7 @@
             </div>
           </div>
 
+
           <button id="submit-memory" type="submit" class="submit-btn">Submit Memory</button>
         </form>
       </div>
@@ -163,6 +164,34 @@
           <h3 id="modal-title"></h3>
           <p id="modal-submitter"></p>
           <p id="modal-description"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal -->
+    <div id="submit-modal"  class="memory-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-info">
+          <h3 id="submit-title">
+            Notes
+          </h3>
+          <div id="modal-notes">
+            <span>
+              If you have submitted before, you're previous submission will be overwritten.
+            </span>
+            <br/>
+            <br/>
+            <span>
+              Please wait 1-2mins for the verification email to arrived. It may arrived on your junk/spam folder! 
+            </span>
+            <br/>
+            <span>
+              <small>(dev notes: we dont have smtp server, sorry 🙇)</small>
+            </span>
+
+            <p id="modal-description"></p>
+          </div>
         </div>
       </div>
     </div>

@@ -17,12 +17,13 @@ const previewImg = document.getElementById("preview-img");
 const removeImageBtn = document.getElementById("remove-image");
 const galleryGrid = document.querySelector(".gallery-grid");
 const filterButtons = document.querySelectorAll(".filter-btn");
+const submitModal = document.getElementById("submit-modal");
 const memoryModal = document.getElementById("memory-modal");
 const modalImage = document.getElementById("modal-image");
 const modalTitle = document.getElementById("modal-title");
 const modalSubmitter = document.getElementById("modal-submitter");
 const modalDescription = document.getElementById("modal-description");
-const closeModal = document.querySelector(".close-modal");
+const closeModal = document.querySelectorAll(".close-modal");
 const submitBtn = document.getElementById("submit-memory");
 const categoryInput = document.getElementById("category");
 const linkContainer = document.getElementById("link-container");
@@ -49,8 +50,11 @@ function setupEventListeners() {
 
     submissionForm.addEventListener("submit", handleSubmission);
 
-    closeModal.addEventListener("click", () => {
-        memoryModal.style.display = "none";
+    closeModal.forEach((el) => {
+        el.addEventListener("click", () => {
+            memoryModal.style.display = "none";
+            submitModal.style.display = "none";
+        });
     });
 
     window.addEventListener("click", (e) => {
@@ -87,10 +91,29 @@ function removeImage() {
     previewImg.src = "#";
     imagePreview.style.display = "none";
 }
+
+function submitModalReset() {
+    document.getElementById("submit-title").textContent = "Notes";
+    document.getElementById("modal-notes").innerHTML = `<span>
+              If you have submitted before, you're previous submission will be overwritten.
+            </span>
+            <br/>
+            <br/>
+            <span>
+              Please wait 1-2mins for the verification email to arrived. It may arrived on your junk/spam folder! 
+            </span>
+            <br/>
+            <span>
+              <small>(dev notes: we dont have smtp server, sorry 🙇)</small>
+            </span>`;
+}
+
 function handleSubmission(e) {
     submitBtn.classList.add("button-disabled");
 
-    console.log("handleSubmission");
+    submitModalReset();
+    submitModal.style.display = "block";
+
     e.preventDefault();
 
     const name = document.getElementById("submitter-name").value;
@@ -182,11 +205,12 @@ function handleSubmission(e) {
                         )) {
                             messages.forEach((message) => {
                                 // Concatenate each error message followed by a line break
-                                errorString += message + "\n";
+                                errorString +=
+                                    "<br/><span>" + message + "</span><br/>";
                             });
                         }
                         console.error("Error details:", data); // Log the error response from Laravel
-                        throw new Error(errorString);
+                        throw errorString;
                     });
                 }
                 return response.json();
@@ -195,21 +219,15 @@ function handleSubmission(e) {
                 if (data.success) {
                     submissionForm.reset();
                     removeImage();
-
-                    const newGalleryItem = createGalleryItem(newMemory);
-                    galleryGrid.insertAdjacentElement(
-                        "afterbegin",
-                        newGalleryItem
-                    );
-
-                    alert("Your design has been added to the time capsule!");
                 }
 
                 submitBtn.classList.remove("button-disabled");
             })
             .catch((error) => {
                 submitBtn.classList.remove("button-disabled");
-                alert("Error: occurred Submitting Design.\n" + error);
+                document.getElementById("submit-title").textContent =
+                    "Submission Failed: Unable to Submit Design";
+                document.getElementById("modal-notes").innerHTML = error;
             });
     };
 

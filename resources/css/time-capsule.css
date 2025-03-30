@@ -476,3 +476,27 @@ label.file-upload-label sub {
         width: 90%;
     }
 }
+
+#submit-modal {
+    word-wrap: break-word; /* Ensures long words or URLs break to the next line */
+    white-space: normal; /* Prevents text from being displayed in one long line */
+
+    #submit-title {
+        margin-top: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    #modal-notes {
+        max-width: 100%; /* Set a max width for the description to ensure it wraps within the modal */
+        overflow-wrap: break-word;
+        span {
+            word-wrap: break-word;
+            font-weight: 100;
+            line-height: 1.5;
+        }
+
+        span:nth-of-type(3) {
+            width: 100%;
+        }
+    }
+}
