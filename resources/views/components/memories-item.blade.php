@@ -5,6 +5,6 @@
     <div class="gallery-info">
         <h3 class="gallery-title">{{ $memory['title'] }}</h3>
         <p class="gallery-submitter">By {{ $memory['name'] }}</p>
-        <p class="gallery-description">{{ $memory['description'] }}</p>
+        <p class="gallery-description">{{ $memory['design_category'] . $memory['description'] }}</p>
     </div>
 </div>

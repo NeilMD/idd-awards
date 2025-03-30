@@ -131,10 +131,10 @@
         </p>
 
         <div class="filter-container">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="Graphic">Graphic</button>
-          <button class="filter-btn" data-filter="UX">UX</button>
-          <button class="filter-btn" data-filter="Web">Web</button>
+          <button id="all" class="filter-btn active" data-filter="all">All</button>
+          <button id="graphic" class="filter-btn" data-filter="graphic">Graphic</button>
+          <button id="ux" class="filter-btn" data-filter="ux">UX</button>
+          <button id="web" class="filter-btn" data-filter="web">Web</button>
         </div>
 
         <div id="gallery-section" class="gallery-grid tab-content">
@@ -142,7 +142,7 @@
         </div>
         <div id="load-more"></div>
         <input type="hidden" id="next-page-category" value="all">
-        <input type="hidden" id="next-page-url" value="{{ $submissions->nextPageUrl() }}">
+      <input type="hidden" id="next-page-url" value="{{ $submissions->nextPageUrl() }}">
       </div>
     </section>
 

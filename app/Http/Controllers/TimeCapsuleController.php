@@ -182,7 +182,7 @@ class TimeCapsuleController extends Controller
         $submissions = DesignSubmission::orderBy('updated_at', 'desc')
                         ->where('isVerified', true)
                         ->when($category !== 'all', function ($query) use ($category) {
-                            return $query->where('category', $category);
+                            return $query->where('design_category', $category);
                         })
                         ->paginate(10);
        
@@ -200,7 +200,13 @@ class TimeCapsuleController extends Controller
         });
         
         
-        // Pass the formatted memories data to the view
-        return view('components.section.memories', compact('submissions'));
+        // Render the submissions partial view and pass the submissions
+        $submissionsHtml = view('components.section.memories', compact('submissions'))->render();
+
+        // Return the data as a JSON response, including the rendered partial HTML
+        return response()->json([
+            'submissionsHtml' => $submissionsHtml,
+            'nextPageUrl' => $submissions->nextPageUrl()
+        ]);
     }
 }

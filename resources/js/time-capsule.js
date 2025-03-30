@@ -1,10 +1,20 @@
 document.querySelectorAll(".filter-btn").forEach((button) => {
-    console.log(`button ${button}`);
     button.addEventListener("click", function () {
-        const tab = this.getAttribute("data-filter");
-        document.querySelectorAll(".tab-content").forEach((content) => {
-            content.classList.remove("active-section");
+        // Remove the 'active' class from all buttons
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+            btn.classList.remove("active");
         });
+
+        // Add the 'active' class to the clicked button
+        this.classList.add("active");
+
+        const tab = this.getAttribute("data-filter");
+
+        // Optionally, update sections or content based on the selected tab
+        document.querySelectorAll(".section").forEach((section) => {
+            section.classList.remove("active-section");
+        });
+
         document.getElementById(tab).classList.add("active-section");
     });
 });
@@ -28,6 +38,8 @@ const submitBtn = document.getElementById("submit-memory");
 const categoryInput = document.getElementById("category");
 const linkContainer = document.getElementById("link-container");
 const linkInput = document.getElementById("link");
+const gallerySection = document.getElementById("gallery-section");
+const urlRef = document.getElementById("next-page-url").value.split("?")[0];
 
 let memories = [];
 
@@ -43,12 +55,35 @@ function linkDisplay() {
     }
 }
 
+function changeTab(tab) {
+    console.log("tigres");
+    let nextPageUrlInput = document.getElementById("next-page-url");
+    let nextPageCategory = document.getElementById("next-page-category");
+    nextPageUrlInput.value = urlRef;
+    nextPageCategory.value = tab;
+    galleryGrid.innerHTML = "";
+}
+
+document
+    .getElementById("all")
+    .addEventListener("click", () => changeTab("all"));
+
+document
+    .getElementById("graphic")
+    .addEventListener("click", () => changeTab("graphic"));
+
+document.getElementById("ux").addEventListener("click", () => changeTab("ux"));
+
+document
+    .getElementById("web")
+    .addEventListener("click", () => changeTab("web"));
+
 function setupEventListeners() {
     memoryImageInput.addEventListener("change", handleImagePreview);
 
     removeImageBtn.addEventListener("click", removeImage);
 
-    submissionForm.addEventListener("submit", handleSubmission);
+    submissionForm.addEventListener("submit", () => handleSubmission);
 
     closeModal.forEach((el) => {
         el.addEventListener("click", () => {
@@ -60,6 +95,7 @@ function setupEventListeners() {
     window.addEventListener("click", (e) => {
         if (e.target === memoryModal) {
             memoryModal.style.display = "none";
+            submitModal.style.display = "none";
         }
     });
 }
@@ -269,13 +305,12 @@ document.addEventListener("DOMContentLoaded", function () {
     submissionForm.reset();
 
     const loadMore = document.getElementById("load-more");
-    const nextPageUrlInput = document.getElementById("next-page-url");
-    const nextPageCategory =
-        document.getElementById("next-page-category").value;
 
     let observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
             // Get the next page URL
+            let nextPageUrlInput = document.getElementById("next-page-url");
+
             let nextPageUrl = nextPageUrlInput.value;
 
             if (nextPageUrl) {
@@ -287,21 +322,24 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(loadMore);
 
     function fetchMoreData(url) {
-        let newUrl = url + `&category=${nextPageCategory}`;
+        let nextPageCategory =
+            document.getElementById("next-page-category").value;
+        let newUrl = url.includes("?page")
+            ? url + `&category=${nextPageCategory}` // If URL already has '?page', append with '&category'
+            : url + `?category=${nextPageCategory}`; // If no '?page', start the query string with '?category'
         fetch(newUrl)
-            .then((response) => response.text())
+            .then((response) => response.json())
             .then((data) => {
                 console.log(data);
                 // Append the new designs to the design container
-                document
-                    .getElementById("gallery-section")
-                    .insertAdjacentHTML("beforeend", data);
+                gallerySection.insertAdjacentHTML(
+                    "beforeend",
+                    data.submissionsHtml
+                );
 
                 // Update the next page URL
-                let newNextPageUrl = document.querySelector("#next-page-url");
-                nextPageUrlInput.value = newNextPageUrl
-                    ? newNextPageUrl.value
-                    : "";
+                let nextPageUrlInput = document.querySelector("#next-page-url");
+                nextPageUrlInput.value = data.nextPageUrl;
             })
             .catch((error) =>
                 console.error("Error fetching more data:", error)
