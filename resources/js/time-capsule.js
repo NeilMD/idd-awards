@@ -330,14 +330,13 @@ function fetchMoreData(url) {
             // Query only new '.gallery-item' elements from this DOM structure
             const newGalleryItems = tempDiv.querySelectorAll(".gallery-item");
 
-            // Add event listeners to the new gallery items
+            /// Add event listeners to the new gallery items
             newGalleryItems.forEach((el) => {
                 el.addEventListener("click", () => openMemoryModal(el));
-                gallerySection.appendChild(el);
             });
 
-            // // Append the new elements to the gallery section
-            // gallerySection.appendChild(tempDiv);
+            // Append all the new gallery items to the gallery section
+            gallerySection.append(...newGalleryItems);
 
             // Update the next page URL
             let nextPageUrlInput = document.querySelector("#next-page-url");
