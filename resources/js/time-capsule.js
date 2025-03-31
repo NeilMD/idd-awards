@@ -47,6 +47,7 @@ let memories = [];
 
 function init() {
     setupEventListeners();
+    setupModalEvents();
 }
 
 function linkDisplay() {
@@ -274,21 +275,24 @@ function openMemoryModal(memory) {
 
 init();
 
-const elGalleryItem = document.querySelectorAll(".gallery-item");
+function setupModalEvents() {
+    const elGalleryItem = document.querySelectorAll(".gallery-item");
 
-elGalleryItem.forEach((el) => {
-    el.addEventListener("click", (e) => {
-        let objMemory = {
-            imageUrl: el.querySelector(".gallery-image").src,
-            title: el.querySelector(".gallery-title").textContent,
-            name: el
-                .querySelector(".gallery-submitter")
-                .textContent.substring(3),
-            description: el.querySelector(".gallery-description").textContent,
-        };
-        openMemoryModal(objMemory);
+    elGalleryItem.forEach((el) => {
+        el.addEventListener("click", (e) => {
+            let objMemory = {
+                imageUrl: el.querySelector(".gallery-image").src,
+                title: el.querySelector(".gallery-title").textContent,
+                name: el
+                    .querySelector(".gallery-submitter")
+                    .textContent.substring(3),
+                description: el.querySelector(".gallery-description")
+                    .textContent,
+            };
+            openMemoryModal(objMemory);
+        });
     });
-});
+}
 
 // JavaScript to handle the conditional display of the link input
 document.getElementById("category").addEventListener("change", linkDisplay);
@@ -332,6 +336,7 @@ function fetchMoreData(url) {
             // Update the next page URL
             let nextPageUrlInput = document.querySelector("#next-page-url");
             nextPageUrlInput.value = data.nextPageUrl;
+            setupModalEvents();
         })
         .catch((error) => console.error("Error fetching more data:", error));
 }
