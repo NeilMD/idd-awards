@@ -186,13 +186,17 @@ nav {
     font-weight: 900;
     /* margin-bottom: 30px; */
     letter-spacing: 1px;
+
+    animation: homeEntrance 2.5s ease forwards;
+    text-shadow: 0 0 20px, rgba(255, 255, 255, 10);
+    z-index: 2;
+}
+
+.title-abs {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: homeEntrance 2.5s ease forwards;
-    text-shadow: 0 0 20px, rgba(255, 255, 255, 10);
-    z-index: 2;
 }
 
 .title {
@@ -453,14 +457,14 @@ footer {
 @keyframes homeEntrance {
     0% {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(4);
+        transform: scale(4);
         letter-spacing: 100px;
         filter: blur(10px);
     }
 
     100% {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
+        transform: scale(1);
         letter-spacing: 2px;
         filter: blur(0);
     }
@@ -559,14 +563,14 @@ footer {
     @keyframes homeEntrance {
         0% {
             opacity: 0;
-            transform: translate(-50%, -50%) scale(3);
+            transform: scale(3);
             letter-spacing: 30px;
             filter: blur(10px);
         }
 
         100% {
             opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
+            transform: scale(1);
             letter-spacing: 5px;
             filter: blur(0);
         }
@@ -611,19 +615,19 @@ footer {
     @keyframes homeEntrance {
         0% {
             opacity: 0;
-            transform: translate(-50%, -50%) scale(3.5);
+            transform: scale(3.5);
             letter-spacing: 60px;
             filter: blur(10px);
         }
         40% {
             opacity: 1;
-            transform: translate(-50%, -50%) scale(2.5);
+            transform: scale(2.5);
             letter-spacing: 30px;
             filter: blur(0);
         }
         100% {
             opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
+            transform: scale(1);
             letter-spacing: 8px;
             filter: blur(0);
         }

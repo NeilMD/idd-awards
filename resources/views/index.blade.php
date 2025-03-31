@@ -21,7 +21,10 @@
         </video>
         <div class="overlay"></div>
         <div class="title-wrap">
-          <h1 class="title-home">IGNITE</h1>
+          <div class="title-abs">
+            <h1 class="title-home">IGNITE</h1>
+          </div>
+          
           <h1 class="year">2025</h1>
         </div>
         
