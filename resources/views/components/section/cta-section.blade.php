@@ -6,10 +6,10 @@
 
         @elseif ($page === 'ignite')
 
-            <a href="#"><button class="cta-btn" >Vote Here!</button></a>
+            <a href="https://forms.office.com/r/VP8h1PE826"><button class="cta-btn" >Vote Here!</button></a>
 
         @elseif ($page === 'awards')
-            <a href="#"><button class="cta-btn" >Submit your work!</button></a>
+            <a href="https://forms.office.com/r/VP8h1PE826"><button class="cta-btn" >Submit your work!</button></a>
         @endif
       
     

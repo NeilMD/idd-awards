@@ -47,7 +47,6 @@ let memories = [];
 
 function init() {
     setupEventListeners();
-    setupModalEvents();
 }
 
 function linkDisplay() {
@@ -264,35 +263,26 @@ function handleSubmission(e) {
     reader.readAsDataURL(imageFile);
 }
 
-function openMemoryModal(memory) {
-    modalImage.src = memory.imageUrl;
-    modalTitle.textContent = memory.title;
-    modalSubmitter.textContent = `Submitted by ${memory.name}`;
-    modalDescription.textContent = memory.description;
+function openMemoryModal(el) {
+    modalImage.src = el.querySelector(".gallery-image").src;
+    modalTitle.textContent = el.querySelector(".gallery-title").textContent;
+    modalSubmitter.textContent = `Submitted by ${el
+        .querySelector(".gallery-submitter")
+        .textContent.substring(3)}`;
+    modalDescription.textContent = el.querySelector(
+        ".gallery-description"
+    ).textContent;
 
     memoryModal.style.display = "block";
 }
 
 init();
 
-function setupModalEvents() {
-    const elGalleryItem = document.querySelectorAll(".gallery-item");
+const elGalleryItem = document.querySelectorAll(".gallery-item");
 
-    elGalleryItem.forEach((el) => {
-        el.addEventListener("click", (e) => {
-            let objMemory = {
-                imageUrl: el.querySelector(".gallery-image").src,
-                title: el.querySelector(".gallery-title").textContent,
-                name: el
-                    .querySelector(".gallery-submitter")
-                    .textContent.substring(3),
-                description: el.querySelector(".gallery-description")
-                    .textContent,
-            };
-            openMemoryModal(objMemory);
-        });
-    });
-}
+elGalleryItem.forEach((el) => {
+    el.addEventListener("click", (e) => openMemoryModal(el));
+});
 
 // JavaScript to handle the conditional display of the link input
 document.getElementById("category").addEventListener("change", linkDisplay);
@@ -327,16 +317,31 @@ function fetchMoreData(url) {
     fetch(newUrl)
         .then((response) => response.json())
         .then((data) => {
-            // Append the new designs to the design container
-            gallerySection.insertAdjacentHTML(
-                "beforeend",
-                data.submissionsHtml
-            );
+            // // Append the new designs to the design container
+            // gallerySection.insertAdjacentHTML(
+            //     "beforeend",
+            //     data.submissionsHtml
+            // );
+
+            // Convert the returned HTML string to a DOM structure
+            let tempDiv = document.createElement("div");
+            tempDiv.innerHTML = data.submissionsHtml.trim(); // Convert string to HTML elements
+
+            // Query only new '.gallery-item' elements from this DOM structure
+            const newGalleryItems = tempDiv.querySelectorAll(".gallery-item");
+
+            // Add event listeners to the new gallery items
+            newGalleryItems.forEach((el) => {
+                el.addEventListener("click", () => openMemoryModal(el));
+                gallerySection.appendChild(el);
+            });
+
+            // // Append the new elements to the gallery section
+            // gallerySection.appendChild(tempDiv);
 
             // Update the next page URL
             let nextPageUrlInput = document.querySelector("#next-page-url");
             nextPageUrlInput.value = data.nextPageUrl;
-            setupModalEvents();
         })
         .catch((error) => console.error("Error fetching more data:", error));
 }
