@@ -62,7 +62,7 @@
 
     <!-- redirection -->
     <h2 class="section-title">See Also:</h2>
-    <x-section.cards-section hiddenAward="general" />
+    <x-section.cards-section hiddenAward="impact" />
 
     <!-- Footer -->
     <footer>

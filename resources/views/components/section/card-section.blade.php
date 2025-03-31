@@ -31,11 +31,11 @@
             'id' => 'web'
         ],
         [
-            'pageUrl' => 'general-awards',
+            'pageUrl' => 'impact-awards',
             'imageUrl' => Vite::asset('resources/img/card_impact.webp'),
-            'awardTitle' => 'General Awards',
+            'awardTitle' => 'Impact Awards',
             'awardText' => '',
-            'id' => 'general'
+            'id' => 'impact'
         ],
     ];
 @endphp

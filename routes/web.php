@@ -8,7 +8,7 @@ Route::get('/', function () {
 });
 
 Route::view('/awards', 'awards');
-Route::view('/general-awards', 'general-awards');
+Route::view('/impact-awards', 'impact-awards');
 Route::view('/graphic-design', 'graphic-design');
 Route::view('/ignite-awards', 'ignite-awards');
 Route::view('/user-experience', 'user-experience');
