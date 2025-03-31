@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IGNITE Awards</title>
+    <link rel="icon" href="{{ Vite::asset('resources/img/favicon.svg') }}">
     <link rel="stylesheet" href="https://use.typekit.net/tzg2jet.css">
     @vite('resources/css/styles.css')
-    @vite('resources/css/time-capsule.css')
     @vite('resources/css/award-categories.css')
     @vite('resources/css/wd.css')
 </head>
@@ -19,108 +19,90 @@
         <h1 class="title"> WEB DEV AWARDS</h1>
     </section>
 
-<!-- Accordion Categories -->
-<div class="accordion-container">
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h3>The Business Byte Brilliance Award</h3>
-        <div class="accordion-icon">
-          <span class="arrow"></span>
+    <!-- Accordion Categories -->
+    <div class="accordion-container">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>The Business Byte Brilliance Award</h3>
+            <div class="accordion-icon">
+              <span class="arrow"></span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <h4>BEST BUSINESS BASED WEBSITE</h4>
+            <ul class="award-details">
+              <li>A professionally designed and developed website for a business.</li>
+              <li>Utilizes strong branding, usability, and technical execution.</li>
+          </div>
         </div>
-      </div>
-      <div class="accordion-content">
-        <h4>BEST BUSINESS BASED WEBSITE</h4>
-        <p>Awarded to the student with the best business based website, based on objectives met from the respective brief.</p>
-        <ul class="award-details">
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criterias</li>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h3>The Fire Personal Site Award</h3>
-        <div class="accordion-icon">
-          <span class="arrow"></span>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>The Fire Personal Site Award</h3>
+            <div class="accordion-icon">
+              <span class="arrow"></span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <h4>BEST PERSONAL WEBSITE</h4>
+            <ul class="award-details">
+              <li>Submissions can be a personal portfolio, blog, or other self-promotional website.</li>
+              <li>Showcases outstanding storytelling, visual appeal, and UX.</li>
+          </div>
         </div>
-      </div>
-      <div class="accordion-content">
-        <h4>BEST PERSONAL WEBSITE</h4>
-        <p>Awarded to the student with the best personal website. Think your personal website is the epitome of YOU? This could be the award for you.
-        </p>
-        <ul class="award-details">
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criterias</li>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h3>The Database Dynamo Award</h3>
-        <div class="accordion-icon">
-          <span class="arrow"></span>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>The Database Dynamo Award</h3>
+            <div class="accordion-icon">
+              <span class="arrow"></span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <h4>BEST DATABASE</h4>
+            <ul class="award-details">
+              <li>A well structured and efficient database that supports an interactive web experience or application.</li>
+              <li>Showcases a well-thought-out schema, security, and performance.</li>
+          </div>
         </div>
-      </div>
-      <div class="accordion-content">
-        <h4>BEST DATABASE</h4>
-        <p>Awarded to the student with the best and most functional database.</p>
-        <ul class="award-details">
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criterias</li>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h3>The Browser Breakthrough Award</h3>
-        <div class="accordion-icon">
-          <span class="arrow"></span>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>The Browser Breakthrough Award</h3>
+            <div class="accordion-icon">
+              <span class="arrow"></span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <h4>BEST WEB APP</h4>
+            <ul class="award-details">
+              <li>The most functional and user-friendly web application.</li>
+              <li>Effectively integrates front-end and back-end development to create the tool or service.</li>
+          </div>
         </div>
-      </div>
-      <div class="accordion-content">
-        <h4>BEST WEB APP</h4>
-        <p>Awarded to the student with the best Web App, based on objectives met from the respective brief.</p>
-        <ul class="award-details">
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criterias</li>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h3>The Most "Committed" Award</h3>
-        <div class="accordion-icon">
-          <span class="arrow"></span>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>The Most "Committed" Award</h3>
+            <div class="accordion-icon">
+              <span class="arrow"></span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <h4>MOST CONSISTENT CONTRIBUTIONS TO GITHUB</h4>
+            <ul class="award-details">
+              <li>Awarded to the student with the most active and consistent contributions to coding projects on GitHub.</li>
+          </div>
         </div>
-      </div>
-      <div class="accordion-content">
-        <h4>HIGHEST COMMIT COUNT TO GITHUB</h4>
-        <p>Start adding up your commits on Github NOW... If you're the winner, this could take a while.</p>
-        <ul class="award-details">
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criteria</li>
-          <li>criterias</li>
-      </div>
     </div>
-  </div>
 
-        <!-- redirection -->
-  <h2 class="section-title">See Also:</h2>
-  <x-section.cards-section hiddenAward="web" />
+    <div class="cta">
+      <button class="cta-btn" href="https://www.showpass.com/sait-ignite-awards-2025/">Submit your work!</button>
+    </div>
+
+    <!-- redirection -->
+    <h2 class="section-title">See Also:</h2>
+    <x-section.cards-section hiddenAward="web" />
 
     <!-- Footer -->
     <footer>

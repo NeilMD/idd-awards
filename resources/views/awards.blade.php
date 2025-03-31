@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IGNITE Awards</title>
     <link rel="stylesheet" href="https://use.typekit.net/tzg2jet.css" />
+    <link rel="icon" href="{{ Vite::asset('resources/img/favicon.svg') }}">
     @vite('resources/css/styles.css')
-    @vite('resources/css/time-capsule.css')
     @vite('resources/css/award-categories.css')
   </head>
   <body>

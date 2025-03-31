@@ -1,5 +1,5 @@
 .title {
-    font-size: rem;
+    font-size: 8rem;
     font-weight: 800;
     max-width: 90%;
     padding-bottom: 0;
@@ -13,64 +13,87 @@
 }
 
 .hero {
-  position: relative;
-  height: 65vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
+    position: relative;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.student-votes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 5em;
 }
 
 h4 {
-  font-family: ivyepic-variable, sans-serif;
-  font-weight: 100;
-  letter-spacing: 2px;
-  font-stretch: condensed 50%;
-  font-size: small;
-  margin-bottom: 10px;
+    font-family: ivyepic-variable, sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-stretch: condensed 50%;
+    font-size: small;
+    margin-bottom: 10px;
 }
 
-  .accordion-container {
+.IGNITE-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 50px;
+}
+
+.award-info {
+    width: 60%;
+    align-content: center;
+}
+
+.accordion-container {
     max-width: 100%;
     padding: 100px;
     justify-content: center;
-  }
-  
-  .accordion-item {
+}
+
+.accordion-item {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     background-color: rgba(0, 0, 0, 0.8);
     margin-bottom: 10px;
     overflow: hidden;
-  }
-  
-  .accordion-header {
+}
+
+.accordion-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .accordion-header:hover {
+}
+
+.accordion-header:hover {
     background-color: rgba(50, 50, 50, 0.8);
-  }
-  
-  .accordion-header h3 {
+}
+
+.accordion-header h3 {
     margin: 0;
     color: white;
     font-size: 1.2rem;
-  }
-  
-  .accordion-icon {
+}
+
+.accordion-icon {
     position: relative;
     width: 24px;
     height: 24px;
-  }
-  
-  .arrow {
+}
+
+.arrow {
     position: absolute;
     width: 14px;
     height: 14px;
@@ -78,40 +101,41 @@ h4 {
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
     transition: all 0.3s ease;
-  }
-  
-  .arrow:after, .arrow:before {
-    content: '';
+}
+
+.arrow:after,
+.arrow:before {
+    content: "";
     position: absolute;
     background-color: white;
     transition: all 0.3s ease;
-  }
-  
-  .arrow:after {
+}
+
+.arrow:after {
     width: 100%;
     height: 2px;
     top: 0%;
     left: 50%;
     transform: translateY(-50%);
-  }
-  
-  .arrow:before {
+}
+
+.arrow:before {
     width: 2px;
     height: 100%;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  .accordion-item.active .arrow {
+}
+
+.accordion-item.active .arrow {
     transform: translateY(-50%) rotate(220deg);
-  } 
-  
-  .accordion-item.active .arrow:after {
+}
+
+.accordion-item.active .arrow:after {
     transform: rotate(360deg);
-  }
-  
-  .accordion-content {
+}
+
+.accordion-content {
     max-height: 0;
     padding-left: 20px;
     padding-top: 20px;
@@ -119,98 +143,96 @@ h4 {
     transition: 0.9s ease-in-out;
     background-color: rgba(30, 30, 30, 0.6);
     color: white;
-  }
+}
 
-  .accordion-item::before .accordion-content {
+.accordion-item::before .accordion-content {
     max-height: 520px;
     padding: 20px;
-  }
+}
 
-  
-  .accordion-item.active .accordion-content {
+.accordion-item.active .accordion-content {
     max-height: 500px;
     padding: 20px;
-  }
+}
 
-  .award-details {
+.award-details {
     margin-top: 15px;
     padding-left: 20px;
-  }
-  
-  .award-details li {
+}
+
+.award-details li {
     margin-bottom: 10px;
     position: relative;
     list-style-type: none;
     padding-left: 15px;
-  }
-  
-  .award-details li:before {
-    content: '';
+}
+
+.award-details li:before {
+    content: "";
     position: absolute;
     left: 0;
     top: 4px;
     width: 6px;
     height: 6px;
-    background-color: #FF8217;
+    background-color: #ff8217;
     border-radius: 50%;
-  }
+}
 
 /* Cards Section */
 .section-title {
-  font-size: 2.5rem;
-  padding: 100px 50px 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
+    font-size: 2.5rem;
+    padding: 100px 50px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 .cards-section {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 9px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 9px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .card-content {
-  padding: 20px;
+    padding: 20px;
 }
 
 .card-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .card-text {
-  font-size: 1rem;
-  opacity: 0.8;
-  line-height: 1.5;
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.5;
 }
 
-
-  /*animations */
-  @keyframes titleEntrance {
+/*animations */
+@keyframes titleEntrance {
     0% {
         opacity: 0;
         letter-spacing: 4px;
@@ -226,18 +248,17 @@ h4 {
     }
 }
 @keyframes FadeOut {
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
-  0% {
-    opacity: 0;
-    filter: blur(10px);
-  }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+    }
 }
 /* Responsive styles */
 @media screen and (max-width: 768px) {
-
     .title {
         font-size: 3rem;
         letter-spacing: 2px;
@@ -254,18 +275,18 @@ h4 {
 
     @media (max-width: 768px) {
         .accordion-container {
-          width: 100%;
-          padding: 60px;
+            width: 100%;
+            padding: 60px;
         }
-        
+
         .accordion-header h3 {
-          font-size: 1rem;
+            font-size: 1rem;
         }
-        
+
         .accordion-header {
-          padding: 15px;
+            padding: 15px;
         }
-      }
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {

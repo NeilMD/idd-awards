@@ -1,11 +1,11 @@
 {
   "resources/css/award-categories.css": {
-    "file": "assets/award-categories.DafQKSIS.css",
+    "file": "assets/award-categories.BDsa8TNj.css",
     "src": "resources/css/award-categories.css",
     "isEntry": true
   },
   "resources/css/gd.css": {
-    "file": "assets/gd.CPz-wsZ9.css",
+    "file": "assets/gd.BRt_5AXo.css",
     "src": "resources/css/gd.css",
     "isEntry": true
   },
@@ -20,7 +20,7 @@
     "isEntry": true
   },
   "resources/css/styles.css": {
-    "file": "assets/styles.Ct8_Vi_L.css",
+    "file": "assets/styles.Zf8cWgET.css",
     "src": "resources/css/styles.css",
     "isEntry": true
   },
@@ -35,41 +35,49 @@
     "isEntry": true
   },
   "resources/css/wd.css": {
-    "file": "assets/wd.s4_Duc1K.css",
+    "file": "assets/wd.C0dqHbyZ.css",
     "src": "resources/css/wd.css",
     "isEntry": true
-  },
-  "resources/img/Asset 8.png": {
-    "file": "assets/Asset 8.CwbQkVFK.png",
-    "src": "resources/img/Asset 8.png"
-  },
-  "resources/img/GEN@3x.png": {
-    "file": "assets/GEN@3x.B8boJCZL.png",
-    "src": "resources/img/GEN@3x.png"
-  },
-  "resources/img/GRAPHIC@3x.png": {
-    "file": "assets/GRAPHIC@3x.DNvwh1hc.png",
-    "src": "resources/img/GRAPHIC@3x.png"
-  },
-  "resources/img/IGNITE@3x.png": {
-    "file": "assets/IGNITE@3x.Cz1M-dGu.png",
-    "src": "resources/img/IGNITE@3x.png"
-  },
-  "resources/img/UX@3x.png": {
-    "file": "assets/UX@3x.BkZl1iBM.png",
-    "src": "resources/img/UX@3x.png"
-  },
-  "resources/img/WEB@3x.png": {
-    "file": "assets/WEB@3x.CMEdRC7C.png",
-    "src": "resources/img/WEB@3x.png"
   },
   "resources/img/arrow_up.svg": {
     "file": "assets/arrow_up.BTtOxUE9.svg",
     "src": "resources/img/arrow_up.svg"
   },
-  "resources/img/logo-hover.png": {
-    "file": "assets/logo-hover.CBAGEXPn.png",
-    "src": "resources/img/logo-hover.png"
+  "resources/img/card_graphic.webp": {
+    "file": "assets/card_graphic.DyxbgddI.webp",
+    "src": "resources/img/card_graphic.webp"
+  },
+  "resources/img/card_ignite.webp": {
+    "file": "assets/card_ignite.TBKEOvpl.webp",
+    "src": "resources/img/card_ignite.webp"
+  },
+  "resources/img/card_impact.webp": {
+    "file": "assets/card_impact.Bz3dwXrW.webp",
+    "src": "resources/img/card_impact.webp"
+  },
+  "resources/img/card_ux.webp": {
+    "file": "assets/card_ux.BXxl-rbp.webp",
+    "src": "resources/img/card_ux.webp"
+  },
+  "resources/img/card_web.webp": {
+    "file": "assets/card_web.CmtY1Mvu.webp",
+    "src": "resources/img/card_web.webp"
+  },
+  "resources/img/favicon.svg": {
+    "file": "assets/favicon.tA6f7wYq.svg",
+    "src": "resources/img/favicon.svg"
+  },
+  "resources/img/index_about.webp": {
+    "file": "assets/index_about.OMDwByys.webp",
+    "src": "resources/img/index_about.webp"
+  },
+  "resources/img/nav_logo-hover.png": {
+    "file": "assets/nav_logo-hover.CVP3EJje.png",
+    "src": "resources/img/nav_logo-hover.png"
+  },
+  "resources/img/nav_logo.png": {
+    "file": "assets/nav_logo.CtYIcm0L.png",
+    "src": "resources/img/nav_logo.png"
   },
   "resources/js/app.js": {
     "file": "assets/app-DspuE8pW.js",
@@ -95,8 +103,8 @@
     "src": "resources/js/time-capsule.js",
     "isEntry": true
   },
-  "resources/video/Website Gradient.mp4": {
-    "file": "assets/Website Gradient.C3zqBrkf.mp4",
-    "src": "resources/video/Website Gradient.mp4"
+  "resources/video/index_hero.webm": {
+    "file": "assets/index_hero.W039XC7F.webm",
+    "src": "resources/video/index_hero.webm"
   }
 }

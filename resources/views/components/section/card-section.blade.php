@@ -4,37 +4,37 @@
     $awards = [
         [
             'pageUrl' => 'ignite-awards',
-            'imageUrl' => Vite::asset('resources/img/IGNITE@3x.png'),
-            'awardTitle' => 'The IGNITE Award',
-            'awardText' => 'See criteria for the IGNITE award. Student and Instructor voted!',
+            'imageUrl' => Vite::asset('resources/img/card_ignite.webp'),
+            'awardTitle' => 'The IGNITE Awards',
+            'awardText' => '',
             'id' => 'ignite'
         ],
         [
             'pageUrl' => 'graphic-design',
-            'imageUrl' => Vite::asset('resources/img/IGNITE@3x.png'),
-            'awardTitle' => 'Graphic Design',
-            'awardText' => 'See criteria for all Graphic Design awards.',
+            'imageUrl' => Vite::asset('resources/img/card_graphic.webp'),
+            'awardTitle' => 'Graphic Design Awards',
+            'awardText' => '',
             'id' => 'graphic-design'
         ],
         [
             'pageUrl' => 'user-experience',
-            'imageUrl' => Vite::asset('resources/img/UX@3x.png'),
-            'awardTitle' => 'User Experience',
-            'awardText' => 'See criteria for all UX awards.',
+            'imageUrl' => Vite::asset('resources/img/card_ux.webp'),
+            'awardTitle' => 'User Experience Awards',
+            'awardText' => '',
             'id' => 'ux'
         ],
         [
             'pageUrl' => 'web-development',
-            'imageUrl' => Vite::asset('resources/img/WEB@3x.png'),
-            'awardTitle' => 'Web Development',
-            'awardText' => 'See criteria for all Web awards.',
+            'imageUrl' => Vite::asset('resources/img/card_web.webp'),
+            'awardTitle' => 'Web Development Awards',
+            'awardText' => '',
             'id' => 'web'
         ],
         [
             'pageUrl' => 'general-awards',
-            'imageUrl' => Vite::asset('resources/img/GEN@3x.png'),
-            'awardTitle' => 'General',
-            'awardText' => 'See criteria for general awards. ',
+            'imageUrl' => Vite::asset('resources/img/card_impact.webp'),
+            'awardTitle' => 'General Awards',
+            'awardText' => '',
             'id' => 'general'
         ],
     ];

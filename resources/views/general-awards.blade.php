@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IGNITE Awards</title>
     <link rel="stylesheet" href="https://use.typekit.net/tzg2jet.css">
+    <link rel="icon" href="{{ Vite::asset('resources/img/favicon.svg') }}">
     @vite('resources/css/styles.css')
-    @vite('resources/css/time-capsule.css')
     @vite('resources/css/award-categories.css')
     @vite('resources/css/gen.css')
 </head>
@@ -16,108 +16,49 @@
        <!--hero-->
        <section class="hero gen-hero">
         <div class="overlay"></div>
-        <h1 class="title"> GENERAL AWARDS</h1>
+        <h1 class="title"> IMPACT AWARDS</h1>
     </section>
 
     <!-- Accordion Categories -->
     <div class="accordion-container">
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>The Inslusivity Champion Award</h3>
-          <div class="accordion-icon">
-            <span class="arrow"></span>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>The Inclusivity Champion Award</h3>
+            <div class="accordion-icon">
+              <span class="arrow"></span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <h4>MOST INCLUSIVE DESIGN</h4>
+            <ul class="award-details">
+                <li>A project that prioritizes accessibility and inclusivity, ensuring that all users, regardless 
+                  of background or disability, can engage with and use the design effectively.
+                </li>
           </div>
         </div>
-        <div class="accordion-content">
-          <h4>MOST INCLUSIVE DESIGN</h4>
-          <p>Do you run your designs through millions of accessibility checkers before passoff? This might just be the award for you.
-          </p>
-          <ul class="award-details">
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criterias</li>
-        </div>
-      </div>
-      
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>The Future Instructor Award</h3>
-          <div class="accordion-icon">
-            <span class="arrow"></span>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>The A11Y All-Star Award</h3>
+            <div class="accordion-icon">
+              <span class="arrow"></span>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <h4>MOST ACCESSIBLE DESIGN</h4>
+            <ul class="award-details">
+                <li>A project that demonstrates oustanding accessibility considerations, ensuring inclusivity
+                  for users with disabilities.
+                </li>
+                <li>Showcases outstanding contrast, readability, keyboard navigation, assistive technology compatibility,
+                  and overall usability for diverse audiences.
+                </li>
           </div>
         </div>
-        <div class="accordion-content">
-          <h4>MOST LIKELY TO RETURN TO TEACH</h4>
-          <p>Description
-          </p>
-          <ul class="award-details">
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criterias</li>
-        </div>
-      </div>
-      
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>The Project Management Hero Award</h3>
-          <div class="accordion-icon">
-            <span class="arrow"></span>
-          </div>
-        </div>
-        <div class="accordion-content">
-          <h4>OUTSTANDING PROJECT MANAGEMENT</h4>
-          <p>Description</p>
-          <ul class="award-details">
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criterias</li>
-        </div>
-      </div>
-      
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>The Async Warrior Award</h3>
-          <div class="accordion-icon">
-            <span class="arrow"></span>
-          </div>
-        </div>
-        <div class="accordion-content">
-          <h4>MOST ASYNCH COMPLETED</h4>
-          <p>description</p>
-          <ul class="award-details">
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criterias</li>
-        </div>
-      </div>
-      
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <h3>The Team Player Award</h3>
-          <div class="accordion-icon">
-            <span class="arrow"></span>
-          </div>
-        </div>
-        <div class="accordion-content">
-          <h4>BEST TEAMMATE</h4>
-          <p>If you've worked on a team with osmeone who checks all the boxes below, please nominate them for this award!</p>
-          <ul class="award-details">
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criteria</li>
-              <li>criterias</li>
-        </div>
-      </div>
-    </di>
+    </div>
+
+    <div class="cta">
+      <button class="cta-btn" href="https://www.showpass.com/sait-ignite-awards-2025/">Submit your work!</button>
+    </div>
 
     <!-- redirection -->
     <h2 class="section-title">See Also:</h2>
