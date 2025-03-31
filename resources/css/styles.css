@@ -1,8 +1,10 @@
-* {
+*,
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "ivy-epic-variable", sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -312,6 +314,7 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 70px 50px;
+    scroll-behavior: smooth;
 }
 
 .event-details h2 {

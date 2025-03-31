@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,16 +29,17 @@
         <div class="hero-buttons">
             <a href="https://www.showpass.com/sait-ignite-awards-2025/"><button class="hero-btn" >Get Tickets</button></a>
         </div>
-        <div class="arrow-down">
+       
+        <a href="#event-info" class="arrow-down">
           <i class="fa-solid fa-arrow-down"></i>
-        </div>
+        </a>
     </section>
 
-    <div class="event-details">
+    <div id="event-info" class="event-details">
       <div class="event-image">
           <img src="{{ Vite::asset('resources/img/index_about.webp')}}" alt="Event Image">
       </div> 
-      <div class="event-info-container">
+      <div  class="event-info-container">
             <h1 class="bigger">IGNITE AWARDS</h1>
             <p>CELEBRATING INTERACTIVE DESIGN STUDENTS</b></p>
             <p>A torch lit, a future ignitied. </p>
