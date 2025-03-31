@@ -116,9 +116,7 @@
   </div>
     </div>
 
-    <div class="cta">
-      <button class="cta-btn" href="https://www.showpass.com/sait-ignite-awards-2025/">Vote Here!</button>
-    </div>
+    <x-section.cta-section page="ignite"/>
 
     <!-- redirection -->
     <h2 class="section-title">See Also:</h2>

@@ -23,7 +23,7 @@
         <h1 class="year">2025</h1>
         <h2 class="subtitle">STUDENT AWARDS SHOW</h2>
         <div class="hero-buttons">
-            <button class="hero-btn" href="https://www.showpass.com/sait-ignite-awards-2025/">Get Tickets</button>
+            <a href="https://www.showpass.com/sait-ignite-awards-2025/"><button class="hero-btn" >Get Tickets</button></a>
         </div>
     </section>
 
@@ -46,10 +46,7 @@
       </div>
     </div>
     <!-- cta -->            
-    <div class="cta">
-        <button class="cta-btn" href="https://www.showpass.com/sait-ignite-awards-2025/">Get Tickets</button>
-        <button class="cta-btn" href="https://www.showpass.com/sait-ignite-awards-2025/">See Awards</button>
-    </div>
+    <x-section.cta-section page="home"/>
     
     <!-- Footer -->
     <footer>
