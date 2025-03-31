@@ -14,5 +14,6 @@
         <span></span>
         <span></span>
     </div>
-    <button class="contact-btn">Contact</button>
+
+    <a href="https://www.instagram.com/ignite_idd/" class="nav-ig"><i class="fa-brands fa-instagram"></i></a>
 </nav>

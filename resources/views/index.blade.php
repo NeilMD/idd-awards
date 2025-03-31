@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IGNITE Awards</title>
     <link rel="icon" href="{{ Vite::asset('resources/img/favicon.svg') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://use.typekit.net/tzg2jet.css" />
     <!-- Load Compiled CSS -->
     @vite(['resources/css/styles.css'])
@@ -19,11 +20,17 @@
             Your browser does not support the video tag.
         </video>
         <div class="overlay"></div>
-        <h1 class="title">IGNITE</h1>
-        <h1 class="year">2025</h1>
+        <div class="title-wrap">
+          <h1 class="title-home">IGNITE</h1>
+          <h1 class="year">2025</h1>
+        </div>
+        
         <h2 class="subtitle">STUDENT AWARDS SHOW</h2>
         <div class="hero-buttons">
             <a href="https://www.showpass.com/sait-ignite-awards-2025/"><button class="hero-btn" >Get Tickets</button></a>
+        </div>
+        <div class="arrow-down">
+          <i class="fa-solid fa-arrow-down"></i>
         </div>
     </section>
 
