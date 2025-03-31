@@ -402,6 +402,7 @@ nav {
     border-radius: 9px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .card:hover {
