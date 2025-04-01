@@ -82,6 +82,14 @@ button {
 .form-group {
     margin-bottom: 20px;
     font-family: "ivy-epic-variable", sans-serif;
+    font-variation-settings: "slnt" 0, "wdth" 100, "wght" 200;
+
+    input,
+    select,
+    button {
+        font-family: "ivy-epic-variable", sans-serif;
+        font-variation-settings: "slnt" 0, "wdth" 100, "wght" 200;
+    }
 }
 
 .form-group label {
