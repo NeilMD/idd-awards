@@ -30,6 +30,7 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 const submitModal = document.getElementById("submit-modal");
 const memoryModal = document.getElementById("memory-modal");
 const modalImage = document.getElementById("modal-image");
+const modalCategory = document.getElementById("modal-category");
 const modalTitle = document.getElementById("modal-title");
 const modalSubmitter = document.getElementById("modal-submitter");
 const modalDescription = document.getElementById("modal-description");
@@ -266,12 +267,18 @@ function handleSubmission(e) {
 function openMemoryModal(el) {
     modalImage.src = el.querySelector(".gallery-image").src;
     modalTitle.textContent = el.querySelector(".gallery-title").textContent;
+    modalCategory.textContent = el.querySelector(
+        ".gallery-category span"
+    ).textContent;
+
     modalSubmitter.textContent = `Submitted by ${el
         .querySelector(".gallery-submitter")
         .textContent.substring(3)}`;
-    modalDescription.textContent = el.querySelector(
-        ".gallery-description"
-    ).textContent;
+    modalDescription.innerHTML = `${
+        el.querySelector(".gallery-description").textContent
+    } Check out the link <a href='${el.getAttribute(
+        "data-attr-link"
+    )}' target="_blank">here</a>.`;
 
     memoryModal.style.display = "block";
 }

@@ -153,6 +153,7 @@
           <img id="modal-image" src="" alt="Memory" />
         </div>
         <div class="modal-info">
+          <h4 id="modal-category"></h4>
           <h3 id="modal-title"></h3>
           <p id="modal-submitter"></p>
           <p id="modal-description"></p>
