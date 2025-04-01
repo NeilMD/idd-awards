@@ -276,7 +276,7 @@ function openMemoryModal(el) {
         .textContent.substring(3)}`;
     modalDescription.innerHTML = `${
         el.querySelector(".gallery-description").textContent
-    } Check out the link <a href='${el.getAttribute(
+    } <br/> Check out the link <a href='${el.getAttribute(
         "data-attr-link"
     )}' target="_blank">here</a>.`;
 

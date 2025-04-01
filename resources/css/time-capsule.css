@@ -247,6 +247,7 @@ label.file-upload-label sub {
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-variation-settings: "slnt" 0, "wdth" 90, "wght" 300;
 }
 
 .filter-btn:hover,
@@ -286,11 +287,12 @@ label.file-upload-label sub {
     position: absolute;
     top: 15px;
     right: 15px;
+
     span {
         position: relative;
         background-color: #ea8936;
         color: black;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.7);
         padding: 0.25rem 0.5rem;
         border-radius: 30px;
         font-size: 1rem;
@@ -300,6 +302,7 @@ label.file-upload-label sub {
         cursor: pointer;
         transition: all 0.3s ease;
         text-transform: capitalize;
+        font-variation-settings: "slnt" 0, "wdth" 90, "wght" 200;
     }
 }
 
@@ -344,6 +347,7 @@ label.file-upload-label sub {
     -webkit-line-clamp: 1; /* number of lines to show */
     line-clamp: 1;
     -webkit-box-orient: vertical;
+    text-transform: uppercase;
 }
 
 .gallery-submitter {
@@ -355,6 +359,7 @@ label.file-upload-label sub {
     -webkit-line-clamp: 1; /* number of lines to show */
     line-clamp: 1;
     -webkit-box-orient: vertical;
+    text-transform: capitalize;
 }
 
 .gallery-description {
@@ -425,7 +430,11 @@ label.file-upload-label sub {
     text-transform: capitalize;
     font-style: italic;
     font-weight: 200;
-    color: #ea8936;
+    color: white;
+    line-height: 1.35;
+    font-size: 1rem;
+    font-variation-settings: "slnt" 0, "wdth" 100, "wght" 100;
+    opacity: 0.7;
 }
 
 .modal-info {
@@ -434,12 +443,14 @@ label.file-upload-label sub {
 
 #modal-title {
     font-size: 1.8rem;
+    text-transform: uppercase;
 }
 
 #modal-submitter {
     font-size: 1rem;
     opacity: 0.7;
     margin-bottom: 15px;
+    text-transform: capitalize;
 }
 
 #modal-description {
