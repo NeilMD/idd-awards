@@ -89,13 +89,17 @@ class TimeCapsuleController extends Controller
 
     {
         // Check if the signature is valid
-        if (! $request->hasValidSignature()) {
+        if (!$request->hasValidSignature()) {
             abort(401);
+        }
+
+        if ($request->boolean('agree') !== true) {
+            return; // Do nothing if 'agree' is not explicitly checked
         }
 
         $updated = DesignSubmission::where('email',$email)->update(['isVerified'=> true]);
 
-        return redirect()->away('http://interactivedesign.ca/time-capsule');
+        return redirect()->away('https://interactivedesign.ca/time-capsule#gallery-section');
        
     }
 
@@ -104,7 +108,7 @@ class TimeCapsuleController extends Controller
 
        
         // Check if the signature is valid
-        if (! $request->hasValidSignature()) {
+        if (!$request->hasValidSignature()) {
             abort(401);
         }
 

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Submission</title>
+    <link rel="stylesheet" href="https://use.typekit.net/tzg2jet.css" />
     <style>
         * {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family: ivyepic-variable,sans-serif !important;
             font-optical-sizing: auto;
             box-sizing: border-box;
             scroll-behavior: smooth;
@@ -110,7 +111,7 @@
         .verify-btn {
             display: inline-block;
             background-color: #ea8936;
-            color: #ffffff;
+            color: black;
             padding: 12px 25px;
             text-decoration: none;
             border-radius: 8px;
@@ -120,6 +121,8 @@
             word-break: break-word;
             border: none;
             transition: transform .3s ease;
+            font-weight: 300;
+            font-variation-settings: "slnt" 0,"wdth" 100,"wght" 400;
         }
 
         .verify-btn:hover {
@@ -211,7 +214,7 @@
                 </p>
 
                 <div class="checkbox-group">
-                    <input type="checkbox" id="agree" name="agree" value="false" required />
+                    <input type="checkbox" id="agree" name="agree" value="true" required />
                     <label for="agree">I confirm that this is my submission.</label>
                 </div>
 

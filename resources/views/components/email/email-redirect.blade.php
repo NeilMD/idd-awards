@@ -60,12 +60,14 @@
         .verify-btn {
             display: inline-block;
             background-color: #ea8936;
-            color: #ffffff;
+            color: black;
             padding: 12px 25px;
             text-decoration: none;
             border-radius: 8px;
             font-size: 16px;
             margin-top: 20px;
+            font-weight: 300;
+            font-variation-settings: "slnt" 0,"wdth" 100,"wght" 400;
         }
         .verify-btn:hover {
             opacity: 80%;
