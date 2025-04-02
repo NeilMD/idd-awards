@@ -78,7 +78,7 @@
           
 
           <div id="link-container" class="form-group">
-            <label for="link">Related Link</label>
+          <label for="link">Related Link (Figma, Website, etc.)</label>
             <input type="url" id="link" name="link" placeholder="Share your link (don’t forget the http:// or https://)!" />
           </div>
           
@@ -101,7 +101,7 @@
             <label for="memory-image" class="file-upload-label">
               <object type="image/svg+xml" data="{{ Vite::asset('resources/img/arrow_up.svg') }}"></object>
               <span>Upload the Design here</span>
-              <sub class="">max 2MB design allowed</sub>
+              <sub>Max 2MB • 1 image only</sub>
             </label>
             <input
               type="file"
@@ -175,7 +175,7 @@
           <br/>
           <br/>
             <span>
-              If you have submitted before, you're previous submission will be overwritten.
+              If you have submitted before, the previous submission will be overwritten.
             </span>
             <br/>
             <br/>

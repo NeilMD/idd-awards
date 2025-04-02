@@ -119,7 +119,7 @@ function removeImage() {
 function submitModalReset() {
     document.getElementById("submit-title").textContent = "Notes";
     document.getElementById("modal-notes").innerHTML = `<span>
-              If you have submitted before, you're previous submission will be overwritten.
+              If you have submitted before, the previous submission will be overwritten.
             </span>
             <br/>
             <br/>
@@ -271,7 +271,7 @@ function openMemoryModal(el) {
     let link = el.getAttribute("data-attr-link");
 
     modalDescription.innerHTML = link
-        ? `${description} <br/> Check out the link <a href='${link}' target="_blank">here</a>.`
+        ? `${description} <br/> <br/> Check out the link <a href='${link}' target="_blank">here</a>.`
         : description;
 
     memoryModal.style.display = "block";
