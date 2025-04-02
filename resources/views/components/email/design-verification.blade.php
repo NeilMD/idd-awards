@@ -11,7 +11,7 @@
             box-sizing: border-box;
             scroll-behavior: smooth;
             font-weight: 300;
-            color: white
+            color: white;
         }
         html {
             background-color: #0e0e10;
@@ -34,7 +34,7 @@
         }
         
         .group {
-            margin-bottom:2rem
+            margin-bottom: 2rem;
         }
         h1 {
             font-size: 24px;
@@ -46,41 +46,41 @@
 
         h3 {
             font-size: 18px;
-            margin: 5px 0;
+            margin: 0;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             text-transform: capitalize;
-            
         }
 
         p {
             margin: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
+
         .email-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 0.75rem;
+            word-break: word-break;
+            text-overflow: break-word;
+            white-space: unset;
         }
+        
         p.description {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            white-space: normal;
+            overflow-wrap: break-word;
         }
-        strong {
-            color: #1a1a1c;
-            font-weight: 400;
+        small {
+            margin-bottom: 0.25rem;
         }
         .design-image {
             width: 100%;
+            max-width: 100%;
             height: auto;
             border-radius: 8px;
-            margin-top: 20px;
         }
-        p.info {
-            line-height: 1.5;
-            color: #1a1a1c;
-            white-space: wrap;
-        }
+
         .info-box {
             background-color: #f9f9f9;
             color: black;
@@ -91,25 +91,22 @@
             border-radius: 8px;
             border: 1px solid #ddd;
         }
+
         #btn {
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
+
         .verify-group {
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            gap:1rem;
+            gap: 1rem;
         }
-        .verify-link {
-            margin: 20px 0;
-            font-weight: 200;
-            text-decoration: underline;
-            color: whitesmoke;
-        }
+
         .verify-btn {
             display: inline-block;
             background-color: #ea8936;
@@ -119,58 +116,110 @@
             border-radius: 8px;
             font-size: 16px;
             margin-top: 20px;
-            text-align: left;
-
+            text-align: center;
+            word-break: break-word;
+            border: none;
+            transition: transform .3s ease;
         }
+
         .verify-btn:hover {
             opacity: 80%;
+            transform: translateY(-2px);
         }
+
+        .verify-link {
+            margin: 20px 0;
+            font-weight: 200;
+            text-decoration: underline;
+            color: whitesmoke;
+            word-wrap: break-word;
+        }
+
         .footer-text {
             font-size: 14px;
             color: #777;
             text-align: center;
             margin-top: 20px;
         }
+
         small {
             margin-top: 2rem;
+            display: block;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Style for Checkbox */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            margin-bottom: 1rem;
+            gap: 0.5rem;
+        }
+
+        .checkbox-group input {
+            width: 14px;
+            height: 14px;
+            accent-color: #ea8936;
+            margin: 0;
+            margin-bottom: 1px;
+        }
+
+        .checkbox-group label {
+            font-size: 16px;
+            line-height: 1;
+            color: #ccc;
+            cursor: pointer;
+            margin: auto 0 
         }
     </style>
 </head>
 <body> 
-
     <main>
         <div class="email-container">
-            <h1 class="email-header">Thank you for your Submission!</h1>
+            <h1 class="email-header">Confirm your Submission</h1>
 
+            <p style="text-align: center; font-size: 16px; color: #ccc; margin-bottom: 20px;">
+                Please review the details of your submission below before confirming.
+            </p>
             <div class="group">
                 <small>Design Title:</small>
-                <h1>{{ $designTitle}}</h1>
+                <h1>{{ $designTitle }}</h1>
             </div>
 
             <div class="group">
                 <small>Design Category:</small>
-                <h3> {{ $category}}</h3>
+                <h3>{{ $category }}</h3>
             </div>
+
             <div class="group">
                 <small>Design Description:</small>
-                <p class="">{{ $description }}</p>
+                <p class="description">{{ $description }}</p>
             </div>
-           
-            <div id="btn" class="verify-group">
-                <div >
-                    <a class="verify-btn" href="{{ $verificationUrl }}">
-                    Click to here verify your submission 
-                    </a>
-                </div>
-                <small>
-                    If you cant click on the button above, go to following link manually: 
-                    {{ $verificationUrl }}
-                </small>
 
+            <!-- Added Design Image -->
+            <div class="group">
+                <small>Design Image:</small>
+                <img class="design-image" src="{{ $designImageUrl }}" alt="Design Image">
             </div>
+            <form method="POST" action="{{ $verificationUrl }}">
+                @csrf
+                <p style="text-align: center; font-size: 16px; color: #ccc; margin-top: 20px; margin-bottom:10px">
+                    If everything looks correct, please confirm your submission by checking the box below and clicking submit.
+                </p>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agree" name="agree" value="false" required />
+                    <label for="agree">I confirm that this is my submission.</label>
+                </div>
+
+                <div id="btn" class="verify-group">
+                    <button class="verify-btn" type="submit">Submit</button>
+                </div>
+            </form>
         </div>
     </main>
-    
-
 </body>
 </html>

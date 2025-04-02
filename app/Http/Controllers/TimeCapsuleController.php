@@ -84,22 +84,67 @@ class TimeCapsuleController extends Controller
         }
 
     }
-    // TODO:: Add extra button as SAIT actually crawls this one.
+
     public function verify(Request $request, $email)
 
     {
+        // Check if the signature is valid
         if (! $request->hasValidSignature()) {
             abort(401);
         }
-       
+
         $updated = DesignSubmission::where('email',$email)->update(['isVerified'=> true]);
-        
-        if (!$updated){
-            echo  'No records were verified.';
-        }
+
         return redirect()->away('http://interactivedesign.ca/time-capsule');
        
     }
+
+    
+    public function confirm(Request $request, $email){
+
+       
+        // Check if the signature is valid
+        if (! $request->hasValidSignature()) {
+            abort(401);
+        }
+
+        $signedUrl = URL::temporarySignedRoute(
+
+            'verify', now()->addMinutes(3000), ['email' => $email]
+        
+        );
+
+        // Retrieve the design submission
+        $design = DesignSubmission::where('email', $email)->first();
+
+        // Check if the record exists
+        if (!$design) {
+            abort(404, 'Submission not found.');
+        }
+
+        // Transform data and add verifyUrlLink
+        $designData = [
+            'imageUrl' => asset('storage/' . $design->image_path), // Assuming stored in 'public' disk
+            'title' => $design->design_title,
+            'name' => $design->name,
+            'description' => $design->design_description,
+            'email' => $design->email,
+            'link' => $design->link,
+            'design_category' => $design->design_category,
+            'verificationUrl' => $signedUrl,
+        ];
+
+        // Return the email verification view instead of 'time-capsule'
+        return view('components.email.design-verification', [
+            'designTitle' => $design->design_title,
+            'category' => $design->design_category,
+            'description' => $design->design_description,
+            'designImageUrl' => $designData['imageUrl'],
+            'verificationUrl' => $signedUrl,
+            'email' => $email
+        ]);
+    }
+
     private function sendEmail($validatedData, $imagePath) {
 
         // Additional dynamic data
@@ -107,17 +152,13 @@ class TimeCapsuleController extends Controller
         
         $signedUrl = URL::temporarySignedRoute(
 
-            'verify', now()->addMinutes(3000), ['email' => $validatedData['email']]
+            'confirm', now()->addMinutes(3000), ['email' => $validatedData['email']]
         
         );
 
         // Render the Blade view to HTML
-        $viewContent = view('components.email.design-verification', [
-            'designTitle' => $validatedData['design_title'],
-            'category' => $validatedData['design_category'],
-            'description' => $validatedData['design_description'],
-            'designImageUrl' => $imagePath,
-            'verificationUrl' => $signedUrl
+        $viewContent = view('components.email.email-redirect', [
+            'verificationUrl' => $signedUrl,
         ])->render();
 
         // Email details
@@ -138,7 +179,7 @@ class TimeCapsuleController extends Controller
     {
         return URL::temporarySignedRoute(
 
-            'verify', now()->addMinutes(30), ['email' => 'temp@edu.sait.ca']
+            'confirm', now()->addMinutes(30), ['email' => 'capsitra@edu.sait.ca']
         
         );
     }
