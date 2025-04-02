@@ -15289,3 +15289,26 @@
 #18 /Applications/MAMP/htdocs/idd/awards/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
 #19 {main}
 "} 
+[2025-04-01 15:59:15] local.ERROR: The process "'/opt/homebrew/Cellar/php/8.4.5_1/bin/php' 'artisan' 'queue:work' '--once' '--name=default' '--queue=default' '--backoff=0' '--memory=128' '--sleep=3' '--tries=1'" exceeded the timeout of 60 seconds. {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessTimedOutException(code: 0): The process \"'/opt/homebrew/Cellar/php/8.4.5_1/bin/php' 'artisan' 'queue:work' '--once' '--name=default' '--queue=default' '--backoff=0' '--memory=128' '--sleep=3' '--tries=1'\" exceeded the timeout of 60 seconds. at /Applications/MAMP/htdocs/idd/awards/vendor/symfony/process/Process.php:1181)
+[stacktrace]
+#0 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/process/Process.php(450): Symfony\\Component\\Process\\Process->checkTimeout()
+#1 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/process/Process.php(251): Symfony\\Component\\Process\\Process->wait()
+#2 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Queue/Listener.php(181): Symfony\\Component\\Process\\Process->run(Object(Closure))
+#3 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Queue/Listener.php(92): Illuminate\\Queue\\Listener->runProcess(Object(Symfony\\Component\\Process\\Process), '128')
+#4 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php(75): Illuminate\\Queue\\Listener->listen(NULL, 'default', Object(Illuminate\\Queue\\ListenerOptions))
+#5 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Queue\\Console\\ListenCommand->handle()
+#6 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#7 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call(Array)
+#11 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Queue\\Console\\ListenCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /Applications/MAMP/htdocs/idd/awards/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /Applications/MAMP/htdocs/idd/awards/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /Applications/MAMP/htdocs/idd/awards/artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#19 {main}
+"} 

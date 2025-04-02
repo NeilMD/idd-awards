@@ -64,16 +64,25 @@
             ></textarea>
           </div>
 
+         
           <div class="form-group">
-            <label for="submitter-name">Name</label>
+            <label for="submitter-name">Designer's Name</label>
             <input
               type="text"
               id="submitter-name"
               name="submitter-name"
-              placeholder="What’s your name, trailblazer?"
+              placeholder="Declare your name, trailblazer!"
               required
             />
           </div>
+          
+
+          <div id="link-container" class="form-group">
+            <label for="link">Related Link</label>
+            <input type="url" id="link" name="link" placeholder="Share your link (don’t forget the http:// or https://)!" />
+          </div>
+          
+          
 
           <div class="form-group">
             <label for="email">SAIT Email Address</label>
@@ -81,17 +90,10 @@
               type="email"
               id="email"
               name="email"
-              placeholder="@edu.sait.ca or @sait only 😤"
+              placeholder="@edu.sait.ca or @sait.ca only 😤"
               required
             />
           
-          </div>
-         
-          
-
-          <div id="link-container" class="form-group" style="display: none;">
-            <label for="link">Add Figma or Website Link</label>
-            <input type="url" id="link" name="link" placeholder="Share your link (don’t forget the http:// or https://)!" />
           </div>
 
           <div class="form-group file-upload-container">
@@ -162,7 +164,7 @@
     </div>
 
     <!-- modal -->
-    <div id="submit-modal"  class="memory-modal">
+    <div id="submit-modal" class="memory-modal">
       <div class="modal-content">
         <span class="close-modal">&times;</span>
         <div class="modal-info">
@@ -170,17 +172,19 @@
             Notes
           </h3>
           <div id="modal-notes">
+          <br/>
+          <br/>
             <span>
               If you have submitted before, you're previous submission will be overwritten.
             </span>
             <br/>
             <br/>
             <span>
-              Please wait 1-2mins for the verification email to arrived. It may arrived on your junk/spam folder! 
+              Please wait <a href="https://outlook.office.com/mail/" class="note-time" target="_blank">3-5mins</a> for the verification email to arrived. It may arrived on your junk/spam folder! 
             </span>
             <br/>
             <span>
-              <small>(dev notes: we dont have smtp server, sorry 🙇)</small>
+              <small>(dev notes: Please be patient, we dont have dedicated email server. Sorry! 🙇)</small>
             </span>
 
             <p id="modal-description"></p>

@@ -103,7 +103,7 @@ class TimeCapsuleController extends Controller
     private function sendEmail($validatedData, $imagePath) {
 
         // Additional dynamic data
-        $subject = "Verify your Upload";
+        $subject = "IGNITE AWARDS – Confirm Your Submission";
         
         $signedUrl = URL::temporarySignedRoute(
 

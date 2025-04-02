@@ -86,7 +86,8 @@ button {
 
     input,
     select,
-    button {
+    button,
+    textarea {
         font-family: "ivy-epic-variable", sans-serif;
         font-variation-settings: "slnt" 0, "wdth" 100, "wght" 200;
     }
@@ -300,7 +301,7 @@ label.file-upload-label sub {
         position: relative;
         background-color: #ea8936;
         color: black;
-        border: 1px solid rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         padding: 0.25rem 0.5rem;
         border-radius: 30px;
         font-size: 1rem;
@@ -537,8 +538,8 @@ label.file-upload-label sub {
 
     #submit-title {
         margin-top: 2rem;
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        font-variation-settings: "slnt" 0, "wdth" 100, "wght" 300;
     }
     #modal-notes {
         max-width: 100%; /* Set a max width for the description to ensure it wraps within the modal */
@@ -549,8 +550,17 @@ label.file-upload-label sub {
             line-height: 1.5;
         }
 
+        a.note-time {
+            text-decoration: underline;
+            color: #ea8936;
+            font-variation-settings: "slnt" 0, "wdth" 100, "wght" 500;
+        }
+
         span:nth-of-type(3) {
             width: 100%;
         }
+    }
+    .modal-content {
+        background-color: #313133;
     }
 }

@@ -50,14 +50,6 @@ function init() {
     setupEventListeners();
 }
 
-function linkDisplay() {
-    if (categoryInput.value === "ux" || categoryInput.value === "web") {
-        linkContainer.style.display = "block"; // Show the link input
-    } else {
-        linkContainer.style.display = "none"; // Hide the link input
-    }
-}
-
 document
     .getElementById("all")
     .addEventListener("click", () => changeTab("all"));
@@ -89,6 +81,8 @@ function setupEventListeners() {
     window.addEventListener("click", (e) => {
         if (e.target === memoryModal) {
             memoryModal.style.display = "none";
+        }
+        if (e.target === submitModal) {
             submitModal.style.display = "none";
         }
     });
@@ -130,11 +124,11 @@ function submitModalReset() {
             <br/>
             <br/>
             <span>
-              Please wait 1-2mins for the verification email to arrived. It may arrived on your junk/spam folder! 
+              Please wait <a href="https://outlook.office.com/mail/" class="note-time" target="_blank">3-5mins</a> for the verification email to arrived. It may arrived on your junk/spam folder! 
             </span>
             <br/>
             <span>
-              <small>(dev notes: we dont have smtp server, sorry 🙇)</small>
+              <small>(dev notes: Please be patient, we dont have dedicated email server. Sorry! 🙇)</small>
             </span>`;
 }
 
@@ -178,14 +172,12 @@ function handleSubmission(e) {
 
     // Check validity using HTML5 checkValidity method
     if (!submissionForm.checkValidity()) {
-        // If any field is invalid, gather error messages
-        const invalidFields = submissionForm.querySelectorAll(":invalid");
-        invalidFields.forEach((field) => {
-            errorMessages.push(`${field.name} is invalid.`);
-        });
-
-        // Also show an alert with the errors
-        alert("Error: \n" + errorMessages.join("\n"));
+        submitModal.style.display = "block";
+        submitBtn.classList.remove("button-disabled");
+        document.getElementById("submit-title").textContent =
+            "Submission Failed: Unable to Submit Design";
+        document.getElementById("modal-notes").innerHTML =
+            "<br/><br/><span>Please provide a valid link (URL) for UX or Web category.</span>";
 
         submitBtn.classList.remove("button-disabled");
         return;
@@ -254,6 +246,7 @@ function handleSubmission(e) {
                 submitBtn.classList.remove("button-disabled");
             })
             .catch((error) => {
+                submitModal.style.display = "block";
                 submitBtn.classList.remove("button-disabled");
                 document.getElementById("submit-title").textContent =
                     "Submission Failed: Unable to Submit Design";
@@ -274,11 +267,12 @@ function openMemoryModal(el) {
     modalSubmitter.textContent = `Submitted by ${el
         .querySelector(".gallery-submitter")
         .textContent.substring(3)}`;
-    modalDescription.innerHTML = `${
-        el.querySelector(".gallery-description").textContent
-    } <br/> Check out the link <a href='${el.getAttribute(
-        "data-attr-link"
-    )}' target="_blank">here</a>.`;
+    let description = el.querySelector(".gallery-description").textContent;
+    let link = el.getAttribute("data-attr-link");
+
+    modalDescription.innerHTML = link
+        ? `${description} <br/> Check out the link <a href='${link}' target="_blank">here</a>.`
+        : description;
 
     memoryModal.style.display = "block";
 }
@@ -291,11 +285,7 @@ elGalleryItem.forEach((el) => {
     el.addEventListener("click", (e) => openMemoryModal(el));
 });
 
-// JavaScript to handle the conditional display of the link input
-document.getElementById("category").addEventListener("change", linkDisplay);
-
 document.addEventListener("DOMContentLoaded", function () {
-    linkDisplay();
     submissionForm.reset();
 
     const loadMore = document.getElementById("load-more");
