@@ -118,9 +118,10 @@ function removeImage() {
 
 function submitModalReset() {
     document.getElementById("submit-title").textContent = "Notes";
-    document.getElementById("modal-notes").innerHTML = `<span>
-              If you have submitted before, the previous submission will be overwritten.
-            </span>
+    document.getElementById(
+        "modal-notes"
+    ).innerHTML = `<span><strong>Before your submission is posted, please verify it via the email you will receive.</strong></span>
+            <span><strong>If you've submitted previously, your prior submission will be replaced.</strong></span>
             <br/>
             <br/>
             <span>
@@ -314,12 +315,6 @@ function fetchMoreData(url) {
     fetch(newUrl)
         .then((response) => response.json())
         .then((data) => {
-            // // Append the new designs to the design container
-            // gallerySection.insertAdjacentHTML(
-            //     "beforeend",
-            //     data.submissionsHtml
-            // );
-
             // Convert the returned HTML string to a DOM structure
             let tempDiv = document.createElement("div");
             tempDiv.innerHTML = data.submissionsHtml.trim(); // Convert string to HTML elements
@@ -343,7 +338,6 @@ function fetchMoreData(url) {
 }
 
 function changeTab(tab) {
-    console.log("tigres");
     let nextPageUrlInput = document.getElementById("next-page-url");
     let nextPageCategory = document.getElementById("next-page-category");
     nextPageCategory.value = tab;

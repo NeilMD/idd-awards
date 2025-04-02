@@ -169,14 +169,13 @@
         <span class="close-modal">&times;</span>
         <div class="modal-info">
           <h3 id="submit-title">
-            Notes
+            Please Read the Following
           </h3>
           <div id="modal-notes">
           <br/>
           <br/>
-            <span>
-              If you have submitted before, the previous submission will be overwritten.
-            </span>
+            <span><strong>Before your submission is posted, please verify it via the email you will receive.</strong></span>
+            <span><strong>If you've submitted previously, your prior submission will be replaced.</strong></span>
             <br/>
             <br/>
             <span>
