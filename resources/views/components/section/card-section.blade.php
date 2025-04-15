@@ -30,13 +30,7 @@
             'awardText' => '',
             'id' => 'web'
         ],
-        [
-            'pageUrl' => 'impact-awards',
-            'imageUrl' => Vite::asset('resources/img/card_impact.webp'),
-            'awardTitle' => 'Impact Awards',
-            'awardText' => '',
-            'id' => 'impact'
-        ],
+        
     ];
 @endphp
 

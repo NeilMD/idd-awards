@@ -18,10 +18,13 @@
        <section class="hero ux-hero">
         <div class="overlay"></div>
         <h1 class="title"> USER EXPERIENCE AWARDS</h1>
+        <h2 class="title"> NOMINEES</h2>
     </section>
 
     <!-- Accordion Categories -->
-    <div class="accordion-container">
+    <!-- REMOVE 04/15 For Nominees -->
+     
+    <!-- <div class="accordion-container">
           <div class="accordion-item">
             <div class="accordion-header">
               <h3>The HI-FI High-Five Award</h3>
@@ -98,9 +101,137 @@
                     interactive UI elements that enhance user experience.</li>
             </div>
           </div>
-    </div>
+    </div> -->
 
-    <x-section.cta-section page="awards"/>
+    <h2 class="nom-section-title"><b>Design System Vanguard</b></h2>
+    <section class="nom-cards-section">
+      <div class="nom-cards-container">
+          <div class="nom-card">
+              <div class="card-content">
+                  <h3 class="card-title">Jason's Sticker Club</h3>
+                  <h2 class="card-title">Ronald Atutubo</h2>
+                  <h2 class="card-title">Tina Le</h2>
+                  <h2 class="card-title">Aleksandr Brudnyi</h2>
+                  <h2 class="card-title">Aaron Nicor</h2>
+                  <h2 class="card-title">Chris Nicdao</h2>
+                  <h2 class="card-title">Briana Truong</h2>
+                </div>
+          </div>
+          <div class="nom-card">
+            <div class="card-content">
+                <h3 class="card-title">Crypta: Designing an Intuitive Signup Flow for Crypto</h3>
+                <h2 class="card-title">Hoi Yan Cheng, Yanny</h2>
+            </div>
+          </div>
+          <div class="nom-card">
+            <div class="card-content">
+              <h3 class="card-title">Be Sober</h3>
+                <h2 class="card-title">Elena Napolskikh</h2>
+              </div>
+          </div>
+        </div>
+    </section>
+    
+    <h2 class="nom-section-title"><b>Sick Flow!</b></h2>
+    <section class="nom-cards-section">
+      <div class="nom-cards-container">
+        <div class="nom-card">
+            <div class="card-content">
+                <h3 class="card-title">Be Sober</h3>
+                <h2 class="card-title">Elena Napolskikh</h2>
+              </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">Crypta</h3>
+              <h2 class="card-title">Kayla Nikpour</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <h2 class="nom-section-title"><b>Hi-Fi High-Five</b></h2>
+    <section class="nom-cards-section">
+      <div class="nom-cards-container">
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">Crypta: Designing an Intuitive Signup Flow for Crypto</h3>
+              <h2 class="card-title">Hoi Yan Cheng, Yanny</h2>
+            </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">Jason's Sticker Club</h3>
+              <h2 class="card-title">Ronald Atutubo</h2>
+              <h2 class="card-title">Tina Le</h2>
+              <h2 class="card-title">Aleksandr Brudnyi</h2>
+              <h2 class="card-title">Aaron Nicor</h2>
+              <h2 class="card-title">Chris Nicdao</h2>
+              <h2 class="card-title">Briana Truong</h2>
+          </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">Find Fonts</h3>
+              <h2 class="card-title">Irene Doan</h2>
+              <h2 class="card-title">Sophie Tran</h2>
+            </div>
+        </div>
+      </div>
+    </section>
+    
+    <h2 class="nom-section-title"><b>Innovator Extraordinaire</b></h2>
+    <section class="nom-cards-section">
+      <div class="nom-cards-container">
+        <div class="nom-card">
+          <div class="card-content">
+            <h3 class="card-title">On My Way!</h3>
+              <h2 class="card-title">Briana Truong</h2>
+              <h2 class="card-title">Tina Le</h2>
+              <h2 class="card-title">Jason Ye</h2>
+              <h2 class="card-title">Jinseop Kim</h2>
+              <h2 class="card-title">Aaron Nicor</h2>
+          </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+            <h3 class="card-title">Peek-a-Poop: The Ultimate Washroom Finding App</h3>
+              <h2 class="card-title">Hoi Yan Cheng</h2>
+              <h2 class="card-title">Yang Yang</h2>
+              <h2 class="card-title">Minjeong Jeon</h2>
+              <h2 class="card-title">Ka Man Lau</h2>
+              <h2 class="card-title">Shubo Zhang</h2>
+            </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">Sayfe - Dietary Communication Tool</h3>
+              <h2 class="card-title">Aaron Nicor</h2>
+            </div>
+        </div>
+      </div>
+    </section>
+    
+    <h2 class="nom-section-title"><b>Little Big Deal</b></h2>
+    <section class="nom-cards-section">
+      <div class="nom-cards-container">
+        <div class="nom-card">
+          <div class="card-content">
+            <h3 class="card-title">Clothing Filter Menu</h3>
+              <h2 class="card-title">Kayla Nikpour</h2>
+            </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+            <h3 class="card-title">Steady</h3>
+              <h2 class="card-title">Ronald Atutubo</h2>
+              <h2 class="card-title">Aleksandr Brudnyi</h2>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <x-section.cta-section page="awards"/> -->
 
     <!-- redirection -->
     <h2 class="section-title">See Also:</h2>

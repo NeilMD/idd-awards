@@ -7,7 +7,7 @@
     <div class="nav-links">
         <a href="{{ url('/') }}" class="{{ $active == '' ? 'active' : '' }}">Home</a>
         <a href="{{ url('awards') }}" class="{{ $active == 'awards' ? 'active' : '' }}">Awards</a>
-        <!-- <a href="{{ url('time-capsule') }}" class="{{ $active == 'time-capsule' ? 'active' : '' }}">Time Capsule</a> -->
+        <a href="{{ url('time-capsule') }}" class="{{ $active == 'time-capsule' ? 'active' : '' }}">Time Capsule</a>
     </div>
     <div class="menu-toggle">
         <span></span>

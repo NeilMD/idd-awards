@@ -18,10 +18,14 @@
        <section class="hero web-hero">
         <div class="overlay"></div>
         <h1 class="title"> WEB DEV AWARDS</h1>
+        <h2 class="title"> NOMINEES</h2>
     </section>
 
-    <!-- Accordion Categories -->
-    <div class="accordion-container">
+   
+    <!-- Accordion Categories-->
+    <!-- REMOVE 04/15 For Nominees -->
+     
+    <!-- <div class="accordion-container">
         <div class="accordion-item">
           <div class="accordion-header">
             <h3>The Business Byte Brilliance Award</h3>
@@ -95,9 +99,91 @@
               <li>Awarded to the student with the most active and consistent contributions to coding projects on GitHub.</li>
           </div>
         </div>
-    </div>
+    </div> -->
 
-    <x-section.cta-section page="awards"/>
+    <h2 class="nom-section-title"><b>Fire Personal Site</b></h2>
+    <section class="nom-cards-section">
+      <div class="nom-cards-container">
+        <div class="nom-card">
+            <div class="card-content">
+                <h3 class="card-title">Portfolio</h3>
+                <h2 class="card-title">Neil Capistrano</h2>
+            </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">Yanny Cheng personal portfolio site</h3>
+              <h2 class="card-title">Hoi Yan Cheng, Yanny</h2>
+          </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+            <h3 class="card-title">Linspired - My portfolio website</h3>
+              <h2 class="card-title">Austin Lin</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="nom-section-title"><b>Business Byte Brilliance</b></h2>
+    <section class="nom-cards-section">
+      <div class="nom-cards-container">
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">Bamboo TCMA Massage Clinic Website</h3>
+              <h2 class="card-title">Austin Lin</h2>
+          </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">BeatCurrent</h3>
+              <h2 class="card-title">Neil Capistrano</h2>
+              <h2 class="card-title">Sueun Choi</h2>
+              <h2 class="card-title">Matthew Sperling</h2>
+          </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">Night Sparrow</h3>
+              <h2 class="card-title">Neil Capistrano</h2>
+              <h2 class="card-title">Sueun Choi</h2>
+              <h2 class="card-title">Matthew Sperling</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="nom-section-title"><b>Browser Breakthrough</b></h2>
+    <section class="nom-cards-section">
+      <div class="nom-cards-container">
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">Academix</h3>
+              <h2 class="card-title">Neil Capistrano</h2>
+              <h2 class="card-title">Sueun Choi</h2>
+              <h2 class="card-title">Milan Djordjevic</h2>
+              <h2 class="card-title">Matthew Sperling</h2>
+            </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">BeatCurrent</h3>
+              <h2 class="card-title">Neil Capistrano</h2>
+              <h2 class="card-title">Sueun Choi</h2>
+              <h2 class="card-title">Matthew Sperling</h2>
+          </div>
+        </div>
+        <div class="nom-card">
+          <div class="card-content">
+              <h3 class="card-title">Portfolio Portal</h3>
+              <h2 class="card-title">Neil Capistrano</h2>
+              <h2 class="card-title">Sueun Choi</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <x-section.cta-section page="awards"/> -->
 
     <!-- redirection -->
     <h2 class="section-title">See Also:</h2>
