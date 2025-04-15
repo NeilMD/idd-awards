@@ -18,8 +18,16 @@
     <section class="hero ignite-award-hero">
       <div class="overlay"></div>
       <h1 class="title">THE IGNITE AWARD</h1>
+      <h2 class="title"> NOMINEES</h2>
     </section>
 
+    <div class="student-votes">
+      <h1>Student Voted Awards</h1>
+    </div>
+    <h2 class="nom-section-title">Coming Soon!</h2>
+
+    <!-- REMOVE 04/15 For Nominees -->
+<!-- 
     <div class="student-votes">
            <h1>Student Voted Awards</h1>
     </div>
@@ -115,9 +123,9 @@
           <li>Who has been the most supportive, collaborative, and positive contributor in group work?</li>
     </div>
   </div>
-    </div>
+    </div> -->
 
-    <x-section.cta-section page="ignite"/>
+    <!-- <x-section.cta-section page="ignite"/> -->
 
     <!-- redirection -->
     <h2 class="section-title">See Also:</h2>
